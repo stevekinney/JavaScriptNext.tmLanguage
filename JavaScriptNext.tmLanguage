@@ -5,7 +5,7 @@
     <key>name</key>
     <string>JavaScriptNext</string>
     <key>scopeName</key>
-    <string>source.js.base</string>
+    <string>source.jsnext.base</string>
     <key>keyEquivalent</key>
     <string>^~J</string>
     <key>uuid</key>

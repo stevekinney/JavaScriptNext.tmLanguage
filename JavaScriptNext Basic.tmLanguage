@@ -11,7 +11,7 @@
     <string>jsx</string>
   </array>
   <key>scopeName</key>
-  <string>source.js</string>
+  <string>source.jsnext</string>
   <key>firstLineMatch</key>
   <string>^#!/.*\b(node|js)</string>
   <key>keyEquivalent</key>
