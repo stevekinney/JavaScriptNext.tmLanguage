@@ -2,18 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+  <key>name</key>
+  <string>JavaScriptNext Embedded</string>
   <key>fileTypes</key>
   <array>
     <string>js</string>
     <string>htc</string>
     <string>jsx</string>
   </array>
+  <key>scopeName</key>
+  <string>source.js</string>
   <key>firstLineMatch</key>
   <string>^#!/.*\b(node|js)</string>
   <key>keyEquivalent</key>
   <string>^~J</string>
-  <key>name</key>
-  <string>Embedded JavaScript</string>
   <key>patterns</key>
   <array>
     <dict>
@@ -1733,8 +1735,6 @@
       </array>
     </dict>
   </dict>
-  <key>scopeName</key>
-  <string>source.js</string>
   <key>uuid</key>
   <string>0D2D03B9-F18B-4D9D-A960-716FDEC35331</string>
 </dict>

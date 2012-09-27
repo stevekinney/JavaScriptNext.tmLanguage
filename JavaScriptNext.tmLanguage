@@ -2,10 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>name</key>
+    <string>JavaScriptNext</string>
+    <key>scopeName</key>
+    <string>source.js.base</string>
     <key>keyEquivalent</key>
     <string>^~J</string>
     <key>uuid</key>
     <string>93E017CC-6F27-11D9-90EB-000D93589AF6</string>
+    <key>foldingStopMarker</key>
+    <string>(?x)^
+      #                     (         Blank |Comments                                        | (No Paren | String) | String                                                        | (Nested Parens             )  )*+  Close  Yes *+
+      (?&gt;                   (?&lt;yesS&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noS&gt;[^\[\]'"/]) | (?&lt;str&gt; '(\\'|[^'])*+' | "(\\"|[^"])*+" | /(\\/|[^/])*+/) | (?&lt;squar&gt; \[ \g&lt;yesS&gt;*+ \] )  )*+  \]     \g&lt;yesS&gt;*+
+      |                     (?&lt;yesR&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noR&gt;[^\(\)'"/]) | \g&lt;str&gt;                                                       | (?&lt;round&gt; \( \g&lt;yesR&gt;*+ \) )  )*+  \)     \g&lt;yesR&gt;*+
+      |                     (?&lt;yesC&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noC&gt;[^\{\}'"/]) | \g&lt;str&gt;                                                       | (?&lt;curly&gt; \{ \g&lt;yesC&gt;*+ \} )  )*+  \}     \g&lt;yesC&gt;*+
+    )$</string>
+    <key>foldingStartMarker</key>
+    <string>(?x)^
+      #   Yes *+      Open  (         Blank |Comments                                        | (No Paren | String) | String                                                        | (Nested Parens             )  )*+
+      (?&gt; \g&lt;yesS&gt;*+  \[    (?&lt;yesS&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noS&gt;[^\[\]'"/]) | (?&lt;str&gt; '(\\'|[^'])*+' | "(\\"|[^"])*+" | /(\\/|[^/])*+/) | (?&lt;squar&gt; \[ \g&lt;yesS&gt;*+ \] )  )*+
+      |   \g&lt;yesR&gt;*+  \(    (?&lt;yesR&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noR&gt;[^\(\)'"/]) | \g&lt;str&gt;                                                       | (?&lt;round&gt; \( \g&lt;yesR&gt;*+ \) )  )*+
+      |   \g&lt;yesC&gt;*+  \{    (?&lt;yesC&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noC&gt;[^\{\}'"/]) | \g&lt;str&gt;                                                       | (?&lt;curly&gt; \{ \g&lt;yesC&gt;*+ \} )  )*+
+    )$</string>
     <key>patterns</key>
     <array>
       <dict>
@@ -182,24 +200,6 @@
         <string>#leading-space</string>
       </dict>
     </array>
-    <key>name</key>
-    <string>JavaScript</string>
-    <key>scopeName</key>
-    <string>source.js.base</string>
-    <key>foldingStopMarker</key>
-    <string>(?x)^
-      #                     (         Blank |Comments                                        | (No Paren | String) | String                                                        | (Nested Parens             )  )*+  Close  Yes *+
-      (?&gt;                   (?&lt;yesS&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noS&gt;[^\[\]'"/]) | (?&lt;str&gt; '(\\'|[^'])*+' | "(\\"|[^"])*+" | /(\\/|[^/])*+/) | (?&lt;squar&gt; \[ \g&lt;yesS&gt;*+ \] )  )*+  \]     \g&lt;yesS&gt;*+
-      |                     (?&lt;yesR&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noR&gt;[^\(\)'"/]) | \g&lt;str&gt;                                                       | (?&lt;round&gt; \( \g&lt;yesR&gt;*+ \) )  )*+  \)     \g&lt;yesR&gt;*+
-      |                     (?&lt;yesC&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noC&gt;[^\{\}'"/]) | \g&lt;str&gt;                                                       | (?&lt;curly&gt; \{ \g&lt;yesC&gt;*+ \} )  )*+  \}     \g&lt;yesC&gt;*+
-    )$</string>
-    <key>foldingStartMarker</key>
-    <string>(?x)^
-      #   Yes *+      Open  (         Blank |Comments                                        | (No Paren | String) | String                                                        | (Nested Parens             )  )*+
-      (?&gt; \g&lt;yesS&gt;*+  \[    (?&lt;yesS&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noS&gt;[^\[\]'"/]) | (?&lt;str&gt; '(\\'|[^'])*+' | "(\\"|[^"])*+" | /(\\/|[^/])*+/) | (?&lt;squar&gt; \[ \g&lt;yesS&gt;*+ \] )  )*+
-      |   \g&lt;yesR&gt;*+  \(    (?&lt;yesR&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noR&gt;[^\(\)'"/]) | \g&lt;str&gt;                                                       | (?&lt;round&gt; \( \g&lt;yesR&gt;*+ \) )  )*+
-      |   \g&lt;yesC&gt;*+  \{    (?&lt;yesC&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noC&gt;[^\{\}'"/]) | \g&lt;str&gt;                                                       | (?&lt;curly&gt; \{ \g&lt;yesC&gt;*+ \} )  )*+
-    )$</string>
     <key>repository</key>
     <dict>
       <key>function-params</key>
