@@ -209,34 +209,6 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>({)</string>
-            <key>captures</key>
-            <dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.separator.objects.js</string>
-              </dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.section.scope.curly.js</string>
-              </dict>
-            </dict>
-            <key>name</key>
-            <string>meta.group.braces.curly</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>$base</string>
-              </dict>
-            </array>
-            <key>end</key>
-            <string>(\})(,)?\s*</string>
-          </dict>
-          <dict>
-            <key>begin</key>
             <string>(\()(?!\))</string>
             <key>captures</key>
             <dict>
@@ -448,7 +420,7 @@
             <key>comment</key>
             <string>match regular class like: class MyClass { â€¦ }</string>
             <key>match</key>
-            <string>\b(class)(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$]\w*))?)?\s*</string>
+            <string>\b(class)\b(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$]\w*))?)?\s*</string>
             <key>name</key>
             <string>meta.class.js</string>
           </dict>
