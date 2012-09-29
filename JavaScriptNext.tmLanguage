@@ -1480,6 +1480,36 @@
         <array>
           <dict>
             <key>match</key>
+            <string>\.?[A-Z][_$\dA-Z]*\b</string>
+            <key>name</key>
+            <string>variable.other.constant.js</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b([A-Z][_$\w]*\.?)\s*?(?:([a-z$_][\w_$]*(?=\())|([a-z$_][\w_$]*))?</string>
+            <key>name</key>
+            <string>meta.entity.static.js</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.class.js</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>meta.function.call.class.static.js</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.class.static.js</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
             <string>(?&lt;!\.)[_$a-zA-Z][_$\w]*\s*(?=[\[\.])</string>
             <key>name</key>
             <string>variable.other.object.js</string>
