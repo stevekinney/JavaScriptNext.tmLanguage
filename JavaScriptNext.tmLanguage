@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>name</key>
-  <string>JavaScriptNext Embedded</string>
+  <string>JavaScriptNext</string>
   <key>fileTypes</key>
   <array>
     <string>js</string>
@@ -11,26 +11,11 @@
     <string>jsx</string>
   </array>
   <key>scopeName</key>
-  <string>source.jsnext</string>
+  <string>source.js</string>
   <key>firstLineMatch</key>
   <string>^#!/.*\b(node|js)</string>
   <key>keyEquivalent</key>
   <string>^~J</string>
-
-    <key>foldingStopMarker</key>
-    <string>(?x)^
-      #                     (         Blank |Comments                                        | (No Paren | String) | String                                                        | (Nested Parens             )  )*+  Close  Yes *+
-      (?&gt;                   (?&lt;yesS&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noS&gt;[^\[\]'"/]) | (?&lt;str&gt; '(\\'|[^'])*+' | "(\\"|[^"])*+" | /(\\/|[^/])*+/) | (?&lt;squar&gt; \[ \g&lt;yesS&gt;*+ \] )  )*+  \]     \g&lt;yesS&gt;*+
-      |                     (?&lt;yesR&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noR&gt;[^\(\)'"/]) | \g&lt;str&gt;                                                       | (?&lt;round&gt; \( \g&lt;yesR&gt;*+ \) )  )*+  \)     \g&lt;yesR&gt;*+
-      |                     (?&lt;yesC&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noC&gt;[^\{\}'"/]) | \g&lt;str&gt;                                                       | (?&lt;curly&gt; \{ \g&lt;yesC&gt;*+ \} )  )*+  \}     \g&lt;yesC&gt;*+
-    )$</string>
-    <key>foldingStartMarker</key>
-    <string>(?x)^
-      #   Yes *+      Open  (         Blank |Comments                                        | (No Paren | String) | String                                                        | (Nested Parens             )  )*+
-      (?&gt; \g&lt;yesS&gt;*+  \[    (?&lt;yesS&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noS&gt;[^\[\]'"/]) | (?&lt;str&gt; '(\\'|[^'])*+' | "(\\"|[^"])*+" | /(\\/|[^/])*+/) | (?&lt;squar&gt; \[ \g&lt;yesS&gt;*+ \] )  )*+
-      |   \g&lt;yesR&gt;*+  \(    (?&lt;yesR&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noR&gt;[^\(\)'"/]) | \g&lt;str&gt;                                                       | (?&lt;round&gt; \( \g&lt;yesR&gt;*+ \) )  )*+
-      |   \g&lt;yesC&gt;*+  \{    (?&lt;yesC&gt;  (?!.) |//.*+|/\*((?!\*/).)++(\*/|$)|(^)((?!/\*).)*(\*/)| (?&lt;noC&gt;[^\{\}'"/]) | \g&lt;str&gt;                                                       | (?&lt;curly&gt; \{ \g&lt;yesC&gt;*+ \} )  )*+
-    )$</string>
 
   <key>patterns</key>
   <array>
@@ -461,7 +446,7 @@
             </dict>
           </dict>
           <key>comment</key>
-          <string>match regular class like: class MyClass { … }</string>
+          <string>match regular class like: class MyClass { â€¦ }</string>
           <key>match</key>
           <string>\b(class)(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$]\w*))?)?\s*</string>
           <key>name</key>
@@ -526,7 +511,7 @@
             </dict>
           </dict>
           <key>comment</key>
-          <string>match module like: module Module { … }</string>
+          <string>match module like: module Module { â€¦ }</string>
           <key>match</key>
           <string>(module)(?:\s+([a-zA-Z_$]\w*))?</string>
           <key>name</key>
@@ -625,7 +610,7 @@
             </dict>
           </dict>
           <key>comment</key>
-          <string>match regular function like: function myFunc(arg) { … }</string>
+          <string>match regular function like: function myFunc(arg) { â€¦ }</string>
           <key>match</key>
           <string>\b(function)(?:\s+([a-zA-Z_$]\w*))?\s*(\()(.*?)(\))</string>
           <key>name</key>
@@ -646,7 +631,7 @@
             </dict>
           </dict>
           <key>comment</key>
-          <string>match stuff like: Sound.prototype = { … } when extending an object</string>
+          <string>match stuff like: Sound.prototype = { â€¦ } when extending an object</string>
           <key>match</key>
           <string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\s*=\s*</string>
           <key>name</key>
@@ -692,7 +677,7 @@
             </dict>
           </dict>
           <key>comment</key>
-          <string>match stuff like: Sound.prototype.play = function() { … }</string>
+          <string>match stuff like: Sound.prototype.play = function() { â€¦ }</string>
           <key>match</key>
           <string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)?\s*(\()(.*?)(\))</string>
           <key>name</key>
@@ -785,7 +770,7 @@
             </dict>
           </dict>
           <key>comment</key>
-          <string>match stuff like: Sound.play = function() { … }</string>
+          <string>match stuff like: Sound.play = function() { â€¦ }</string>
           <key>match</key>
           <string>([a-zA-Z_?.$][\w?.$]*)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))</string>
           <key>name</key>
@@ -826,7 +811,7 @@
             </dict>
           </dict>
           <key>comment</key>
-          <string>match stuff like: foobar: function() { … }</string>
+          <string>match stuff like: foobar: function() { â€¦ }</string>
           <key>match</key>
           <string>\b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function)?\s*(\()(.*?)(\))</string>
           <key>name</key>
