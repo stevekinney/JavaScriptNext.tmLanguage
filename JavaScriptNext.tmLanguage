@@ -941,7 +941,7 @@
               </dict>
             </dict>
             <key>match</key>
-            <string>(new)\s+(\w+(?:\.\w*)?)</string>
+            <string>(new)\s+([a-zA-Z_?.$][\w?.$]*)</string>
             <key>name</key>
             <string>meta.instance.constructor</string>
           </dict>
