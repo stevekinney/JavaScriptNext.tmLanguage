@@ -205,7 +205,7 @@
             <key>name</key>
             <string>meta.function-call.method.with-arguments.js</string>
             <key>match</key>
-            <string>(?x)(?&lt;= \. ) ([_$a-zA-Z][_$\w]*) (?=\()</string>
+            <string>(?x)(?&lt;= \. ) ([_$a-zA-Z][_$\w]*)? (?=\()</string>
           </dict>
           <dict>
             <key>begin</key>
@@ -270,7 +270,7 @@
             <array>
               <dict>
                 <key>match</key>
-                <string>[_$a-zA-Z][_$\w]*</string>
+                <string>([_$a-zA-Z][_$\w]*)?</string>
                 <key>name</key>
                 <string>entity.name.function.js</string>
               </dict>
@@ -326,7 +326,7 @@
           \b(function)
           (?=
             (?:\b(?:[_$a-zA-Z][_$\w]*))? \s* # The function name
-            \([^)]*\) # The properties that the function accepts
+            \(.*?\) # The properties that the function accepts
           )</string>
             <key>comment</key>
             <string>function(one,two,...)\n?{...}</string>
@@ -381,8 +381,7 @@
             (?&lt;![_$\w] )(?&lt;!function)
             ([_$a-zA-Z][_$\w]*)
             (\() (\s*
-                (?:[_$a-zA-Z][_$\w]*,\s*)*
-                (?:[_$a-zA-Z][_$\w]*)
+                (.*?)
               )?\s* (\))
             \s*
             (?={)</string>
@@ -418,9 +417,9 @@
               </dict>
             </dict>
             <key>comment</key>
-            <string>match regular class like: class MyClass { â€¦ }</string>
+            <string>match regular class like: class MyClass {  }</string>
             <key>match</key>
-            <string>\b(class)\b(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$]\w*))?)?\s*</string>
+            <string>\b(class)\b(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$][.\w]*))?)?\s*</string>
             <key>name</key>
             <string>meta.class.js</string>
           </dict>
@@ -503,47 +502,6 @@
               </dict>
             </dict>
           </dict>
-          <dict>
-            <key>comment</key>
-            <string>match import like: import { x, y, z } from "module"</string>
-            <key>match</key>
-            <string>\b(import)\b\s*([{\[])?\s*([a-zA-Z$_][\w\$,\s{}\[\]:_]*)+([\}\]])?\s*(from)\s*(".*")</string>
-            <key>name</key>
-            <string>meta.module.import.js</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>storage.type.import.js</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.destructuring.begin.js</string>
-              </dict>
-              <key>3</key>
-              <dict>
-                <key>name</key>
-                <string>variable.import.destructuring.js</string>
-              </dict>
-              <key>4</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.destructuring.end.js</string>
-              </dict>
-              <key>5</key>
-              <dict>
-                <key>name</key>
-                <string>storage.type.from.js</string>
-              </dict>
-              <key>6</key>
-              <dict>
-                <key>name</key>
-                <string>variable.import.parameter.js</string>
-              </dict>
-            </dict>
-          </dict>
         </array>
       </dict>
       <key>arrow-function</key>
@@ -558,7 +516,7 @@
               <dict>
                 <key>match</key>
                 <string>(?x)\s*(
-               (?:(\() ([_$a-zA-Z][_$\w,\s]*)? (\)))
+               (?:(\() (.*?)? (\)))
                          | ([_$a-zA-Z][_$\w]*)
                )\s*(=&gt;)</string>
                 <key>name</key>
@@ -637,7 +595,7 @@
               </dict>
             </dict>
             <key>comment</key>
-            <string>match regular function like: function myFunc(arg) { â€¦ }</string>
+            <string>match regular function like: function myFunc(arg) {  }</string>
             <key>match</key>
             <string>\b(function)(?:\s+([a-zA-Z_$]\w*))?\s*(\()(.*?)(\))</string>
             <key>name</key>
@@ -658,7 +616,7 @@
               </dict>
             </dict>
             <key>comment</key>
-            <string>match stuff like: Sound.prototype = { â€¦ } when extending an object</string>
+            <string>match stuff like: Sound.prototype = {  } when extending an object</string>
             <key>match</key>
             <string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\s*=\s*</string>
             <key>name</key>
@@ -704,7 +662,7 @@
               </dict>
             </dict>
             <key>comment</key>
-            <string>match stuff like: Sound.prototype.play = function() { â€¦ }</string>
+            <string>match stuff like: Sound.prototype.play = function() {  }</string>
             <key>match</key>
             <string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)?\s*(\()(.*?)(\))</string>
             <key>name</key>
@@ -797,7 +755,7 @@
               </dict>
             </dict>
             <key>comment</key>
-            <string>match stuff like: Sound.play = function() { â€¦ }</string>
+            <string>match stuff like: Sound.play = function() {  }</string>
             <key>match</key>
             <string>([a-zA-Z_?.$][\w?.$]*)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))</string>
             <key>name</key>
@@ -838,7 +796,7 @@
               </dict>
             </dict>
             <key>comment</key>
-            <string>match stuff like: foobar: function() { â€¦ }</string>
+            <string>match stuff like: foobar: function() {  }</string>
             <key>match</key>
             <string>\b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function)?\s*(\()(.*?)(\))</string>
             <key>name</key>
