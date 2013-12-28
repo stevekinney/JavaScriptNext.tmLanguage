@@ -359,29 +359,26 @@
                 {
                     "captures": {
                         "1": {
-                            "name": "support.object.js"
+                            "name": "entity.name.function.js"
                         },
                         "2": {
-                            "name": "entity.name.function.js"
-                        },
-                        "3": {
                             "name": "storage.type.function.js"
                         },
-                        "4": {
+                        "3": {
                             "name": "entity.name.function.js"
                         },
-                        "5": {
+                        "4": {
                             "name": "punctuation.definition.parameters.begin.js"
                         },
-                        "6": {
+                        "5": {
                             "name": "variable.parameter.function.js"
                         },
-                        "7": {
+                        "6": {
                             "name": "punctuation.definition.parameters.end.js"
                         }
                     },
-                    "comment": "match stuff like: Sound.play = function() {  }",
-                    "match": "([a-zA-Z_?.$][\\w?.$]*)\\.([a-zA-Z_?.$][\\w?.$]*)\\s*=\\s*(function)( [a-zA-Z_?.$][\\w?.$]*)?\\s*(\\()(.*?)(\\))",
+                    "comment": "match stuff like: .play = function() {  }",
+                    "match": "\\.([a-zA-Z_?.$][\\w?.$]*)\\s*=\\s*(function)( [a-zA-Z_?.$][\\w?.$]*)?\\s*(\\()(.*?)(\\))",
                     "name": "meta.function.js"
                 },
                 {
