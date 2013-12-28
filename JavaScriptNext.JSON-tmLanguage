@@ -159,6 +159,9 @@
                     "include": "#brackets"
                 },
                 {
+                    "include": "#literal-keywords"
+                },
+                {
                     "include": "#literal-method"
                 },
                 {
@@ -181,9 +184,6 @@
                 },
                 {
                     "include": "#literal-module"
-                },
-                {
-                    "include": "#literal-keywords"
                 },
                 {
                     "include": "#literal-function-call"
