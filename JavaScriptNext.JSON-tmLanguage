@@ -892,7 +892,7 @@
                             "name": "variable.other.class.js"
                         },
                         "2": {
-                            "name": "meta.function.call.class.static.js"
+                            "name": "meta.function-call.class.static.js"
                         },
                         "3": {
                             "name": "variable.other.class.static.js"

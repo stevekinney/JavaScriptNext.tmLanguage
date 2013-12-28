@@ -1448,7 +1448,7 @@
             <key>2</key>
             <dict>
               <key>name</key>
-              <string>meta.function.call.class.static.js</string>
+              <string>meta.function-call.class.static.js</string>
             </dict>
             <key>3</key>
             <dict>
