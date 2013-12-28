@@ -496,7 +496,7 @@
                     "name": "keyword.control.switch.js"
                 },
                 {
-                    "match": "\\b(delete|in(stanceof)?|new|typeof|void|with)\\b",
+                    "match": "\\b(delete|in(stanceof)?|of|new|typeof|void|with)\\b",
                     "name": "keyword.operator.js"
                 },
                 {
