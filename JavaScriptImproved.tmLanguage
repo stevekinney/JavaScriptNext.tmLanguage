@@ -13,7 +13,7 @@
 	<key>keyEquivalent</key>
 	<string>^~J</string>
 	<key>name</key>
-	<string>JavaScriptNext</string>
+	<string>JavaScriptImproved</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -1879,6 +1879,6 @@
 	<key>scopeName</key>
 	<string>source.js</string>
 	<key>uuid</key>
-	<string>0D2D03B9-F18B-4D9D-A960-716FDEC35331</string>
+	<string>487CF323-A3F9-48FA-B140-DCE8C893E664</string>
 </dict>
 </plist>
