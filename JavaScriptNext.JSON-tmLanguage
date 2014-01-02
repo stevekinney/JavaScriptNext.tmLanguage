@@ -649,6 +649,7 @@
                     ]
                 },
                 {
+                    //matches things like "abc(x, y, z){"
                     "captures": {
                         "1": {
                             "name": "entity.name.method.js"
