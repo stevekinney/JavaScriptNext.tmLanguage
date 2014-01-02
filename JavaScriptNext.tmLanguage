@@ -445,7 +445,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.class.js</string>
+							<string>entity.name.class.js</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -464,7 +464,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.class.js</string>
+							<string>entity.name.class.js</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -508,7 +508,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.class.js</string>
+							<string>entity.name.class.js</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -527,7 +527,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.class.js</string>
+							<string>entity.name.class.js</string>
 						</dict>
 						<key>2</key>
 						<dict>

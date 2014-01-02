@@ -171,14 +171,14 @@ repository:
     - name: meta.prototype.declaration.js
       match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\s*=\s*
       captures:
-        '1': {name: support.class.js}
+        '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
 
     # match stuff like: Sound.prototype.play = function() {  }
     - name: meta.prototype.function.js
       match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)?\s*(\()(.*?)(\))
       captures:
-        '1': {name: support.class.js}
+        '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
         '3': {name: entity.name.function.js}
         '4': {name: storage.type.function.js}
@@ -190,14 +190,14 @@ repository:
     - name: meta.prototype.js
       match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)
       captures:
-        '1': {name: support.class.js}
+        '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
 
     # match stuff like: Sound.prototype.play = myfunc
     - name: meta.function.js
       match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*
       captures:
-        '1': {name: support.class.js}
+        '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
         '3': {name: entity.name.function.js}
 
