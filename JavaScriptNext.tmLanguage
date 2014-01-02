@@ -82,8 +82,6 @@
 									<string>punctuation.definition.arrow.js</string>
 								</dict>
 							</dict>
-							<key>comment</key>
-							<string>match stuff like:(args) =&gt;</string>
 							<key>match</key>
 							<string>(?x)\s*(
                (?:(\() (.*?)? (\)))
@@ -335,8 +333,6 @@
 							<string>entity.name.extends.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match regular class like: class MyClass {  }</string>
 					<key>match</key>
 					<string>\b(class)\b(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$][.\w]*))?)?\s*</string>
 					<key>name</key>
@@ -371,8 +367,6 @@
 							<string>punctuation.definition.parameters.end.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>Concise getter and setter</string>
 					<key>match</key>
 					<string>\b([gs]et\s*)\b([a-zA-Z_$][\w?_$]*)\s*(\()(.*?)(\))</string>
 					<key>name</key>
@@ -436,8 +430,6 @@
 							<string>punctuation.definition.parameters.end.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match regular function like: function myFunc(arg) {  }</string>
 					<key>match</key>
 					<string>\b(function)(?:\s+([a-zA-Z_$]\w*))?\s*(\()(.*?)(\))</string>
 					<key>name</key>
@@ -457,8 +449,6 @@
 							<string>support.constant.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match stuff like: Sound.prototype = {  } when extending an object</string>
 					<key>match</key>
 					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\s*=\s*</string>
 					<key>name</key>
@@ -503,8 +493,6 @@
 							<string>punctuation.definition.parameters.end.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match stuff like: Sound.prototype.play = function() {  }</string>
 					<key>match</key>
 					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
@@ -524,8 +512,6 @@
 							<string>support.constant.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>Sound.prototype</string>
 					<key>match</key>
 					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)</string>
 					<key>name</key>
@@ -550,8 +536,6 @@
 							<string>entity.name.function.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match stuff like: Sound.prototype.play = myfunc</string>
 					<key>match</key>
 					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*</string>
 					<key>name</key>
@@ -591,8 +575,6 @@
 							<string>punctuation.definition.parameters.end.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match stuff like: .play = function() {  }</string>
 					<key>match</key>
 					<string>\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
@@ -632,8 +614,6 @@
 							<string>punctuation.definition.parameters.end.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match stuff like: foobar: function() {  }</string>
 					<key>match</key>
 					<string>\b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
@@ -708,8 +688,6 @@
 							<string>punctuation.separator.key-value.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>Attempt to match "foo": function</string>
 					<key>match</key>
 					<string>(?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
@@ -1041,8 +1019,6 @@
 							<string>storage.type.function.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>function(one,two,...)\n?{...}</string>
 					<key>end</key>
 					<string>(?&lt;=})(\s*\n)?</string>
 					<key>name</key>
@@ -1111,8 +1087,6 @@
 							<string>entity.name.module.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match module like: module Module {  }</string>
 					<key>match</key>
 					<string>\b(module)(?:\s+([a-zA-Z_$][_$\w]*))?\s*(?=\{)</string>
 					<key>name</key>
@@ -1127,8 +1101,6 @@
 							<string>storage.type.export.js</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>match export like: export decl</string>
 					<key>match</key>
 					<string>\b(export)\b\s*(?=(?:module|class|function|var|let|const)\b(?:\s+[a-zA-Z_$][_$\w]*)?)</string>
 					<key>name</key>
@@ -1860,7 +1832,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(ELEMENT_NODE|ATTRIBUTE_NODE|TEXT_NODE|CDATA_SECTION_NODE|ENTITY_REFERENCE_NODE|ENTITY_NODE|PROCESSING_INSTRUCTION_NODE|COMMENT_NODE|DOCUMENT_NODE|DOCUMENT_TYPE_NODE|DOCUMENT_FRAGMENT_NODE|NOTATION_NODE|INDEX_SIZE_ERR|DOMSTRING_SIZE_ERR|HIERARCHY_REQUEST_ERR|WRONG_DOCUMENT_ERR|INVALID_CHARACTER_ERR|NO_DATA_ALLOWED_ERR|NO_MODIFICATION_ALLOWED_ERR|NOT_FOUND_ERR|NOT_SUPPORTED_ERR|INUSE_ATTRIBUTE_ERR)\b</string>
+					<string>(?x)
+  \b(
+    ELEMENT_NODE|ATTRIBUTE_NODE|TEXT_NODE|CDATA_SECTION_NODE|ENTITY_REFERENCE_NODE|ENTITY_NODE|PROCESSING_INSTRUCTION_NODE|COMMENT_NODE|
+    DOCUMENT_NODE|DOCUMENT_TYPE_NODE|DOCUMENT_FRAGMENT_NODE|NOTATION_NODE|INDEX_SIZE_ERR|DOMSTRING_SIZE_ERR|HIERARCHY_REQUEST_ERR|
+    WRONG_DOCUMENT_ERR|INVALID_CHARACTER_ERR|NO_DATA_ALLOWED_ERR|NO_MODIFICATION_ALLOWED_ERR|NOT_FOUND_ERR|NOT_SUPPORTED_ERR|INUSE_ATTRIBUTE_ERR
+  )\b
+</string>
 					<key>name</key>
 					<string>support.constant.dom.js</string>
 				</dict>
