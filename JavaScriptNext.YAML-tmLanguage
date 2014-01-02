@@ -157,7 +157,7 @@ repository:
     patterns:
     # e.g. function myFunc(arg) {  }
     - name: meta.function.js
-      match: \b(function)(?:\s+([a-zA-Z_$]\w*))?\s*(\()(.*?)(\))
+      match: \b(function\*?)(?:\s+([a-zA-Z_$]\w*))?\s*(\()(.*?)(\))
       captures:
         '1': {name: storage.type.function.js}
         '2': {name: entity.name.function.js}
@@ -174,7 +174,7 @@ repository:
 
     # e.g. Sound.prototype.play = function() {  }
     - name: meta.prototype.function.js
-      match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)?\s*(\()(.*?)(\))
+      match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)?\s*(\()(.*?)(\))
       captures:
         '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
@@ -201,7 +201,7 @@ repository:
 
     # e.g. .play = function() {  }
     - name: meta.function.js
-      match: \.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))
+      match: \.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))
       captures:
         '1': {name: entity.name.function.js}
         '2': {name: storage.type.function.js}
@@ -212,7 +212,7 @@ repository:
 
     # e.g. foobar: function() {  }
     - name: meta.function.json.js
-      match: \b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function)?\s*(\()(.*?)(\))
+      match: \b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))
       captures:
         '1': {name: entity.name.function.js}
         '2': {name: punctuation.separator.key-value.js}
@@ -223,7 +223,7 @@ repository:
 
     # e.g. "foo": function
     - name: meta.function.json.js
-      match: (?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function)?\s*(\()(.*?)(\))
+      match: (?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))
       captures:
         '1': {name: string.quoted.single.js}
         '2': {name: punctuation.definition.string.begin.js}
@@ -257,7 +257,7 @@ repository:
     - name: meta.function.js
       begin: |-
         (?x)
-          \b(function)
+          \b(function\*?)
           (?=
             (?:\b(?:[_$a-zA-Z][_$\w]*))? \s*  # The function name
             \(.*?\)                           # The properties that the function accepts

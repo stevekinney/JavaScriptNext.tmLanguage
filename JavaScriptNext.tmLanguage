@@ -451,7 +451,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b(function)(?:\s+([a-zA-Z_$]\w*))?\s*(\()(.*?)(\))</string>
+					<string>\b(function\*?)(?:\s+([a-zA-Z_$]\w*))?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.function.js</string>
 				</dict>
@@ -514,7 +514,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)?\s*(\()(.*?)(\))</string>
+					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.prototype.function.js</string>
 				</dict>
@@ -596,7 +596,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))</string>
+					<string>\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.function.js</string>
 				</dict>
@@ -635,7 +635,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function)?\s*(\()(.*?)(\))</string>
+					<string>\b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
 				</dict>
@@ -709,7 +709,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function)?\s*(\()(.*?)(\))</string>
+					<string>(?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
 				</dict>
@@ -1042,7 +1042,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b(function)
+  \b(function\*?)
   (?=
     (?:\b(?:[_$a-zA-Z][_$\w]*))? \s*  # The function name
     \(.*?\)                           # The properties that the function accepts
