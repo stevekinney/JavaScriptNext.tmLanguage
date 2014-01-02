@@ -92,16 +92,20 @@ repository:
     - include: '#leading-space'
     - include: '#brackets'
     - include: '#literal-keywords'
-    - include: '#literal-method'
     - include: '#literal-number'
     - include: '#literal-string'
     - include: '#arrow-function'
-    - include: '#literal-class'
     - include: '#literal-quasi'
     - include: '#literal-regex'
-    - include: '#literal-module'
+
     - include: '#literal-function-call'
     - include: '#literal-function-constructor'
+    - include: '#literal-class'
+    - include: '#literal-module'
+    #later than function definitions, as matching for methods is only an approximation:
+    # anything looking like abc(){ with no 'function' in front will be a method
+    - include: '#literal-method'
+
     - include: '#literal-labels'
     - include: '#literal-variable'
     - include: '#literal-punctuation'

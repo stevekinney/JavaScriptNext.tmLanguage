@@ -257,10 +257,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-method</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-number</string>
 				</dict>
 				<dict>
@@ -273,10 +269,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-class</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-quasi</string>
 				</dict>
 				<dict>
@@ -285,15 +277,23 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-module</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-function-call</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#literal-function-constructor</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-module</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-method</string>
 				</dict>
 				<dict>
 					<key>include</key>
