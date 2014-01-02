@@ -292,10 +292,14 @@ repository:
   literal-keywords:
     patterns:
     - name: meta.instance.constructor
-      match: (new)\s+([a-zA-Z_?.$][\w?.$]*)
-      captures:
+      begin: (new)\s+*(?=[a-zA-Z_?.$][\w?.$]*)
+      beginCaptures:
         '1': {name: keyword.operator.new.js}
-        '2': {name: entity.name.type.new.js}
+      end: (?![a-zA-Z_?.$][\w?.$]*)
+      patterns:
+        - include: '#support'
+        - name: entity.name.type.new.js
+          match: ([a-zA-Z_?.$][\w?.$]*)
 
     - name: keyword.control.declaration.js
       match: \b(var|let|const)\b

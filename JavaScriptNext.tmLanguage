@@ -704,23 +704,33 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>(new)\s+*(?=[a-zA-Z_?.$][\w?.$]*)</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.operator.new.js</string>
 						</dict>
-						<key>2</key>
+					</dict>
+					<key>end</key>
+					<string>(?![a-zA-Z_?.$][\w?.$]*)</string>
+					<key>name</key>
+					<string>meta.instance.constructor</string>
+					<key>patterns</key>
+					<array>
 						<dict>
+							<key>include</key>
+							<string>#support</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>([a-zA-Z_?.$][\w?.$]*)</string>
 							<key>name</key>
 							<string>entity.name.type.new.js</string>
 						</dict>
-					</dict>
-					<key>match</key>
-					<string>(new)\s+([a-zA-Z_?.$][\w?.$]*)</string>
-					<key>name</key>
-					<string>meta.instance.constructor</string>
+					</array>
 				</dict>
 				<dict>
 					<key>match</key>
