@@ -83,10 +83,14 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(?x)\s*(
-               (?:(\() (.*?)? (\)))
-                         | ([_$a-zA-Z][_$\w]*)
-               )\s*(=&gt;)</string>
+							<string>(?x)
+  \s*
+  (
+   (?:
+      (\() (.*?)? (\)))|
+      ([_$a-zA-Z][_$\w]*
+    )
+  )\s*(=&gt;)</string>
 							<key>name</key>
 							<string>storage.type.function.arrow.js</string>
 						</dict>
@@ -847,59 +851,59 @@
 				<dict>
 					<key>match</key>
 					<string>(?x)
-          !(?!=)| # logical-not     right-to-left   right
-          &amp;&amp;    | # logical-and     left-to-right   both
-          \|\|   # logical-or      left-to-right   both</string>
+  !(?!=)| # logical-not     right-to-left   right
+  &amp;&amp;    | # logical-and     left-to-right   both
+  \|\|   # logical-or      left-to-right   both</string>
 					<key>name</key>
 					<string>keyword.operator.logical.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?x)
-            %= | # assignment      right-to-left   both
-            &amp;= | # assignment      right-to-left   both
-           \*= | # assignment      right-to-left   both
-           \+= | # assignment      right-to-left   both
-            -= | # assignment      right-to-left   both
-            /= | # assignment      right-to-left   both
-           \^= | # assignment      right-to-left   both
-           \|= | # assignment      right-to-left   both
-           &lt;&lt;= | # assignment      right-to-left   both
-           &gt;&gt;= | # assignment      right-to-left   both
-          &gt;&gt;&gt;=   # assignment      right-to-left   both</string>
+    %= | # assignment      right-to-left   both
+    &amp;= | # assignment      right-to-left   both
+   \*= | # assignment      right-to-left   both
+   \+= | # assignment      right-to-left   both
+    -= | # assignment      right-to-left   both
+    /= | # assignment      right-to-left   both
+   \^= | # assignment      right-to-left   both
+   \|= | # assignment      right-to-left   both
+   &lt;&lt;= | # assignment      right-to-left   both
+   &gt;&gt;= | # assignment      right-to-left   both
+  &gt;&gt;&gt;=   # assignment      right-to-left   both</string>
 					<key>name</key>
 					<string>keyword.operator.assignment.augmented.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?x)
-          ~    | # bitwise-not     right-to-left   right
-          &lt;&lt;   | # bitwise-shift   left-to-right   both
-          &gt;&gt;&gt;  | # bitwise-shift   left-to-right   both
-          &gt;&gt;   | # bitwise-shift   left-to-right   both
-          &amp;    | # bitwise-and     left-to-right   both
-          \^   | # bitwise-xor     left-to-right   both
-          \|     # bitwise-or      left-to-right   both</string>
+  ~    | # bitwise-not     right-to-left   right
+  &lt;&lt;   | # bitwise-shift   left-to-right   both
+  &gt;&gt;&gt;  | # bitwise-shift   left-to-right   both
+  &gt;&gt;   | # bitwise-shift   left-to-right   both
+  &amp;    | # bitwise-and     left-to-right   both
+  \^   | # bitwise-xor     left-to-right   both
+  \|     # bitwise-or      left-to-right   both</string>
 					<key>name</key>
 					<string>keyword.operator.bitwise.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?x)
-          &lt;=   | # relational      left-to-right   both
-          &gt;=   | # relational      left-to-right   both
-          &lt;    | # relational      left-to-right   both
-          &gt;      # relational      left-to-right   both</string>
+  &lt;=   | # relational      left-to-right   both
+  &gt;=   | # relational      left-to-right   both
+  &lt;    | # relational      left-to-right   both
+  &gt;      # relational      left-to-right   both</string>
 					<key>name</key>
 					<string>keyword.operator.relational.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?x)
-          ===  | # equality        left-to-right   both
-          !==  | # equality        left-to-right   both
-           ==  | # equality        left-to-right   both
-          !=     # equality        left-to-right   both</string>
+  ===  | # equality        left-to-right   both
+  !==  | # equality        left-to-right   both
+   ==  | # equality        left-to-right   both
+  !=     # equality        left-to-right   both</string>
 					<key>name</key>
 					<string>keyword.operator.comparison.js</string>
 				</dict>
@@ -912,13 +916,13 @@
 				<dict>
 					<key>match</key>
 					<string>(?x)
-          --   | # decrement       n/a             right-or-left
-          \+\+ | # increment       n/a             right-or-left
-          /    | # division        left-to-right   both
-          %    | # modulus         left-to-right   both
-          \*   | # multiplication  left-to-right   both
-          \+   | # addition        left-to-right   both
-          -      # subtraction     left-to-right   both</string>
+  --   | # decrement       n/a             right-or-left
+  \+\+ | # increment       n/a             right-or-left
+  /    | # division        left-to-right   both
+  %    | # modulus         left-to-right   both
+  \*   | # multiplication  left-to-right   both
+  \+   | # addition        left-to-right   both
+  -      # subtraction     left-to-right   both</string>
 					<key>name</key>
 					<string>keyword.operator.arithmetic.js</string>
 				</dict>
@@ -1006,11 +1010,11 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-          \b(function)
-          (?=
-            (?:\b(?:[_$a-zA-Z][_$\w]*))? \s* # The function name
-            \(.*?\) # The properties that the function accepts
-          )</string>
+  \b(function)
+  (?=
+    (?:\b(?:[_$a-zA-Z][_$\w]*))? \s*  # The function name
+    \(.*?\)                           # The properties that the function accepts
+  )</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1057,13 +1061,14 @@
 					</dict>
 					<key>match</key>
 					<string>(?x)
-            (?&lt;![_$\w] )(?&lt;!function)
-            ([_$a-zA-Z][_$\w]*)
-            (\() (\s*
-                (.*?)
-              )?\s* (\))
-            \s*
-            (?={)</string>
+  (?&lt;![_$\w])
+  (?&lt;!function)
+  ([_$a-zA-Z][_$\w]*)
+  (\()
+  (\s*(.*?))?\s*
+  (\))
+  \s*
+  (?={)</string>
 					<key>name</key>
 					<string>meta.method.js</string>
 				</dict>
@@ -1126,12 +1131,15 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?xi)(?:\B[-+])?(?:
-           \b0x[0-9a-f]* # HEX
-          |(          \B\.[0-9]+   # EG:    .999
-            | \b[0-9]+ (\.[0-9]*)? # EG: 999.999 or 999. or 999
-           )(e[-+]?[0-9]+)?        # EG: e+123 or E-123
-          )</string>
+					<string>(?xi)
+  (?:\B[-+])?
+  (?:
+    \b0x[0-9a-f]*|              # hex
+    (
+      \B\.[0-9]+|               # e.g. .999
+      \b[0-9]+(\.[0-9]*)?       # e.g. 999.999, 999. or 999
+    )(e[-+]?[0-9]+)?            # e.g. e+123, E-123
+  )</string>
 					<key>name</key>
 					<string>constant.numeric.js</string>
 				</dict>

@@ -21,10 +21,14 @@ repository:
       # match stuff like:(args) =>
       - name: storage.type.function.arrow.js
         match: |-
-          (?x)\s*(
-                         (?:(\() (.*?)? (\)))
-                                   | ([_$a-zA-Z][_$\w]*)
-                         )\s*(=>)
+          (?x)
+            \s*
+            (
+             (?:
+                (\() (.*?)? (\)))|
+                ([_$a-zA-Z][_$\w]*
+              )
+            )\s*(=>)
         captures:
           '1': {name: entity.arrow.function.js}
           '2': {name: punctuation.definition.parameters.begin.js}
@@ -292,51 +296,51 @@ repository:
     - name: keyword.operator.logical.js
       match: |-
         (?x)
-                  !(?!=)| # logical-not     right-to-left   right
-                  &&    | # logical-and     left-to-right   both
-                  \|\|   # logical-or      left-to-right   both
+          !(?!=)| # logical-not     right-to-left   right
+          &&    | # logical-and     left-to-right   both
+          \|\|   # logical-or      left-to-right   both
 
     - name: keyword.operator.assignment.augmented.js
       match: |-
         (?x)
-                    %= | # assignment      right-to-left   both
-                    &= | # assignment      right-to-left   both
-                   \*= | # assignment      right-to-left   both
-                   \+= | # assignment      right-to-left   both
-                    -= | # assignment      right-to-left   both
-                    /= | # assignment      right-to-left   both
-                   \^= | # assignment      right-to-left   both
-                   \|= | # assignment      right-to-left   both
-                   <<= | # assignment      right-to-left   both
-                   >>= | # assignment      right-to-left   both
-                  >>>=   # assignment      right-to-left   both
+            %= | # assignment      right-to-left   both
+            &= | # assignment      right-to-left   both
+           \*= | # assignment      right-to-left   both
+           \+= | # assignment      right-to-left   both
+            -= | # assignment      right-to-left   both
+            /= | # assignment      right-to-left   both
+           \^= | # assignment      right-to-left   both
+           \|= | # assignment      right-to-left   both
+           <<= | # assignment      right-to-left   both
+           >>= | # assignment      right-to-left   both
+          >>>=   # assignment      right-to-left   both
 
     - name: keyword.operator.bitwise.js
       match: |-
         (?x)
-                  ~    | # bitwise-not     right-to-left   right
-                  <<   | # bitwise-shift   left-to-right   both
-                  >>>  | # bitwise-shift   left-to-right   both
-                  >>   | # bitwise-shift   left-to-right   both
-                  &    | # bitwise-and     left-to-right   both
-                  \^   | # bitwise-xor     left-to-right   both
-                  \|     # bitwise-or      left-to-right   both
+          ~    | # bitwise-not     right-to-left   right
+          <<   | # bitwise-shift   left-to-right   both
+          >>>  | # bitwise-shift   left-to-right   both
+          >>   | # bitwise-shift   left-to-right   both
+          &    | # bitwise-and     left-to-right   both
+          \^   | # bitwise-xor     left-to-right   both
+          \|     # bitwise-or      left-to-right   both
 
     - name: keyword.operator.relational.js
       match: |-
         (?x)
-                  <=   | # relational      left-to-right   both
-                  >=   | # relational      left-to-right   both
-                  <    | # relational      left-to-right   both
-                  >      # relational      left-to-right   both
+          <=   | # relational      left-to-right   both
+          >=   | # relational      left-to-right   both
+          <    | # relational      left-to-right   both
+          >      # relational      left-to-right   both
 
     - name: keyword.operator.comparison.js
       match: |-
         (?x)
-                  ===  | # equality        left-to-right   both
-                  !==  | # equality        left-to-right   both
-                   ==  | # equality        left-to-right   both
-                  !=     # equality        left-to-right   both
+          ===  | # equality        left-to-right   both
+          !==  | # equality        left-to-right   both
+           ==  | # equality        left-to-right   both
+          !=     # equality        left-to-right   both
 
     - name: keyword.operator.assignment.js
       match: (?x)=
@@ -344,13 +348,13 @@ repository:
     - name: keyword.operator.arithmetic.js
       match: |-
         (?x)
-                  --   | # decrement       n/a             right-or-left
-                  \+\+ | # increment       n/a             right-or-left
-                  /    | # division        left-to-right   both
-                  %    | # modulus         left-to-right   both
-                  \*   | # multiplication  left-to-right   both
-                  \+   | # addition        left-to-right   both
-                  -      # subtraction     left-to-right   both
+          --   | # decrement       n/a             right-or-left
+          \+\+ | # increment       n/a             right-or-left
+          /    | # division        left-to-right   both
+          %    | # modulus         left-to-right   both
+          \*   | # multiplication  left-to-right   both
+          \+   | # addition        left-to-right   both
+          -      # subtraction     left-to-right   both
 
   literal-labels:
     patterns:
@@ -378,32 +382,33 @@ repository:
         '2': {name: meta.group.braces.round.function.arguments.js}
         '3': {name: punctuation.section.scope.round.js}
 
-    # function(one,two,...)\n?{...}
+    # matches things like: function(one,two,...)\n?{...}
     - name: meta.function.js
       begin: |-
         (?x)
-                  \b(function)
-                  (?=
-                    (?:\b(?:[_$a-zA-Z][_$\w]*))? \s* # The function name
-                    \(.*?\) # The properties that the function accepts
-                  )
+          \b(function)
+          (?=
+            (?:\b(?:[_$a-zA-Z][_$\w]*))? \s*  # The function name
+            \(.*?\)                           # The properties that the function accepts
+          )
       beginCaptures:
         '1': {name: storage.type.function.js}
       end: (?<=})(\s*\n)?
       patterns:
       - include: $base
 
-    # matches things like "abc(x, y, z){"
+    # matches things like: abc(x, y, z){
     - name: meta.method.js
       match: |-
         (?x)
-                    (?<![_$\w] )(?<!function)
-                    ([_$a-zA-Z][_$\w]*)
-                    (\() (\s*
-                        (.*?)
-                      )?\s* (\))
-                    \s*
-                    (?={)
+          (?<![_$\w])
+          (?<!function)
+          ([_$a-zA-Z][_$\w]*)
+          (\()
+          (\s*(.*?))?\s*
+          (\))
+          \s*
+          (?={)
       captures:
         '1': {name: entity.name.method.js}
         '2': {name: punctuation.definition.parameters.begin.js}
@@ -435,12 +440,15 @@ repository:
 
     - name: constant.numeric.js
       match: |-
-        (?xi)(?:\B[-+])?(?:
-                   \b0x[0-9a-f]* # HEX
-                  |(          \B\.[0-9]+   # EG:    .999
-                    | \b[0-9]+ (\.[0-9]*)? # EG: 999.999 or 999. or 999
-                   )(e[-+]?[0-9]+)?        # EG: e+123 or E-123
-                  )
+        (?xi)
+          (?:\B[-+])?
+          (?:
+            \b0x[0-9a-f]*|              # hex
+            (
+              \B\.[0-9]+|               # e.g. .999
+              \b[0-9]+(\.[0-9]*)?       # e.g. 999.999, 999. or 999
+            )(e[-+]?[0-9]+)?            # e.g. e+123, E-123
+          )
 
     - name: constant.language.infinity.js
       match: (?:\B[-+]|\b)(Infinity)\b
