@@ -682,26 +682,22 @@ repository:
 
   support:
     patterns:
+    # built-ins
     - name: support.class.builtin.js
       match: \b(Array|Boolean|Date|Function|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap)\b
+
+    - name: support.function.js
+      match: \b(decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape)\b(?=\()
+
+    - name: support.function.mutator.js
+      match: \b(s(hift|ort|plice)|unshift|p(op|ush)|reverse)\b(?=\()
 
     - name: support.class.error.js
       match: \b((Eval|Range|Reference|Syntax|Type|URI)?Error)\b
 
-    - name: entity.name.function.mutator.js
-      match: \b(s(hift|ort|plice)|unshift|p(op|ush)|reverse)\b(?=\()
-
-    - name: support.module.node.js
-      match: \b(natives|buffer|child_process|cluster|crypto|d(gram|ns)|fs|http(s)?|net|os|path|punycode|(query)?string(_decoder)?|re(adline|pl)|tls|tty|util|vm|zlib)\b
-
-    - name: support.keyword.node.js
-      match: \b(process(.env)?|global|GLOBAL|root|std(out|in|err)|exports)\b
-
-    - name: support.class.node.js
-      match: \b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b
-
-    - name: entity.name.function.js
-      match: \b(decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape)\b(?=\()
+    # dom
+    - name: support.type.object.dom.js
+      match: \b(document|window)\b
 
     - name: support.constant.dom.js
       match: >
@@ -711,3 +707,17 @@ repository:
             DOCUMENT_NODE|DOCUMENT_TYPE_NODE|DOCUMENT_FRAGMENT_NODE|NOTATION_NODE|INDEX_SIZE_ERR|DOMSTRING_SIZE_ERR|HIERARCHY_REQUEST_ERR|
             WRONG_DOCUMENT_ERR|INVALID_CHARACTER_ERR|NO_DATA_ALLOWED_ERR|NO_MODIFICATION_ALLOWED_ERR|NOT_FOUND_ERR|NOT_SUPPORTED_ERR|INUSE_ATTRIBUTE_ERR
           )\b
+
+    # firebug
+    - name: support.type.object.firebug.js
+      match: \b(console)\b
+
+    # node
+    - name: support.module.node.js
+      match: \b(natives|buffer|child_process|cluster|crypto|d(gram|ns)|fs|http(s)?|net|os|path|punycode|(query)?string(_decoder)?|re(adline|pl)|tls|tty|util|vm|zlib)\b
+
+    - name: support.type.object.node.js
+      match: \b(module|process(.env)?|global|GLOBAL|root|std(out|in|err)|exports|__dirname|__filename|console)\b
+
+    - name: support.class.node.js
+      match: \b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b

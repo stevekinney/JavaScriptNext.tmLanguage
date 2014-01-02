@@ -1814,39 +1814,27 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\b(decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape)\b(?=\()</string>
+					<key>name</key>
+					<string>support.function.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(s(hift|ort|plice)|unshift|p(op|ush)|reverse)\b(?=\()</string>
+					<key>name</key>
+					<string>support.function.mutator.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\b((Eval|Range|Reference|Syntax|Type|URI)?Error)\b</string>
 					<key>name</key>
 					<string>support.class.error.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(s(hift|ort|plice)|unshift|p(op|ush)|reverse)\b(?=\()</string>
+					<string>\b(document|window)\b</string>
 					<key>name</key>
-					<string>entity.name.function.mutator.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(natives|buffer|child_process|cluster|crypto|d(gram|ns)|fs|http(s)?|net|os|path|punycode|(query)?string(_decoder)?|re(adline|pl)|tls|tty|util|vm|zlib)\b</string>
-					<key>name</key>
-					<string>support.module.node.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(process(.env)?|global|GLOBAL|root|std(out|in|err)|exports)\b</string>
-					<key>name</key>
-					<string>support.keyword.node.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b</string>
-					<key>name</key>
-					<string>support.class.node.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape)\b(?=\()</string>
-					<key>name</key>
-					<string>entity.name.function.js</string>
+					<string>support.type.object.dom.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -1859,6 +1847,30 @@
 </string>
 					<key>name</key>
 					<string>support.constant.dom.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(console)\b</string>
+					<key>name</key>
+					<string>support.type.object.firebug.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(natives|buffer|child_process|cluster|crypto|d(gram|ns)|fs|http(s)?|net|os|path|punycode|(query)?string(_decoder)?|re(adline|pl)|tls|tty|util|vm|zlib)\b</string>
+					<key>name</key>
+					<string>support.module.node.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(module|process(.env)?|global|GLOBAL|root|std(out|in|err)|exports|__dirname|__filename|console)\b</string>
+					<key>name</key>
+					<string>support.type.object.node.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b</string>
+					<key>name</key>
+					<string>support.class.node.js</string>
 				</dict>
 			</array>
 		</dict>
