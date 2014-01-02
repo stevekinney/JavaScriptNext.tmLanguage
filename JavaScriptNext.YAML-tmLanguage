@@ -301,8 +301,11 @@ repository:
         - name: entity.name.type.new.js
           match: ([a-zA-Z_?.$][\w?.$]*)
 
-    - name: keyword.control.declaration.js
+    - name: storage.type.js
       match: \b(var|let|const)\b
+
+    - name: storage.modifier.js
+      match: \b(public|private|static)\b
 
     - name: keyword.control.flow.js
       match: \b(return|yield)\b

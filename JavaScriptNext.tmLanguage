@@ -736,7 +736,13 @@
 					<key>match</key>
 					<string>\b(var|let|const)\b</string>
 					<key>name</key>
-					<string>keyword.control.declaration.js</string>
+					<string>storage.type.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(public|private|static)\b</string>
+					<key>name</key>
+					<string>storage.modifier.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
