@@ -47,16 +47,20 @@ repository:
     - name: meta.group.braces.round
       begin: (\()(?!\))
       end: (\))
-      captures:
-        '1': {name: punctuation.section.scope.round.js}
+      beginCaptures:
+        '1': {name: meta.brace.round.js}
+      endCaptures:
+        '1': {name: meta.brace.round.js}
       patterns:
       - include: $base
 
     - name: meta.group.braces.square
       begin: (\[)(?!\])
       end: (\])
-      captures:
-        '1': {name: punctuation.section.scope.square.js}
+      beginCaptures:
+        '1': {name: meta.brace.round.js}
+      endCaptures:
+        '1': {name: meta.brace.round.js}
       patterns:
       - include: $base
 
@@ -247,7 +251,7 @@ repository:
       captures:
         '1': {name: entity.name.function.js}
         '2': {name: meta.group.braces.round.function.arguments.js}
-        '3': {name: punctuation.section.scope.round.js}
+        '3': {name: meta.brace.round.js}
 
     # matches things like: function(one,two,...)\n?{...}
     - name: meta.function.js

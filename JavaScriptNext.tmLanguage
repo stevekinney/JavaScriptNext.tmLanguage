@@ -119,16 +119,24 @@
 				<dict>
 					<key>begin</key>
 					<string>(\()(?!\))</string>
-					<key>captures</key>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.section.scope.round.js</string>
+							<string>meta.brace.round.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(\))</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.round.js</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.group.braces.round</string>
 					<key>patterns</key>
@@ -142,16 +150,24 @@
 				<dict>
 					<key>begin</key>
 					<string>(\[)(?!\])</string>
-					<key>captures</key>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.section.scope.square.js</string>
+							<string>meta.brace.round.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(\])</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.round.js</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.group.braces.square</string>
 					<key>patterns</key>
@@ -1015,7 +1031,7 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.section.scope.round.js</string>
+							<string>meta.brace.round.js</string>
 						</dict>
 					</dict>
 					<key>match</key>
