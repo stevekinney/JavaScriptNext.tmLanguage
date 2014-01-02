@@ -277,14 +277,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-function-call</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-function-constructor</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-class</string>
 				</dict>
 				<dict>
@@ -294,6 +286,14 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-method</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-function-call</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-function-constructor</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1056,7 +1056,7 @@
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.parameters.begin.js</string>
+							<string>punctuation.definition.parameters.end.js</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -1065,7 +1065,7 @@
   (?&lt;!function\s)                     # An approximation due to fixed width look-behind, but usually good enough
   ([_$a-zA-Z][_$\w]*)
   (\()
-  (\s*(.*?))?\s*
+  (?:\s*([^()]*?))?\s*
   (\))
   \s*
   (?={)</string>
