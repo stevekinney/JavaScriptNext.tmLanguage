@@ -112,18 +112,12 @@ repository:
 
   literal-module:
     patterns:
-    # match module like: module Module {  }
-    - name: meta.module.js
-      match: \b(module)(?:\s+([a-zA-Z_$][_$\w]*))?\s*(?=\{)
-      captures:
-        '1': {name: storage.type.module.js}
-        '2': {name: entity.name.module.js}
+    # module names are defined using strings
+    - name: storage.type.module.js
+      match: \b(module)\b
 
-    # match export like: export decl
-    - name: meta.module.export.js
-      match: \b(export)\b\s*(?=(?:module|class|function|var|let|const)\b(?:\s+[a-zA-Z_$][_$\w]*)?)
-      captures:
-        '1': {name: storage.type.export.js}
+    - name: keyword.operator.module.js
+      match: \b(import|export|from|as)\b
 
   literal-class:
     patterns:
@@ -720,7 +714,7 @@ repository:
       match: \b(natives|buffer|child_process|cluster|crypto|d(gram|ns)|fs|http(s)?|net|os|path|punycode|(query)?string(_decoder)?|re(adline|pl)|tls|tty|util|vm|zlib)\b
 
     - name: support.type.object.node.js
-      match: \b(module|process(.env)?|global|GLOBAL|root|std(out|in|err)|exports|__dirname|__filename|console)\b
+      match: \b(process(.env)?|global|GLOBAL|root|std(out|in|err)|exports|__dirname|__filename|console)\b
 
     - name: support.class.node.js
       match: \b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b

@@ -1095,37 +1095,16 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.module.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.module.js</string>
-						</dict>
-					</dict>
 					<key>match</key>
-					<string>\b(module)(?:\s+([a-zA-Z_$][_$\w]*))?\s*(?=\{)</string>
+					<string>\b(module)\b</string>
 					<key>name</key>
-					<string>meta.module.js</string>
+					<string>storage.type.module.js</string>
 				</dict>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.export.js</string>
-						</dict>
-					</dict>
 					<key>match</key>
-					<string>\b(export)\b\s*(?=(?:module|class|function|var|let|const)\b(?:\s+[a-zA-Z_$][_$\w]*)?)</string>
+					<string>\b(import|export|from|as)\b</string>
 					<key>name</key>
-					<string>meta.module.export.js</string>
+					<string>keyword.operator.module.js</string>
 				</dict>
 			</array>
 		</dict>
@@ -1868,7 +1847,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(module|process(.env)?|global|GLOBAL|root|std(out|in|err)|exports|__dirname|__filename|console)\b</string>
+					<string>\b(process(.env)?|global|GLOBAL|root|std(out|in|err)|exports|__dirname|__filename|console)\b</string>
 					<key>name</key>
 					<string>support.type.object.node.js</string>
 				</dict>
