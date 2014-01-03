@@ -81,7 +81,7 @@
 					<key>match</key>
 					<string>\\[wWsSdD]|\.</string>
 					<key>name</key>
-					<string>constant.character.character-class.regexp</string>
+					<string>constant.other.character-class.escape.backslash.regexp</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -135,7 +135,7 @@
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>constant.character.character-class.regexp</string>
+									<string>constant.other.character-class.escape.backslash.regexp</string>
 								</dict>
 								<key>3</key>
 								<dict>
@@ -145,7 +145,7 @@
 								<key>5</key>
 								<dict>
 									<key>name</key>
-									<string>constant.character.character-class.regexp</string>
+									<string>constant.other.character-class.escape.backslash.regexp</string>
 								</dict>
 								<key>6</key>
 								<dict>

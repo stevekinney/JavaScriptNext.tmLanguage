@@ -69,7 +69,7 @@ repository:
 
   character-class:
     patterns:
-    - name: constant.character.character-class.regexp
+    - name: constant.other.character-class.escape.backslash.regexp
       match: \\[wWsSdD]|\.
 
     - name: constant.character.escape.backslash.regexp
@@ -99,7 +99,7 @@ repository:
               (\\([trnvf0]|c[A-Z]|x[\da-fA-F]{2}|u[\da-fA-F]{4}|.))
             )
         captures:
-          '2': {name: constant.character.character-class.regexp}
+          '2': {name: constant.other.character-class.escape.backslash.regexp}
           '3': {name: constant.character.escape.backslash.regexp}
-          '5': {name: constant.character.character-class.regexp}
+          '5': {name: constant.other.character-class.escape.backslash.regexp}
           '6': {name: constant.character.escape.backslash.regexp}
