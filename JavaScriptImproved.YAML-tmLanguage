@@ -40,7 +40,11 @@ repository:
   brackets:
     patterns:
     - name: meta.function-call.method.with-arguments.js
-      match: (?x)(?<= \. ) ([_$a-zA-Z][_$\w]*)? (?=\()
+      match: >-
+        (?x)
+          (?<=\.)
+          ([_$a-zA-Z][_$\w]*)?
+          (?=\()
       captures:
         '1': {name: entity.name.function.js}
 
