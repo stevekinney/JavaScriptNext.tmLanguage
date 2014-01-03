@@ -13,7 +13,7 @@
 	<key>keyEquivalent</key>
 	<string>^~J</string>
 	<key>name</key>
-	<string>JavaScriptImproved</string>
+	<string>JavaScript Improved</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -1333,22 +1333,8 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>match</key>
-							<string>\\\n</string>
-							<key>name</key>
-							<string>constant.character.escape.newline.js</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\n</string>
-							<key>name</key>
-							<string>invalid.illegal.newline.js</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\\.</string>
-							<key>name</key>
-							<string>constant.character.escape.js</string>
+							<key>include</key>
+							<string>source.regexp.js</string>
 						</dict>
 					</array>
 				</dict>
