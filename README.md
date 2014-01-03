@@ -1,8 +1,5 @@
 # JavaScript.tmLanguage
-ECMAScript 6 JavaScript language definition for TextMate and SublimeText. This builds on [Benvie's work](https://github.com/Benvie/JavaScriptNext.tmLanguage
-).
-
-Highlighted features include modules, succinct methods, arrow functions, classes, generators, and accessors.
+Better JavaScript language definition for TextMate and SublimeText. This builds on the language files commonly used and adds more fine grained matching and also includes new features from ECMAScript 6 like modules, succinct methods, arrow functions, classes, generators, and accessors (ES5).
 
 ## Installation and Use
 
@@ -10,13 +7,12 @@ If you haven't already, [install Package Control](https://sublime.wbond.net/inst
 
 To set this as your default JavaScript syntax, open a javascript file, then select `View -> Syntax -> Open all with current extension as... -> JavascriptImproved`.
 
-# Screenshots
-![screenshot](https://raw.github.com/simonzack/JavaScriptImproved/master/screenshots/code.png)
+# JavaScript.tmLanguage
 
-__Classes__
+__ES6__
 
-![screenshot](https://raw.github.com/simonzack/JavaScriptImproved/master/screenshots/classes.png)
+![screenshot](https://raw.github.com/Benvie/JavaScriptNext.tmLanguage/master/screenshots/es6.png)
 
-__Modules__
+__ES5__
 
-![screenshot](https://raw.github.com/simonzack/JavaScriptImproved/master/screenshots/module.png)
+![screenshot](https://raw.github.com/Benvie/JavaScriptNext.tmLanguage/master/screenshots/es5.png)
