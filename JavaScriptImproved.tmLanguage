@@ -269,10 +269,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-keywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-number</string>
 				</dict>
 				<dict>
@@ -281,15 +277,19 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#arrow-function</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-quasi</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#literal-regex</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#arrow-function</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1285,7 +1285,16 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?x) (?&lt;= [\[,=(:] | ^ | &amp;&amp; | return )\s*((/)) (?! [/*+{}?] | $ )</string>
+					<string>(?x)
+  (?&lt;=
+    [\[,=(:]|
+    ^|
+    &amp;&amp;|
+    return
+  )\s*
+  (/)
+  (?![/*+{}?]|$)
+</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>

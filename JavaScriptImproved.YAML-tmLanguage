@@ -95,12 +95,16 @@ repository:
     patterns:
     - include: '#leading-space'
     - include: '#brackets'
-    - include: '#literal-keywords'
+
+    # literals should precede operators to avoid ambiguoties
     - include: '#literal-number'
     - include: '#literal-string'
-    - include: '#arrow-function'
     - include: '#literal-quasi'
     - include: '#literal-regex'
+
+    - include: '#literal-keywords'
+
+    - include: '#arrow-function'
 
     - include: '#literal-class'
     - include: '#literal-module'
@@ -509,7 +513,16 @@ repository:
   literal-regex:
     patterns:
     - contentName: string.regexp.js
-      begin: (?x) (?<= [\[,=(:] | ^ | && | return )\s*((/)) (?! [/*+{}?] | $ )
+      begin: >
+        (?x)
+          (?<=
+            [\[,=(:]|
+            ^|
+            &&|
+            return
+          )\s*
+          (/)
+          (?![/*+{}?]|$)
       beginCaptures:
         '1': {name: string.regexp.js}
         '2': {name: punctuation.definition.string.begin.js}
