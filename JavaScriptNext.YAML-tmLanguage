@@ -527,16 +527,7 @@ repository:
   literal-regex:
     patterns:
     - contentName: string.regexp.js
-      begin: >
-        (?x)
-          (?<=
-            [\[,=(:]|
-            ^|
-            &&|
-            return
-          )\s*
-          (/)
-          (?![/*+{}?]|$)
+      begin: ((/))
       beginCaptures:
         '1': {name: string.regexp.js}
         '2': {name: punctuation.definition.string.begin.js}

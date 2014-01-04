@@ -1459,16 +1459,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?x)
-  (?&lt;=
-    [\[,=(:]|
-    ^|
-    &amp;&amp;|
-    return
-  )\s*
-  (/)
-  (?![/*+{}?]|$)
-</string>
+					<string>((/))</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
