@@ -7,7 +7,7 @@ If you haven't already, [install Package Control](https://sublime.wbond.net/inst
 
 To set this as your default JavaScript syntax, open a javascript file, then select `View -> Syntax -> Open all with current extension as... -> JavascriptNext`.
 
-# JavaScript.tmLanguage
+## Screenshots
 
 __ES6__
 
