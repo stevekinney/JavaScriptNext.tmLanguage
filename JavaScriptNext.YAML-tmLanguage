@@ -188,14 +188,14 @@ repository:
 
     # e.g. Sound.prototype = {  } when extending an object
     - name: meta.prototype.declaration.js
-      match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\s*=\s*
+      match: ([_$a-zA-Z][_$\w]*)\.(prototype)\s*=\s*
       captures:
         '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
 
     # e.g. Sound.prototype.play = function() {  }
     - name: meta.prototype.function.js
-      match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)?\s*(\()(.*?)(\))
+      match: ([_$a-zA-Z][_$\w]*)\.(prototype)\.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)?\s*(\()(.*?)(\))
       captures:
         '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
@@ -207,14 +207,14 @@ repository:
 
     # e.g. Sound.prototype
     - name: meta.prototype.js
-      match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)
+      match: ([_$a-zA-Z][_$\w]*)\.(prototype)
       captures:
         '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
 
     # e.g. Sound.prototype.play = myfunc
     - name: meta.function.js
-      match: ([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*
+      match: ([_$a-zA-Z][_$\w]*)\.(prototype)\.([_$a-zA-Z][_$\w]*)\s*=\s*
       captures:
         '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
@@ -222,7 +222,7 @@ repository:
 
     # e.g. .play = function() {  }
     - name: meta.function.js
-      match: \.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))
+      match: \.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)( [_$a-zA-Z][_$\w]*)?\s*(\()(.*?)(\))
       captures:
         '1': {name: entity.name.function.js}
         '2': {name: storage.type.function.js}
@@ -233,7 +233,7 @@ repository:
 
     # e.g. foobar: function() {  }
     - name: meta.function.json.js
-      match: \b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))
+      match: \b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))
       captures:
         '1': {name: entity.name.function.js}
         '2': {name: punctuation.separator.key-value.js}

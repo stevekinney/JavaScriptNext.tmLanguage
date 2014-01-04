@@ -650,7 +650,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\s*=\s*</string>
+					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\s*=\s*</string>
 					<key>name</key>
 					<string>meta.prototype.declaration.js</string>
 				</dict>
@@ -694,7 +694,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)?\s*(\()(.*?)(\))</string>
+					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.prototype.function.js</string>
 				</dict>
@@ -713,7 +713,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)</string>
+					<string>([_$a-zA-Z][_$\w]*)\.(prototype)</string>
 					<key>name</key>
 					<string>meta.prototype.js</string>
 				</dict>
@@ -737,7 +737,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([a-zA-Z_?.$][\w?.$]*)\.(prototype)\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*</string>
+					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\.([_$a-zA-Z][_$\w]*)\s*=\s*</string>
 					<key>name</key>
 					<string>meta.function.js</string>
 				</dict>
@@ -776,7 +776,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\.([a-zA-Z_?.$][\w?.$]*)\s*=\s*(function\*?)( [a-zA-Z_?.$][\w?.$]*)?\s*(\()(.*?)(\))</string>
+					<string>\.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)( [_$a-zA-Z][_$\w]*)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.function.js</string>
 				</dict>
@@ -815,7 +815,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b([a-zA-Z_?.$][\w?.$]*)\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))</string>
+					<string>\b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
 				</dict>
