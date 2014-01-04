@@ -50,9 +50,9 @@ repository:
 
     - name: meta.group.braces.round
       begin: (\()(?!\))
-      end: (\))
       beginCaptures:
         '1': {name: meta.brace.round.js}
+      end: (\))
       endCaptures:
         '1': {name: meta.brace.round.js}
       patterns:
@@ -60,9 +60,9 @@ repository:
 
     - name: meta.group.braces.square
       begin: (\[)(?!\])
-      end: (\])
       beginCaptures:
         '1': {name: meta.brace.round.js}
+      end: (\])
       endCaptures:
         '1': {name: meta.brace.round.js}
       patterns:
