@@ -60,10 +60,10 @@ repository:
     - name: meta.group.braces.square
       begin: (\[)(?!\])
       beginCaptures:
-        '1': {name: meta.brace.round.js}
+        '1': {name: meta.brace.square.js}
       end: (\])
       endCaptures:
-        '1': {name: meta.brace.round.js}
+        '1': {name: meta.brace.square.js}
       patterns:
       - include: $base
 

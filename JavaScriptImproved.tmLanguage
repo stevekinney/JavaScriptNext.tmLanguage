@@ -154,7 +154,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>meta.brace.round.js</string>
+							<string>meta.brace.square.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -164,7 +164,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>meta.brace.round.js</string>
+							<string>meta.brace.square.js</string>
 						</dict>
 					</dict>
 					<key>name</key>
