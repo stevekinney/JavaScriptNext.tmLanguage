@@ -1545,7 +1545,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#string-single-innards</string>
+							<string>#string-content</string>
 						</dict>
 					</array>
 				</dict>
@@ -1576,7 +1576,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#string-double-innards</string>
+							<string>#string-content</string>
 						</dict>
 					</array>
 				</dict>
@@ -1771,13 +1771,13 @@
 				</dict>
 			</array>
 		</dict>
-		<key>string-double-innards</key>
+		<key>string-content</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</string>
+					<string>\\(x[\da-fA-F]{2}|\u[\da-fA-F]{4})</string>
 					<key>name</key>
 					<string>constant.character.escape.js</string>
 				</dict>
@@ -1792,42 +1792,6 @@
 					<string>\n</string>
 					<key>name</key>
 					<string>invalid.illegal.newline.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?i)&lt;/\s*script\s*&gt;</string>
-					<key>name</key>
-					<string>invalid.deprecated.inconsistent.js</string>
-				</dict>
-			</array>
-		</dict>
-		<key>string-single-innards</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</string>
-					<key>name</key>
-					<string>constant.character.escape.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\\\n</string>
-					<key>name</key>
-					<string>constant.character.escape.newline.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\n</string>
-					<key>name</key>
-					<string>invalid.illegal.newline.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?i)&lt;/\s*script\s*&gt;</string>
-					<key>name</key>
-					<string>invalid.deprecated.inconsistent.js</string>
 				</dict>
 			</array>
 		</dict>
