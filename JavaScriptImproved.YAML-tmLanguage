@@ -11,7 +11,6 @@ patterns:
 - include: '#support'
 - include: '#core'
 - include: '#special'
-- include: '#sugar'
 
 repository:
   arrow-function:
@@ -656,7 +655,7 @@ repository:
     - name: invalid.deprecated.inconsistent.js
       match: (?i)</\s*script\s*>
 
-  sugar:
+  leading-space:
     patterns:
     - name: meta.leading-tabs
       begin: ^(?=(\t|  ))
