@@ -861,7 +861,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(new)\s+*(?=[a-zA-Z_?.$][\w?.$]*)</string>
+					<string>(new)\s+(?=[_$a-zA-Z][_$\w.]*)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -871,7 +871,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?![a-zA-Z_?.$][\w?.$]*)</string>
+					<string>(?![_$a-zA-Z][_$\w.]*)</string>
 					<key>name</key>
 					<string>meta.instance.constructor</string>
 					<key>patterns</key>
@@ -882,7 +882,7 @@
 						</dict>
 						<dict>
 							<key>match</key>
-							<string>([a-zA-Z_?.$][\w?.$]*)</string>
+							<string>([_$a-zA-Z][_$\w.]*)</string>
 							<key>name</key>
 							<string>entity.name.type.new.js</string>
 						</dict>

@@ -296,14 +296,14 @@ repository:
   literal-keywords:
     patterns:
     - name: meta.instance.constructor
-      begin: (new)\s+*(?=[a-zA-Z_?.$][\w?.$]*)
+      begin: (new)\s+(?=[_$a-zA-Z][_$\w.]*)
       beginCaptures:
         '1': {name: keyword.operator.new.js}
-      end: (?![a-zA-Z_?.$][\w?.$]*)
+      end: (?![_$a-zA-Z][_$\w.]*)
       patterns:
         - include: '#support'
         - name: entity.name.type.new.js
-          match: ([a-zA-Z_?.$][\w?.$]*)
+          match: ([_$a-zA-Z][_$\w.]*)
 
     - name: storage.type.js
       match: \b(var|let|const)\b
