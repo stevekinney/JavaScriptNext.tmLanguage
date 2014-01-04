@@ -3,9 +3,9 @@ Better JavaScript language definition for TextMate and SublimeText. This builds 
 
 ## Installation and Use
 
-If you haven't already, [install Package Control](https://sublime.wbond.net/installation), then select `JavaScript Improved` from the `Package Control: Install Package` dropdown list in the Command Palette.
+If you haven't already, [install Package Control](https://sublime.wbond.net/installation), then select `JavaScript Next` from the `Package Control: Install Package` dropdown list in the Command Palette.
 
-To set this as your default JavaScript syntax, open a javascript file, then select `View -> Syntax -> Open all with current extension as... -> JavascriptImproved`.
+To set this as your default JavaScript syntax, open a javascript file, then select `View -> Syntax -> Open all with current extension as... -> JavascriptNext`.
 
 # JavaScript.tmLanguage
 
