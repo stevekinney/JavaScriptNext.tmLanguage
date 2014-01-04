@@ -48,7 +48,7 @@ repository:
         '1': {name: entity.name.function.js}
 
     - name: meta.group.braces.round
-      begin: (\()(?!\))
+      begin: (\()
       beginCaptures:
         '1': {name: meta.brace.round.js}
       end: (\))
@@ -58,7 +58,7 @@ repository:
       - include: $base
 
     - name: meta.group.braces.square
-      begin: (\[)(?!\])
+      begin: (\[)
       beginCaptures:
         '1': {name: meta.brace.square.js}
       end: (\])
