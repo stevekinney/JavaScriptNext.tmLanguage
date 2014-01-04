@@ -521,6 +521,18 @@
 					<string>\b(?:(public|private|static)\s+)(?:(var|let|const)\s+)?([_$a-zA-Z][_$\w]*\s*)(?=\=)</string>
 				</dict>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.private.js</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\b(private)(?=\s*\()</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>\b(public|private|static)\b</string>
 					<key>name</key>
