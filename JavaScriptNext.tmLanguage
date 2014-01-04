@@ -494,9 +494,37 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b(class)\b(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$][.\w]*))?)?\s*</string>
+					<string>\b(class)\b(?:\s+([_$a-zA-Z][_$\w]*)\s*(?:\b(extends)\b\s*([_$a-zA-Z][_$\w]*))?)?\s*</string>
 					<key>name</key>
 					<string>meta.class.js</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.field.js</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\b(?:(public|private|static)\s+)(?:(var|let|const)\s+)?([_$a-zA-Z][_$\w]*\s*)(?=\=)</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(public|private|static)\b</string>
+					<key>name</key>
+					<string>storage.modifier.js</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -528,7 +556,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b([gs]et\s*)\b([a-zA-Z_$][\w?_$]*)\s*(\()(.*?)(\))</string>
+					<string>\b([gs]et\s*)\b([_$a-zA-Z][_$\w]*)\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.accessor.js</string>
 				</dict>
@@ -893,12 +921,6 @@
 					<string>\b(var|let|const)\b</string>
 					<key>name</key>
 					<string>storage.type.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(public|private|static)\b</string>
-					<key>name</key>
-					<string>storage.modifier.js</string>
 				</dict>
 				<dict>
 					<key>match</key>

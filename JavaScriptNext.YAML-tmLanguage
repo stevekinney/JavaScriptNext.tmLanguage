@@ -134,16 +134,26 @@ repository:
     patterns:
     # e.g. class MyClass {  }
     - name: meta.class.js
-      match: \b(class)\b(?:\s+([a-zA-Z_$]\w*)\s*(?:\b(extends)\b\s*([a-zA-Z_$][.\w]*))?)?\s*
+      match: \b(class)\b(?:\s+([_$a-zA-Z][_$\w]*)\s*(?:\b(extends)\b\s*([_$a-zA-Z][_$\w]*))?)?\s*
       captures:
         '1': {name: storage.type.class.js}
         '2': {name: entity.name.class.js}
         '3': {name: storage.type.extends.js}
         '4': {name: entity.name.extends.js}
 
+    # definitions here don't include field modifications (e.g. this.a = 'b'), as modifications can occur outside the class
+    - match: \b(?:(public|private|static)\s+)(?:(var|let|const)\s+)?([_$a-zA-Z][_$\w]*\s*)(?=\=)
+      captures:
+        '1': {name: storage.modifier.js}
+        '2': {name: storage.type.js}
+        '3': {name: entity.name.field.js}
+
+    - name: storage.modifier.js
+      match: \b(public|private|static)\b
+
     # getter/setter
     - name: meta.accessor.js
-      match: \b([gs]et\s*)\b([a-zA-Z_$][\w?_$]*)\s*(\()(.*?)(\))
+      match: \b([gs]et\s*)\b([_$a-zA-Z][_$\w]*)\s*(\()(.*?)(\))
       captures:
         '1': {name: storage.type.accessor.js}
         '2': {name: entity.name.accessor.js}
@@ -307,9 +317,6 @@ repository:
 
     - name: storage.type.js
       match: \b(var|let|const)\b
-
-    - name: storage.modifier.js
-      match: \b(public|private|static)\b
 
     - name: keyword.control.flow.js
       match: \b(return|yield)\b
