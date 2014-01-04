@@ -527,11 +527,19 @@ repository:
   literal-regex:
     patterns:
     - contentName: string.regexp.js
-      begin: ((/))
+      begin: >-
+        (?x)
+          (?<=
+            [\[,=(:?]|
+            ^|&&|
+            return
+          )\s*
+          (/)
+          (?![/*+{}?]|$)
       beginCaptures:
         '1': {name: string.regexp.js}
         '2': {name: punctuation.definition.string.begin.js}
-      end: ((/([igm]*)))|(?=</\s*script\s*>\s*\n)|(?<=[^\\]\n)
+      end: ((/)([gimy]*))
       endCaptures:
         '1': {name: string.regexp.js}
         '2': {name: punctuation.definition.string.end.js}
@@ -545,7 +553,7 @@ repository:
       begin: "'"
       beginCaptures:
         '0': {name: punctuation.definition.string.begin.js}
-      end: (?i)'|(?=</\s*script\s*>\s*\n)|(?<=[^\\]\n)
+      end: "'"
       endCaptures:
         '0': {name: punctuation.definition.string.end.js}
       patterns:
@@ -555,7 +563,7 @@ repository:
       begin: '"'
       beginCaptures:
         '0': {name: punctuation.definition.string.begin.js}
-      end: (?i)"|(?=</\s*script\s*>\s*\n)|(?<=[^\\]\n)
+      end: '"'
       endCaptures:
         '0': {name: punctuation.definition.string.end.js}
       patterns:

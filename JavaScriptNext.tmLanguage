@@ -1459,7 +1459,14 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>((/))</string>
+					<string>(?x)
+  (?&lt;=
+    [\[,=(:?]|
+    ^|&amp;&amp;|
+    return
+  )\s*
+  (/)
+  (?![/*+{}?]|$)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1476,7 +1483,7 @@
 					<key>contentName</key>
 					<string>string.regexp.js</string>
 					<key>end</key>
-					<string>((/([igm]*)))|(?=&lt;/\s*script\s*&gt;\s*\n)|(?&lt;=[^\\]\n)</string>
+					<string>((/)([gimy]*))</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1521,7 +1528,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?i)'|(?=&lt;/\s*script\s*&gt;\s*\n)|(?&lt;=[^\\]\n)</string>
+					<string>'</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -1552,7 +1559,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?i)"|(?=&lt;/\s*script\s*&gt;\s*\n)|(?&lt;=[^\\]\n)</string>
+					<string>"</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
