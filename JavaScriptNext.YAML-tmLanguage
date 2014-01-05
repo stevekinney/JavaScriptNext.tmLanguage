@@ -553,9 +553,10 @@ repository:
       begin: "'"
       beginCaptures:
         '0': {name: punctuation.definition.string.begin.js}
-      end: "'"
+      end: (')|(\n)
       endCaptures:
-        '0': {name: punctuation.definition.string.end.js}
+        '1': {name: punctuation.definition.string.end.js}
+        '2': {name: invalid.illegal.newline.js}
       patterns:
       - include: '#string-content'
 
@@ -563,9 +564,10 @@ repository:
       begin: '"'
       beginCaptures:
         '0': {name: punctuation.definition.string.begin.js}
-      end: '"'
+      end: (")|(\n)
       endCaptures:
-        '0': {name: punctuation.definition.string.end.js}
+        '1': {name: punctuation.definition.string.end.js}
+        '2': {name: invalid.illegal.newline.js}
       patterns:
       - include: '#string-content'
 
@@ -639,14 +641,11 @@ repository:
 
   string-content:
     patterns:
-    - name: constant.character.escape.js
-      match: \\(x[\da-fA-F]{2}|\u[\da-fA-F]{4}|.)
-
     - name: constant.character.escape.newline.js
-      match: \\\n
+      match: \\\s*\n
 
-    - name: invalid.illegal.newline.js
-      match: \n
+    - name: constant.character.escape.js
+      match: \\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)
 
   leading-space:
     patterns:
