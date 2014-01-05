@@ -1775,7 +1775,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\(x[\da-fA-F]{2}|\u[\da-fA-F]{4})</string>
+					<string>\\(x[\da-fA-F]{2}|\u[\da-fA-F]{4}|.)</string>
 					<key>name</key>
 					<string>constant.character.escape.js</string>
 				</dict>

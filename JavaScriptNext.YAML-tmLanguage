@@ -640,7 +640,7 @@ repository:
   string-content:
     patterns:
     - name: constant.character.escape.js
-      match: \\(x[\da-fA-F]{2}|\u[\da-fA-F]{4})
+      match: \\(x[\da-fA-F]{2}|\u[\da-fA-F]{4}|.)
 
     - name: constant.character.escape.newline.js
       match: \\\n
