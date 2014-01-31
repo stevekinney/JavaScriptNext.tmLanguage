@@ -55,7 +55,7 @@ repository:
       endCaptures:
         '1': {name: meta.brace.round.js}
       patterns:
-      - include: $base
+      - include: source.js
 
     - name: meta.group.braces.square
       begin: (\[)
@@ -65,7 +65,7 @@ repository:
       endCaptures:
         '1': {name: meta.brace.square.js}
       patterns:
-      - include: $base
+      - include: source.js
 
   comments:
     patterns:
@@ -287,7 +287,7 @@ repository:
         '1': {name: storage.type.function.js}
       end: (?<=})(\s*\n)?
       patterns:
-      - include: $base
+      - include: source.js
 
     # ES6 methods, e.g. abc(x, y, z){
     - name: meta.method.js
@@ -522,7 +522,7 @@ repository:
         endCaptures:
           '0': {name: punctuation.quasi.element.end.js}
         patterns:
-        - include: $base
+        - include: source.js
 
   literal-regex:
     patterns:
@@ -622,7 +622,7 @@ repository:
       captures:
         '0': {name: punctuation.definition.comment.js}
       patterns:
-      - include: $base
+      - include: source.js
 
     - name: keyword.control.conditional.js
       match: (@)(if|elif|else|end)
