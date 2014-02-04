@@ -922,9 +922,16 @@
 						</dict>
 						<dict>
 							<key>match</key>
-							<string>([_$a-zA-Z][_$\w.]*)</string>
-							<key>name</key>
-							<string>entity.name.type.new.js</string>
+							<string>([_$a-zA-Z][_$\w.]*?)([_$a-zA-Z][_$\w]*)</string>
+						</dict>
+						<dict>
+							<key>1</key>
+							<dict>
+								<key>name</key>
+								<string>entity.name.type.new.js</string>
+							</dict>
+							<key>captures</key>
+							<false/>
 						</dict>
 					</array>
 				</dict>
