@@ -921,17 +921,16 @@
 							<string>#support</string>
 						</dict>
 						<dict>
-							<key>match</key>
-							<string>([_$a-zA-Z][_$\w.]*?)([_$a-zA-Z][_$\w]*)</string>
-						</dict>
-						<dict>
-							<key>1</key>
-							<dict>
-								<key>name</key>
-								<string>entity.name.type.new.js</string>
-							</dict>
 							<key>captures</key>
-							<false/>
+							<dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.type.new.js</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>([_$a-zA-Z][_$\w.]*\.)?([_$a-zA-Z][_$\w]*)</string>
 						</dict>
 					</array>
 				</dict>

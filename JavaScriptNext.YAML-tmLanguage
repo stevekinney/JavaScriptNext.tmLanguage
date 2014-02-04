@@ -324,9 +324,9 @@ repository:
       end: (?![_$a-zA-Z][_$\w.]*)
       patterns:
         - include: '#support'
-        - match: ([_$a-zA-Z][_$\w.]*?)([_$a-zA-Z][_$\w]*)
-        - captures:
-          '1': {name: entity.name.type.new.js}
+        - match: ([_$a-zA-Z][_$\w.]*\.)?([_$a-zA-Z][_$\w]*)
+          captures:
+            '2': {name: entity.name.type.new.js}
 
     - name: storage.type.js
       match: \b(var|let|const)\b
