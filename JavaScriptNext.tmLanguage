@@ -304,6 +304,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#literal-prototype-constructor</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#literal-function-constructor</string>
 				</dict>
 				<dict>
@@ -648,25 +652,6 @@
 							<key>name</key>
 							<string>support.constant.js</string>
 						</dict>
-					</dict>
-					<key>match</key>
-					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\s*=\s*</string>
-					<key>name</key>
-					<string>meta.prototype.declaration.js</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.class.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>support.constant.js</string>
-						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
@@ -697,25 +682,6 @@
 					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)?\s*(\()(.*?)(\))</string>
 					<key>name</key>
 					<string>meta.prototype.function.js</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.class.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>support.constant.js</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>([_$a-zA-Z][_$\w]*)\.(prototype)</string>
-					<key>name</key>
-					<string>meta.prototype.js</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -1317,6 +1283,50 @@
 					<string>(?:\B[-+]|\b)(Infinity)\b</string>
 					<key>name</key>
 					<string>constant.language.infinity.js</string>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-prototype-constructor</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.constant.js</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\s*=\s*</string>
+					<key>name</key>
+					<string>meta.prototype.declaration.js</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.constant.js</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>([_$a-zA-Z][_$\w]*)\.(prototype)</string>
+					<key>name</key>
+					<string>meta.prototype.js</string>
 				</dict>
 			</array>
 		</dict>
