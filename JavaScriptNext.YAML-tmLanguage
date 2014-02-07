@@ -111,10 +111,10 @@ repository:
 
     - include: '#literal-class'
     - include: '#literal-module'
-    # before function calls, to differentiate methods from them
-    - include: '#literal-method'
     - include: '#literal-prototype-constructor'
     - include: '#literal-function-constructor'
+    # before function calls & after function constructors, to differentiate methods from them
+    - include: '#literal-method'
 
     - include: '#literal-function-call'
 

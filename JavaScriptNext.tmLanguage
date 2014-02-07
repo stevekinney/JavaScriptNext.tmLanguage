@@ -300,15 +300,15 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-method</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-prototype-constructor</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#literal-function-constructor</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-method</string>
 				</dict>
 				<dict>
 					<key>include</key>
