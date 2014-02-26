@@ -92,12 +92,10 @@ repository:
     patterns:
     - include: '#leading-space'
 
-    # literals should precede operators to avoid ambiguities
-    - include: '#literal-number'
-    - include: '#literal-string'
-    - include: '#literal-quasi'
+    # before operators to avoid ambiguities
     - include: '#literal-regex'
 
+    # keywords/operators
     - include: '#literal-keywords'
 
     - include: '#literal-class'
@@ -107,6 +105,11 @@ repository:
     - include: '#literal-function-storage'
     # before function calls & after function definitions, to differentiate methods from them
     - include: '#literal-method'
+
+    # after literal-function-storage which requires strings in some cases
+    - include: '#literal-string'
+    - include: '#literal-number'
+    - include: '#literal-quasi'
 
     - include: '#literal-function-call'
 

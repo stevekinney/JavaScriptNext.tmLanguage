@@ -205,18 +205,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-number</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-string</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-quasi</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-regex</string>
 				</dict>
 				<dict>
@@ -246,6 +234,18 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-method</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-quasi</string>
 				</dict>
 				<dict>
 					<key>include</key>
