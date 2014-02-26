@@ -305,13 +305,6 @@
 						</dict>
 						<dict>
 							<key>match</key>
-							<string>(?x)
-  [_$a-zA-Z][_$\w]*</string>
-							<key>name</key>
-							<string>variable.parameter.optional.function.js</string>
-						</dict>
-						<dict>
-							<key>match</key>
 							<string>,</string>
 							<key>name</key>
 							<string>punctuation.separator.parameter.function.js</string>
@@ -753,7 +746,7 @@
 					<key>end</key>
 					<string>(?&lt;=\))</string>
 					<key>match</key>
-					<string>\b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)?\s*</string>
+					<string>\b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)\s*</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
 					<key>patterns</key>
@@ -821,7 +814,7 @@
 					<key>end</key>
 					<string>(?&lt;=\))</string>
 					<key>match</key>
-					<string>(?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function\*?)?\s*</string>
+					<string>(?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function\*?)\s*</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
 					<key>patterns</key>
