@@ -205,10 +205,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#brackets</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-number</string>
 				</dict>
 				<dict>
@@ -229,10 +225,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-arrow-function-constructor</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-class</string>
 				</dict>
 				<dict>
@@ -241,11 +233,15 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-prototype-constructor</string>
+					<string>#literal-prototype-storage</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-function-constructor</string>
+					<string>#literal-arrow-function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-function-storage</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -267,9 +263,13 @@
 					<key>include</key>
 					<string>#literal-punctuation</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#brackets</string>
+				</dict>
 			</array>
 		</dict>
-		<key>function-constructor-parameters</key>
+		<key>function-definition-parameters</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -458,38 +458,31 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-arrow-function-constructor</key>
+		<key>literal-arrow-function</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (?=\([^)]*\)\s*(=&gt;))</string>
+					<key>end</key>
+					<string>(?&lt;=\))\s*(=&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.arrow.js</string>
+						</dict>
+					</dict>
 					<key>name</key>
-					<string>arrow.function.js</string>
+					<string>meta.function.arrow.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>begin</key>
-							<string>(?x)
-  (?=\([^)]+\)\s*(=&gt;))</string>
-							<key>end</key>
-							<string>(?&lt;=\))\s*(=&gt;)</string>
-							<key>endCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.arrow.js</string>
-								</dict>
-							</dict>
-							<key>name</key>
-							<string>storage.type.function.arrow.js</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#function-constructor-parameters</string>
-								</dict>
-							</array>
+							<key>include</key>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -592,7 +585,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-constructor-parameters</string>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -621,7 +614,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-function-constructor</key>
+		<key>literal-function-storage</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -649,7 +642,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-constructor-parameters</string>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -687,7 +680,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-constructor-parameters</string>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -720,7 +713,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-constructor-parameters</string>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -753,7 +746,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-constructor-parameters</string>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -821,7 +814,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-constructor-parameters</string>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -1160,11 +1153,10 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (?&lt;![_$\w])
   (?&lt;!function\s)                     # An approximation due to fixed width look-behind, but usually good enough
-  ([_$a-zA-Z][_$\w]*)
+  \b([_$a-zA-Z][_$\w]*)
   \s*
-  (?=\([^)]+\)\s*\{)</string>
+  (?=\([^)]*\)\s*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1181,7 +1173,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-constructor-parameters</string>
+							<string>#function-definition-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -1243,7 +1235,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-prototype-constructor</key>
+		<key>literal-prototype-storage</key>
 		<dict>
 			<key>patterns</key>
 			<array>
