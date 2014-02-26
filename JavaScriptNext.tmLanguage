@@ -1653,7 +1653,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?&lt;=[\.\]])\s*[_$a-zA-Z][_$\w]*</string>
+					<string>(?&lt;=[\.])\s*[_$a-zA-Z][_$\w]*</string>
 					<key>name</key>
 					<string>meta.property.js</string>
 				</dict>
