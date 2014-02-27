@@ -213,6 +213,14 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#literal-language-variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-language-constant</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#literal-class</string>
 				</dict>
 				<dict>
@@ -910,78 +918,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\btrue\b</string>
-					<key>name</key>
-					<string>constant.language.boolean.true.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\bfalse\b</string>
-					<key>name</key>
-					<string>constant.language.boolean.false.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\bnull\b</string>
-					<key>name</key>
-					<string>constant.language.null.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\bundefined\b</string>
-					<key>name</key>
-					<string>constant.language.undefined.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\bNaN\b</string>
-					<key>name</key>
-					<string>constant.language.nan.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;!\.)\b(arguments)\b</string>
-					<key>name</key>
-					<string>variable.language.arguments.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;!\.)\b(super)\b</string>
-					<key>name</key>
-					<string>variable.language.super.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;!\.)\b(this)\b</string>
-					<key>name</key>
-					<string>variable.language.this.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;!\.)\b(self)\b</string>
-					<key>name</key>
-					<string>storage.self.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=\.)\b(__proto__)\b</string>
-					<key>name</key>
-					<string>variable.language.proto.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=\.)\b(constructor)\b</string>
-					<key>name</key>
-					<string>variable.language.constructor.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=\.)\b(prototype)\b</string>
-					<key>name</key>
-					<string>variable.language.prototype.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>!|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\|\||\?\:|\*=|/=|%=|\+=|\-=|&amp;=|\^=</string>
 					<key>name</key>
 					<string>keyword.operator.js</string>
@@ -1106,6 +1042,90 @@
 					<string>(?&lt;!\?|\? |case )(?!\?)([_$a-zA-Z][_$\w]*)\s*(:)</string>
 					<key>name</key>
 					<string>constant.other.object.key.js</string>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-language-constant</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\btrue\b</string>
+					<key>name</key>
+					<string>constant.language.boolean.true.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\bfalse\b</string>
+					<key>name</key>
+					<string>constant.language.boolean.false.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\bnull\b</string>
+					<key>name</key>
+					<string>constant.language.null.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\bundefined\b</string>
+					<key>name</key>
+					<string>constant.language.undefined.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\bNaN\b</string>
+					<key>name</key>
+					<string>constant.language.nan.js</string>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-language-variable</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\.)\b(arguments)\b</string>
+					<key>name</key>
+					<string>variable.language.arguments.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\.)\b(super)\b</string>
+					<key>name</key>
+					<string>variable.language.super.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\.)\b(this)\b</string>
+					<key>name</key>
+					<string>variable.language.this.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\.)\b(self)\b</string>
+					<key>name</key>
+					<string>variable.language.self.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=\.)\b(__proto__)\b</string>
+					<key>name</key>
+					<string>variable.language.proto.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=\.)\b(constructor)\b</string>
+					<key>name</key>
+					<string>variable.language.constructor.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=\.)\b(prototype)\b</string>
+					<key>name</key>
+					<string>variable.language.prototype.js</string>
 				</dict>
 			</array>
 		</dict>

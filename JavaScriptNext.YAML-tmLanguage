@@ -92,32 +92,36 @@ repository:
     patterns:
     - include: '#leading-space'
 
-    # before operators to avoid ambiguities
-    - include: '#literal-regex'
+    # regex
+    - include: '#literal-regex'               # before operators to avoid ambiguities
 
     # keywords/operators
     - include: '#literal-keywords'
+    - include: '#literal-language-variable'
+    - include: '#literal-language-constant'
 
+    # modules/classes/functions
     - include: '#literal-class'
     - include: '#literal-module'
     - include: '#literal-arrow-function'
     - include: '#literal-function-storage'
-    # before function calls & after function declarations, to differentiate methods from them
-    - include: '#literal-method'
-    # after literal-function-storage, which includes some prototype strings
-    - include: '#literal-prototype-storage'
+    - include: '#literal-method'              # before function calls & after function declarations, to differentiate methods from them
+    - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
 
     # after literal-function-storage which requires strings in some cases
     - include: '#literal-string'
     - include: '#literal-number'
     - include: '#literal-quasi'
 
+    # function calls
     - include: '#literal-function-call'
 
+    # punctuation
     - include: '#literal-labels'
     - include: '#literal-variable'
     - include: '#literal-punctuation'
 
+    # brackets
     - include: '#brackets'
 
   literal-module:
@@ -310,6 +314,46 @@ repository:
       patterns:
         - include: '#function-declaration-parameters'
 
+  literal-language-variable:
+    patterns:
+    - name: variable.language.arguments.js
+      match: (?<!\.)\b(arguments)\b
+
+    - name: variable.language.super.js
+      match: (?<!\.)\b(super)\b
+
+    - name: variable.language.this.js
+      match: (?<!\.)\b(this)\b
+
+    - name: variable.language.self.js
+      match: (?<!\.)\b(self)\b
+
+    - name: variable.language.proto.js
+      match: (?<=\.)\b(__proto__)\b
+
+    - name: variable.language.constructor.js
+      match: (?<=\.)\b(constructor)\b
+
+    - name: variable.language.prototype.js
+      match: (?<=\.)\b(prototype)\b
+
+  literal-language-constant:
+    patterns:
+    - name: constant.language.boolean.true.js
+      match: \btrue\b
+
+    - name: constant.language.boolean.false.js
+      match: \bfalse\b
+
+    - name: constant.language.null.js
+      match: \bnull\b
+
+    - name: constant.language.undefined.js
+      match: \bundefined\b
+
+    - name: constant.language.nan.js
+      match: \bNaN\b
+
   literal-keywords:
     patterns:
     - name: meta.instance.constructor
@@ -343,42 +387,6 @@ repository:
 
     - name: keyword.operator.js
       match: \b(delete|in(stanceof)?|of|new|typeof|void|with)\b
-
-    - name: constant.language.boolean.true.js
-      match: \btrue\b
-
-    - name: constant.language.boolean.false.js
-      match: \bfalse\b
-
-    - name: constant.language.null.js
-      match: \bnull\b
-
-    - name: constant.language.undefined.js
-      match: \bundefined\b
-
-    - name: constant.language.nan.js
-      match: \bNaN\b
-
-    - name: variable.language.arguments.js
-      match: (?<!\.)\b(arguments)\b
-
-    - name: variable.language.super.js
-      match: (?<!\.)\b(super)\b
-
-    - name: variable.language.this.js
-      match: (?<!\.)\b(this)\b
-
-    - name: storage.self.js
-      match: (?<!\.)\b(self)\b
-
-    - name: variable.language.proto.js
-      match: (?<=\.)\b(__proto__)\b
-
-    - name: variable.language.constructor.js
-      match: (?<=\.)\b(constructor)\b
-
-    - name: variable.language.prototype.js
-      match: (?<=\.)\b(prototype)\b
 
     - name: keyword.operator.js
       match: '!|%|&|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\|\||\?\:|\*=|/=|%=|\+=|\-=|&=|\^='
