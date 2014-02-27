@@ -281,7 +281,7 @@ repository:
     - name: meta.function.arrow.js
       begin: |-
         (?x)
-          (?=\([^)]*\)\s*(=>))
+          (?=\([^())]*\)\s*(=>))
       end: (?<=\))\s*(=>)
       endCaptures:
         '1': {name: storage.type.function.arrow.js}

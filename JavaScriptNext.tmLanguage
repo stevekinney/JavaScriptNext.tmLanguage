@@ -473,7 +473,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (?=\([^)]*\)\s*(=&gt;))</string>
+  (?=\([^())]*\)\s*(=&gt;))</string>
 					<key>end</key>
 					<string>(?&lt;=\))\s*(=&gt;)</string>
 					<key>endCaptures</key>
