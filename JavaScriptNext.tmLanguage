@@ -269,7 +269,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>function-definition-parameters</key>
+		<key>function-declaration-parameters</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -482,7 +482,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -585,7 +585,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -642,7 +642,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -680,12 +680,14 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>\.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)( [_$a-zA-Z][_$\w]*)?\s*</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
@@ -705,20 +707,20 @@
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))</string>
-					<key>match</key>
-					<string>\.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)( [_$a-zA-Z][_$\w]*)?\s*</string>
 					<key>name</key>
 					<string>meta.function.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>\b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)\s*</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
@@ -738,20 +740,27 @@
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))</string>
-					<key>match</key>
-					<string>\b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)\s*</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>(?x)
+  (?:
+    ((')(.*?)('))|
+    ((")(.*?)("))
+  )
+  \s*(:)
+  \s*\b(function\*?)
+  \s*</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
@@ -806,15 +815,13 @@
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))</string>
-					<key>match</key>
-					<string>(?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function\*?)\s*</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
@@ -1173,7 +1180,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-definition-parameters</string>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>

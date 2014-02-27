@@ -71,7 +71,7 @@ repository:
         '0': {name: punctuation.definition.comment.html.js}
         '2': {name: punctuation.definition.comment.html.js}
 
-  function-definition-parameters:
+  function-declaration-parameters:
     patterns:
     - begin: (\()
       beginCaptures:
@@ -103,7 +103,7 @@ repository:
     - include: '#literal-prototype-storage'
     - include: '#literal-arrow-function'
     - include: '#literal-function-storage'
-    # before function calls & after function definitions, to differentiate methods from them
+    # before function calls & after function declarations, to differentiate methods from them
     - include: '#literal-method'
 
     # after literal-function-storage which requires strings in some cases
@@ -161,7 +161,7 @@ repository:
         '2': {name: entity.name.accessor.js}
       end: (?<=\))
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
   literal-function-call:
     patterns:
@@ -198,7 +198,7 @@ repository:
         '2': {name: entity.name.function.js}
       end: (?<=\))
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
     # e.g. Sound.prototype.play = function(arg1, arg2) {  }
     - name: meta.prototype.function.js
@@ -210,34 +210,42 @@ repository:
         '4': {name: storage.type.function.js}
       end: (?<=\))
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
     # e.g. .play = function(arg1, arg2) {  }
     - name: meta.function.js
-      match: \.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)( [_$a-zA-Z][_$\w]*)?\s*
-      captures:
+      begin: \.([_$a-zA-Z][_$\w]*)\s*=\s*(function\*?)( [_$a-zA-Z][_$\w]*)?\s*
+      beginCaptures:
         '1': {name: entity.name.function.js}
         '2': {name: storage.type.function.js}
         '3': {name: entity.name.function.js}
       end: (?<=\))
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
     # e.g. play: function(arg1, arg2) {  }
     - name: meta.function.json.js
-      match: \b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)\s*
-      captures:
+      begin: \b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function\*?)\s*
+      beginCaptures:
         '1': {name: entity.name.function.js}
         '2': {name: punctuation.separator.key-value.js}
         '3': {name: storage.type.function.js}
       end: (?<=\))
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
     # e.g. "play": function(arg1, arg2) {  }
     - name: meta.function.json.js
-      match: (?:((')(.*?)('))|((")(.*?)(")))\s*(:)\s*\b(function\*?)\s*
-      captures:
+      begin: |-
+        (?x)
+          (?:
+            ((')(.*?)('))|
+            ((")(.*?)("))
+          )
+          \s*(:)
+          \s*\b(function\*?)
+          \s*
+      beginCaptures:
         '1': {name: string.quoted.single.js}
         '2': {name: punctuation.definition.string.begin.js}
         '3': {name: entity.name.function.js}
@@ -250,7 +258,7 @@ repository:
         '10': {name: storage.type.function.js}
       end: (?<=\))
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
   literal-arrow-function:
     patterns:
@@ -263,7 +271,7 @@ repository:
       endCaptures:
         '1': {name: storage.type.function.arrow.js}
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
   literal-method:
     patterns:
@@ -299,7 +307,7 @@ repository:
         '1': {name: entity.name.method.js}
       end: (?<=\))
       patterns:
-        - include: '#function-definition-parameters'
+        - include: '#function-declaration-parameters'
 
   literal-keywords:
     patterns:
