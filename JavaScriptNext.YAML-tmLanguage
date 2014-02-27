@@ -100,11 +100,12 @@ repository:
 
     - include: '#literal-class'
     - include: '#literal-module'
-    - include: '#literal-prototype-storage'
     - include: '#literal-arrow-function'
     - include: '#literal-function-storage'
     # before function calls & after function declarations, to differentiate methods from them
     - include: '#literal-method'
+    # after literal-function-storage, which includes some prototype strings
+    - include: '#literal-prototype-storage'
 
     # after literal-function-storage which requires strings in some cases
     - include: '#literal-string'

@@ -221,10 +221,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-prototype-storage</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-arrow-function</string>
 				</dict>
 				<dict>
@@ -234,6 +230,10 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-method</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-prototype-storage</string>
 				</dict>
 				<dict>
 					<key>include</key>
