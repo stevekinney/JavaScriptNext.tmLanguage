@@ -40,23 +40,6 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(?x)
-  (?&lt;=\.)
-  ([_$a-zA-Z][_$\w]*)?
-  (?=\()</string>
-					<key>name</key>
-					<string>meta.function-call.method.with-arguments.js</string>
-				</dict>
-				<dict>
 					<key>begin</key>
 					<string>(\()</string>
 					<key>beginCaptures</key>

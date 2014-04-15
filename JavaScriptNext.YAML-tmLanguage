@@ -15,15 +15,6 @@ patterns:
 repository:
   brackets:
     patterns:
-    - name: meta.function-call.method.with-arguments.js
-      match: >-
-        (?x)
-          (?<=\.)
-          ([_$a-zA-Z][_$\w]*)?
-          (?=\()
-      captures:
-        '1': {name: entity.name.function.js}
-
     - name: meta.group.braces.round
       begin: (\()
       beginCaptures:
