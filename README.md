@@ -15,7 +15,7 @@ __ES6__
 
 ![screenshot](https://raw.github.com/Benvie/JavaScriptNext.tmLanguage/master/screenshots/es6.png)
 
-![screenshot](http://i.imgur.com/YcmEFkY.png)
+![screenshot](http://i.imgur.com/YzwbnTf.png)
 
 __ES5__
 
