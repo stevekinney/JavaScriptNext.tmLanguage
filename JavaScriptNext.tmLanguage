@@ -603,11 +603,6 @@
 							<key>name</key>
 							<string>meta.group.braces.round.function.arguments.js</string>
 						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.round.js</string>
-						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
@@ -1184,12 +1179,12 @@
 						<key>5</key>
 						<dict>
 							<key>name</key>
-							<string>meta.brace.round.js</string>
+							<string>meta.function-call.static.with-arguments.js</string>
 						</dict>
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>meta.function-call.static.with-arguments.js</string>
+							<string>entity.name.function.js</string>
 						</dict>
 						<key>7</key>
 						<dict>
@@ -1225,11 +1220,6 @@
 						<dict>
 							<key>name</key>
 							<string>meta.group.braces.round.function.arguments.js</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.round.js</string>
 						</dict>
 					</dict>
 					<key>match</key>
