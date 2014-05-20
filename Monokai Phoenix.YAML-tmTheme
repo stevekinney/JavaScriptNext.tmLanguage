@@ -1,5 +1,5 @@
-# [PackageDev] target_format: plist, ext: tmLanguage
-name: Monokai-Phoenix
+# [PackageDev] target_format: plist, ext: tmTheme
+name: Monokai Phoenix
 uuid: b238c753-1549-3f12-a519-0faa5dcd4f65
 
 settings:
