@@ -701,13 +701,25 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?x)
-  (?=
-    ([_$a-zA-Z][_$\w]*)?
-    \.([_$a-zA-Z][_$\w]*)\s*
-    =\s*
-    (function\s*\*?)\s*
-  )</string>
+					<string>([A-Z][_$\w]*)?\.([_$a-zA-Z][_$\w]*)\s*=\s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.js</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))</string>
 					<key>name</key>
@@ -716,33 +728,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#literal-language-variable</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\b(function(?:\s*\*|(?=\s|[(])))(?:\s*([a-zA-Z_$][_$\w]*))?\s*</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>storage.type.function.js</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>entity.name.function.js</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>(?&lt;=\))</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#function-declaration-parameters</string>
-								</dict>
-							</array>
+							<string>#function-declaration-parameters</string>
 						</dict>
 					</array>
 				</dict>
