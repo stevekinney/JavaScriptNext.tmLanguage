@@ -1164,49 +1164,43 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>meta.function-call.static.without-arguments.js</string>
+							<string>entity.name.function.js</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
 							<string>meta.group.braces.round.function.arguments.js</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>meta.function-call.static.with-arguments.js</string>
-						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-						<key>7</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.class.static.js</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
-  \b([A-Z][_$\w]*)\s*
-  (?:\.
-    (?:
-      (
-        ([_$a-zA-Z][_$\w]*)\s*
-        (\(\s*\))
-      )|(
-        ([_$a-zA-Z][_$\w]*)\s*
-        (?=\()
-      )|
-      ([_$a-z][_$\w]*)
-    )
-  )?</string>
+  \b([A-Z][_$\w]*)\s*\.
+  ([_$a-zA-Z][_$\w]*)\s*
+  (\(\s*\))</string>
+					<key>name</key>
+					<string>meta.function-call.static.without-arguments.js</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)
+  \b([A-Z][_$\w]*)\s*\.
+  ([_$a-zA-Z][_$\w]*)\s*
+  (?=\()</string>
+					<key>name</key>
+					<string>meta.function-call.static.with-arguments.js</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -1647,6 +1641,35 @@
 					<string>variable.other.constant.js</string>
 				</dict>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.property.static.js</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)
+  \b([A-Z][_$\w]*)\s*\.
+  ([_$a-zA-Z][_$\w]*)</string>
+					<key>name</key>
+					<string>meta.property.class.js</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.object.js</string>
+						</dict>
+					</dict>
 					<key>match</key>
 					<string>(?&lt;!\.)[_$a-zA-Z][_$\w]*\s*(?=[\[\.])</string>
 					<key>name</key>
@@ -1655,26 +1678,7 @@
 				<dict>
 					<key>captures</key>
 					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.property-name.js</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.object.js</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>([_$a-zA-Z][_$\w]*)\s*(?=[\[\.])</string>
-					<key>name</key>
-					<string>meta.property.js</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
+						<key>2</key>
 						<dict>
 							<key>name</key>
 							<string>variable.other.property.js</string>
@@ -1683,7 +1687,7 @@
 					<key>match</key>
 					<string>(?&lt;=[\.])\s*[_$a-zA-Z][_$\w]*</string>
 					<key>name</key>
-					<string>meta.property.js</string>
+					<string>meta.property.object.js</string>
 				</dict>
 				<dict>
 					<key>match</key>

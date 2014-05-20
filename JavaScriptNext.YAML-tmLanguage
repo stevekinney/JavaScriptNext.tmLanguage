@@ -308,33 +308,26 @@ repository:
 
   literal-method-call:
     patterns:
-    - match: |-
+    - name: meta.function-call.static.without-arguments.js
+      match: |-
         (?x)
-          \b([A-Z][_$\w]*)\s*
-          (?:\.
-            (?:
-              (
-                ([_$a-zA-Z][_$\w]*)\s*
-                (\(\s*\))
-              )|(
-                ([_$a-zA-Z][_$\w]*)\s*
-                (?=\()
-              )|
-              ([_$a-z][_$\w]*)
-            )
-          )?
-
+          \b([A-Z][_$\w]*)\s*\.
+          ([_$a-zA-Z][_$\w]*)\s*
+          (\(\s*\))
       captures:
         '1': {name: variable.other.class.js}
+        '2': {name: entity.name.function.js}
+        '3': {name: meta.group.braces.round.function.arguments.js}
 
-        '2': {name: meta.function-call.static.without-arguments.js}
-        '3': {name: entity.name.function.js}
-        '4': {name: meta.group.braces.round.function.arguments.js}
-
-        '5': {name: meta.function-call.static.with-arguments.js}
-        '6': {name: entity.name.function.js}
-
-        '7': {name: variable.other.class.static.js}
+    - name: meta.function-call.static.with-arguments.js
+      match: |-
+        (?x)
+          \b([A-Z][_$\w]*)\s*\.
+          ([_$a-zA-Z][_$\w]*)\s*
+          (?=\()
+      captures:
+        '1': {name: variable.other.class.js}
+        '2': {name: entity.name.function.js}
 
     - name: meta.function-call.method.without-arguments.js
       match: |-
@@ -626,22 +619,31 @@ repository:
 
   literal-variable:
     patterns:
+    # e.g. .CONSTANT
     - name: variable.other.constant.js
       match: \.?[A-Z][_$\dA-Z]*\b
 
+    # e.g. Class.property
+    - name: meta.property.class.js
+      match: |-
+        (?x)
+          \b([A-Z][_$\w]*)\s*\.
+          ([_$a-zA-Z][_$\w]*)
+      captures:
+        '1': {name: variable.other.class.js}
+        '2': {name: variable.other.property.static.js}
+
+    # e.g. obj.property
     - name: variable.other.object.js
       match: (?<!\.)[_$a-zA-Z][_$\w]*\s*(?=[\[\.])
-
-    - name: meta.property.js
-      match: ([_$a-zA-Z][_$\w]*)\s*(?=[\[\.])
       captures:
-        '0': {name: meta.property-name.js}
         '1': {name: variable.other.object.js}
 
-    - name: meta.property.js
+    # e.g. obj.property
+    - name: meta.property.object.js
       match: (?<=[\.])\s*[_$a-zA-Z][_$\w]*
       captures:
-        '0': {name: variable.other.property.js}
+        '2': {name: variable.other.property.js}
 
     - name: variable.other.readwrite.js
       match: '[_$a-zA-Z][_$\w]*'
