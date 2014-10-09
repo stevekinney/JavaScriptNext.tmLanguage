@@ -1502,13 +1502,12 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (?&lt;=
-    [\[,=(:?]|
-    ^|&amp;&amp;|
-    return
-  )\s*
+  (?:(?&lt;=
+    \.|\(|,|{|}|\[|;|,|&lt;|&gt;|&lt;=|&gt;=|==|!=|===|!==|\+|-|\*|%|\+\+|--|&lt;&lt;|&gt;&gt;|&gt;&gt;&gt;|&amp;|\||\^|!|~|&amp;&amp;|\|\||\?|:|=|\+=|-=|\*=|%=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&amp;=|\|=|\^=|/|/=|
+    new|delete|void|typeof|instanceof|in|do|return|case|throw
+  )|^)\s*
   (/)
-  (?![/*+{}?]|$)</string>
+  (?!/|\*|$)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
