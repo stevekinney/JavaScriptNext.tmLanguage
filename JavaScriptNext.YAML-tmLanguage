@@ -181,6 +181,19 @@ repository:
         '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
 
+  literal-arrow-function-storage:
+    patterns:
+    # e.g. (args) => { }
+    - name: meta.function.arrow.js
+      begin: |-
+        (?x)
+          (?=\([^())]*\)\s*(=>))
+      end: (?<=\))\s*(=>)
+      endCaptures:
+        '1': {name: storage.type.function.arrow.js}
+      patterns:
+        - include: '#function-declaration-parameters'
+
   literal-function-storage:
     patterns:
     # e.g. function play(arg1, arg2) {  }
@@ -249,19 +262,6 @@ repository:
         '9': {name: punctuation.separator.key-value.js}
         '10': {name: storage.type.function.js}
       end: (?<=\))
-      patterns:
-        - include: '#function-declaration-parameters'
-
-  literal-arrow-function-storage:
-    patterns:
-    # e.g. (args) => { }
-    - name: meta.function.arrow.js
-      begin: |-
-        (?x)
-          (?=\([^())]*\)\s*(=>))
-      end: (?<=\))\s*(=>)
-      endCaptures:
-        '1': {name: storage.type.function.arrow.js}
       patterns:
         - include: '#function-declaration-parameters'
 
