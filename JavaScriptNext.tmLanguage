@@ -113,22 +113,6 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>/\*</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\*/</string>
-					<key>name</key>
-					<string>comment.block.js</string>
-				</dict>
-				<dict>
-					<key>begin</key>
 					<string>/\*\*(?!/)</string>
 					<key>captures</key>
 					<dict>
@@ -142,6 +126,22 @@
 					<string>\*/</string>
 					<key>name</key>
 					<string>comment.block.documentation.js</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>/\*</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\*/</string>
+					<key>name</key>
+					<string>comment.block.js</string>
 				</dict>
 				<dict>
 					<key>captures</key>
