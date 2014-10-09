@@ -32,7 +32,6 @@ repository:
     - include: '#literal-arrow-function-storage'
     - include: '#literal-function-storage'
     - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
-    - include: '#literal-method-storage'      # before function calls, after literal-function-storage, to differentiate methods from them
 
     # after literal-function-storage which requires the below in some cases
     - include: '#literal-string'
@@ -69,6 +68,16 @@ repository:
       end: (\])
       endCaptures:
         '1': {name: meta.brace.square.js}
+      patterns:
+      - include: source.js
+
+    - name: meta.group.braces.curly
+      begin: ({)
+      beginCaptures:
+        '1': {name: meta.brace.curly.js}
+      end: (})
+      endCaptures:
+        '1': {name: meta.brace.curly.js}
       patterns:
       - include: source.js
 
@@ -134,36 +143,48 @@ repository:
     patterns:
     # e.g. class MyClass {  }
     - name: meta.class.js
-      match: \b(class)\b(?:\s+([_$a-zA-Z][_$\w]*)\s*(?:\b(extends)\b\s*([_$a-zA-Z][_$\w]*))?)?\s*
-      captures:
+      begin: |-
+        (?x)
+          \b(class)
+          \s+([_$a-zA-Z][_$\w]*)
+          (?:
+            \s+(extends)
+            \s+([_$a-zA-Z][_$\w]*)
+          )?
+          \s*({)
+      beginCaptures:
         '1': {name: storage.type.class.js}
         '2': {name: entity.name.class.js}
         '3': {name: storage.type.extends.js}
         '4': {name: entity.name.extends.js}
-
-    # definitions here don't include field modifications (e.g. this.a = 'b'), as modifications can occur outside the class
-    - match: \b(?:(public|private|static)\s+)(?:(var|let|const)\s+)?([_$a-zA-Z][_$\w]*\s*)(?=\=)
-      captures:
-        '1': {name: storage.modifier.js}
-        '2': {name: storage.type.js}
-        '3': {name: entity.name.field.js}
-
-    - match: \b(private)(?=\s*\()
-      captures:
-        '1': {name: support.function.private.js}
-
-    - name: storage.modifier.js
-      match: \b(public|private|static)\b
-
-    # getter/setter
-    - name: meta.accessor.js
-      begin: \b(get|set)\s*\b([_$a-zA-Z][_$\w]*)\s*
-      beginCaptures:
-        '1': {name: storage.type.accessor.js}
-        '2': {name: entity.name.accessor.js}
-      end: (?<=\))
+        '5': {name: meta.brace.curly.js}
+      end: (})
+      endCaptures:
+        '1': {name: meta.brace.curly.js}
       patterns:
-        - include: '#function-declaration-parameters'
+      # e.g. play(arg1, arg2) {  }
+      - name: meta.method.js
+        begin: |-
+          (?x)
+            \b([_$a-zA-Z][_$\w]*)
+            \s*(?=\([^())]*\)\s*\{)
+        beginCaptures:
+          '1': {name: entity.name.method.js}
+        end: (?<=\))
+        patterns:
+          - include: '#function-declaration-parameters'
+
+      # getter/setter
+      - name: meta.accessor.js
+        begin: \b(get|set)\s*\b([_$a-zA-Z][_$\w]*)\s*
+        beginCaptures:
+          '1': {name: storage.type.accessor.js}
+          '2': {name: entity.name.accessor.js}
+        end: (?<=\))
+        patterns:
+          - include: '#function-declaration-parameters'
+
+      - include: '#brackets'
 
   literal-prototype-storage:
     patterns:
@@ -261,22 +282,6 @@ repository:
         '8': {name: punctuation.definition.string.end.js}
         '9': {name: punctuation.separator.key-value.js}
         '10': {name: storage.type.function.js}
-      end: (?<=\))
-      patterns:
-        - include: '#function-declaration-parameters'
-
-  literal-method-storage:
-    patterns:
-    # ES6 methods, e.g. play(arg1, arg2) {  }
-    - name: meta.method.js
-      begin: |-
-        (?x)
-          (?<!function\s)                     # An approximation due to fixed width look-behind, but usually good enough
-          \b([_$a-zA-Z][_$\w]*)
-          \s*
-          (?=\([^())]*\)\s*\{)
-      beginCaptures:
-        '1': {name: entity.name.method.js}
       end: (?<=\))
       patterns:
         - include: '#function-declaration-parameters'
@@ -532,18 +537,6 @@ repository:
 
     - name: meta.delimiter.method.period.js
       match: \.
-
-    - name: meta.brace.curly.js
-      match: \{|\}
-
-    - name: meta.brace.round.js
-      match: \(|\)
-
-    - name: meta.brace.square.js
-      match: \[|\]
-
-    - name: meta.complete.method
-      match: (?<=\.)\s
 
   literal-quasi:
     patterns:
