@@ -11,12 +11,4 @@ You may also need to change the ColorScheme, `Preferences -> Color Scheme --> Ja
 
 ## Screenshots
 
-__ES6__
-
 ![screenshot](https://raw.github.com/Benvie/JavaScriptNext.tmLanguage/master/screenshots/es6.png)
-
-![screenshot](http://i.imgur.com/YzwbnTf.png)
-
-__ES5__
-
-![screenshot](https://raw.github.com/Benvie/JavaScriptNext.tmLanguage/master/screenshots/es5.png)
