@@ -112,6 +112,34 @@ repository:
       captures:
         '1': {name: punctuation.definition.comment.js}
 
+  special-comments-conditional-compilation:
+    patterns:
+    - name: comment.block.conditional.js
+      begin: /\*(?=@)
+      end: \*/
+      endCaptures:
+        '1': {name: keyword.control.conditional.js}
+        '2': {name: punctuation.definition.keyword.js}
+      captures:
+        '0': {name: punctuation.definition.comment.js}
+      patterns:
+      - include: source.js
+
+    - name: keyword.control.conditional.js
+      match: (@)(if|elif|else|end)
+      captures:
+        '1': {name: punctuation.definition.keyword.js}
+
+    - name: keyword.operator.conditional.js
+      match: (@)(cc_on|set)
+      captures:
+        '1': {name: punctuation.definition.keyword.js}
+
+    - name: variable.other.conditional.js
+      match: (@)(_win32|_win16|_mac|_alpha|_x86|_mc680x0|_PowerPC|_jscript_build|_jscript_version|_jscript|_debug|_fast|[a-zA-Z]\w+)
+      captures:
+        '1': {name: punctuation.definition.variable.js}
+
   function-declaration-parameters:
     patterns:
     - begin: (\()
@@ -637,34 +665,6 @@ repository:
 
     - name: variable.other.readwrite.js
       match: '[_$a-zA-Z][_$\w]*'
-
-  special-comments-conditional-compilation:
-    patterns:
-    - name: comment.block.conditional.js
-      begin: /\*(?=@)
-      end: \*/
-      endCaptures:
-        '1': {name: keyword.control.conditional.js}
-        '2': {name: punctuation.definition.keyword.js}
-      captures:
-        '0': {name: punctuation.definition.comment.js}
-      patterns:
-      - include: source.js
-
-    - name: keyword.control.conditional.js
-      match: (@)(if|elif|else|end)
-      captures:
-        '1': {name: punctuation.definition.keyword.js}
-
-    - name: keyword.operator.conditional.js
-      match: (@)(cc_on|set)
-      captures:
-        '1': {name: punctuation.definition.keyword.js}
-
-    - name: variable.other.conditional.js
-      match: (@)(_win32|_win16|_mac|_alpha|_x86|_mc680x0|_PowerPC|_jscript_build|_jscript_version|_jscript|_debug|_fast|[a-zA-Z]\w+)
-      captures:
-        '1': {name: punctuation.definition.variable.js}
 
   string-content:
     patterns:
