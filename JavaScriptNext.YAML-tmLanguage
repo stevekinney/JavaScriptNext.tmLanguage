@@ -185,6 +185,7 @@ repository:
           - include: '#function-declaration-parameters'
 
       - include: '#brackets'
+      - include: '#comments'
 
   literal-prototype-storage:
     patterns:
