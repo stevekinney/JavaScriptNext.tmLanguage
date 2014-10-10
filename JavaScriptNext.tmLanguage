@@ -257,11 +257,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-arrow-function-storage</string>
+					<string>#literal-function-storage</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-function-storage</string>
+					<string>#literal-arrow-function-storage</string>
 				</dict>
 				<dict>
 					<key>include</key>

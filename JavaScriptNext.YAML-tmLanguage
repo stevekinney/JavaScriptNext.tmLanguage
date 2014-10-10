@@ -28,8 +28,8 @@ repository:
     # modules/classes/functions
     - include: '#literal-class'
     - include: '#literal-module'
-    - include: '#literal-arrow-function-storage'
     - include: '#literal-function-storage'
+    - include: '#literal-arrow-function-storage'
     - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
 
     # after literal-function-storage which requires the below in some cases
