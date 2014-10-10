@@ -718,7 +718,7 @@ repository:
       match: \b(decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape)\b(?=\()
 
     - name: support.function.mutator.js
-      match: \b(s(hift|ort|plice)|unshift|p(op|ush)|reverse)\b(?=\()
+      match: \b(shift|sort|splice|unshift|pop|push|reverse)\b(?=\()
 
     - name: support.class.error.js
       match: \b((Eval|Range|Reference|Syntax|Type|URI)?Error)\b
@@ -749,10 +749,10 @@ repository:
 
     # node
     - name: support.module.node.js
-      match: \b(natives|buffer|child_process|cluster|crypto|d(gram|ns)|fs|http(s)?|net|os|path|punycode|(query)?string(_decoder)?|re(adline|pl)|tls|tty|util|vm|zlib)\b
+      match: \b(natives|buffer|child_process|cluster|crypto|dgram|dns|fs|http|https|net|os|path|punycode|string|string_decoder|readline|repl|tls|tty|util|vm|zlib)\b
 
     - name: support.type.object.node.js
-      match: \b(process(.env)?|global|GLOBAL|root|std(out|in|err)|exports|__dirname|__filename|console)\b
+      match: \b(process|process\.env|global|GLOBAL|root|stdout|stdin|stderr|exports|__dirname|__filename|console)\b
 
     - name: support.class.node.js
       match: \b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b
