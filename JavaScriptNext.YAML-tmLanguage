@@ -712,7 +712,7 @@ repository:
     patterns:
     # built-ins
     - name: support.class.builtin.js
-      match: \b(Array|Boolean|Date|Function|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap)\b
+      match: \b(Array|Boolean|Date|Function|Map|Math|Number|Object|Proxy|RegExp|Set|String|WeakMap)\b
 
     - name: support.function.js
       match: \b(decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape)\b(?=\()
