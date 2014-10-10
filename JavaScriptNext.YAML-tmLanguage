@@ -230,19 +230,6 @@ repository:
         '1': {name: entity.name.class.js}
         '2': {name: support.constant.js}
 
-  literal-arrow-function-storage:
-    patterns:
-    # e.g. (args) => { }
-    - name: meta.function.arrow.js
-      begin: >-
-        (?x)
-          (?=\([^())]*\)\s*(=>))
-      end: (?<=\))\s*(=>)
-      endCaptures:
-        '1': {name: storage.type.function.arrow.js}
-      patterns:
-        - include: '#function-declaration-parameters'
-
   literal-function-storage:
     patterns:
     # e.g. function play(arg1, arg2) {  }
@@ -329,6 +316,97 @@ repository:
         '9': {name: punctuation.separator.key-value.js}
         '10': {name: storage.type.function.js}
       end: (?<=\))
+      patterns:
+        - include: '#function-declaration-parameters'
+
+  literal-arrow-function-storage:
+    patterns:
+    # e.g. (args) => { }
+    - name: meta.function.arrow.js
+      begin: >-
+        (?x)
+          (?=\([^()]*\)\s*(=>))
+      end: (?<=\))\s*(=>)
+      endCaptures:
+        '1': {name: storage.type.function.arrow.js}
+      patterns:
+        - include: '#function-declaration-parameters'
+
+    # e.g. Sound.prototype.play = (args) => { }
+    - name: meta.prototype.function.arrow.js
+      begin: >-
+        (?x)
+          (\b[_$a-zA-Z][_$\w]*)?
+          \.(prototype)
+          \.([_$a-zA-Z][_$\w]*)
+          \s*=
+          \s*(?=\([^()]*\)\s*(=>))
+      beginCaptures:
+        '1': {name: entity.name.class.js}
+        '2': {name: support.constant.js}
+        '3': {name: entity.name.function.js}
+      end: (?<=\))\s*(=>)
+      endCaptures:
+        '1': {name: storage.type.function.arrow.js}
+      patterns:
+        - include: '#function-declaration-parameters'
+
+    # e.g. Sound.play = (args) => { }
+    - name: meta.function.static.js
+      begin: >-
+        (?x)
+          (\b[_$a-zA-Z][_$\w]*)?
+          \.([_$a-zA-Z][_$\w]*)
+          \s*=
+          \s*(?=\([^()]*\)\s*(=>))
+      beginCaptures:
+        '1': {name: entity.name.class.js}
+        '2': {name: entity.name.function.js}
+      end: (?<=\))\s*(=>)
+      endCaptures:
+        '1': {name: storage.type.function.arrow.js}
+      patterns:
+        - include: '#function-declaration-parameters'
+
+    # e.g. play: (args) => { }
+    - name: meta.function.json.js
+      begin: >-
+        (?x)
+          \b([_$a-zA-Z][_$\w]*)
+          \s*(:)
+          \s*(?=\([^()]*\)\s*(=>))
+      beginCaptures:
+        '1': {name: entity.name.function.js}
+        '2': {name: punctuation.separator.key-value.js}
+      end: (?<=\))\s*(=>)
+      endCaptures:
+        '1': {name: storage.type.function.arrow.js}
+      patterns:
+        - include: '#function-declaration-parameters'
+
+    # e.g. "play": (args) => { }
+    - name: meta.function.json.js
+      begin: >-
+        (?x)
+          (?:
+            ((')(.*?)(?<!\\)('))|
+            ((")(.*?)(?<!\\)("))
+          )\s*
+          (:)\s*
+          \s*(?=\([^()]*\)\s*(=>))
+      beginCaptures:
+        '1': {name: string.quoted.single.js}
+        '2': {name: punctuation.definition.string.begin.js}
+        '3': {name: entity.name.function.js}
+        '4': {name: punctuation.definition.string.end.js}
+        '5': {name: string.quoted.double.js}
+        '6': {name: punctuation.definition.string.begin.js}
+        '7': {name: entity.name.function.js}
+        '8': {name: punctuation.definition.string.end.js}
+        '9': {name: punctuation.separator.key-value.js}
+      end: (?<=\))\s*(=>)
+      endCaptures:
+        '1': {name: storage.type.function.arrow.js}
       patterns:
         - include: '#function-declaration-parameters'
 
