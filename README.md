@@ -12,3 +12,9 @@ You may also need to change the ColorScheme, `Preferences -> Color Scheme --> Ja
 ## Screenshots
 
 ![screenshot](https://raw.github.com/Benvie/JavaScriptNext.tmLanguage/master/screenshots/es6.png)
+
+## Contributing
+
+Edit the yaml files with the `YAML-XXX` extensions, convert them to plist xml files, and send in a pull request. The easiest way to do this is by using [AAAPackageDev](https://github.com/SublimeText/AAAPackageDev). You can do all of the above without leaving sublime text.
+
+YAML is used since it's a lot more compact and easier to edit than xml.
