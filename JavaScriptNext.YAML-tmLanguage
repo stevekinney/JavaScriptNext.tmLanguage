@@ -10,7 +10,6 @@ patterns:
 - include: '#comments'
 - include: '#support'
 - include: '#core'
-- include: '#special'
 
 repository:
   core:
@@ -639,17 +638,6 @@ repository:
     - name: variable.other.readwrite.js
       match: '[_$a-zA-Z][_$\w]*'
 
-  special:
-    patterns:
-    - name: entity.name.type.object.js.firebug
-      match: \b(console)\b
-
-    - name: support.function.js.firebug
-      match: \.(warn|info|log|error|time|timeEnd|assert)\b
-
-    - name: keyword.other.js
-      match: \b(debugger)\b
-
   special-comments-conditional-compilation:
     patterns:
     - name: comment.block.conditional.js
@@ -735,6 +723,10 @@ repository:
     - name: support.class.error.js
       match: \b((Eval|Range|Reference|Syntax|Type|URI)?Error)\b
 
+    # debugger
+    - name: keyword.other.js
+      match: \b(debugger)\b
+
     # dom
     - name: support.type.object.dom.js
       match: \b(document|window)\b
@@ -751,6 +743,9 @@ repository:
     # firebug
     - name: support.type.object.firebug.js
       match: \b(console)\b
+
+    - name: support.function.firebug.js
+      match: \.(warn|info|log|error|time|timeEnd|assert)\b
 
     # node
     - name: support.module.node.js

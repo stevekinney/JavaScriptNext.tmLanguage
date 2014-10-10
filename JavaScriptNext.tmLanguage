@@ -28,10 +28,6 @@
 			<key>include</key>
 			<string>#core</string>
 		</dict>
-		<dict>
-			<key>include</key>
-			<string>#special</string>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -1686,30 +1682,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>special</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(console)\b</string>
-					<key>name</key>
-					<string>entity.name.type.object.js.firebug</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\.(warn|info|log|error|time|timeEnd|assert)\b</string>
-					<key>name</key>
-					<string>support.function.js.firebug</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(debugger)\b</string>
-					<key>name</key>
-					<string>keyword.other.js</string>
-				</dict>
-			</array>
-		</dict>
 		<key>special-comments-conditional-compilation</key>
 		<dict>
 			<key>patterns</key>
@@ -1842,6 +1814,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\b(debugger)\b</string>
+					<key>name</key>
+					<string>keyword.other.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\b(document|window)\b</string>
 					<key>name</key>
 					<string>support.type.object.dom.js</string>
@@ -1862,6 +1840,12 @@
 					<string>\b(console)\b</string>
 					<key>name</key>
 					<string>support.type.object.firebug.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\.(warn|info|log|error|time|timeEnd|assert)\b</string>
+					<key>name</key>
+					<string>support.function.firebug.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
