@@ -635,6 +635,14 @@ repository:
       patterns:
       - include: '#string-content'
 
+  string-content:
+    patterns:
+    - name: constant.character.escape.newline.js
+      match: \\\s*\n
+
+    - name: constant.character.escape.js
+      match: \\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)
+
   literal-variable:
     patterns:
     # e.g. .CONSTANT
@@ -665,14 +673,6 @@ repository:
 
     - name: variable.other.readwrite.js
       match: '[_$a-zA-Z][_$\w]*'
-
-  string-content:
-    patterns:
-    - name: constant.character.escape.newline.js
-      match: \\\s*\n
-
-    - name: constant.character.escape.js
-      match: \\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)
 
   leading-space:
     patterns:
