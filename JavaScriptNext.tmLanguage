@@ -690,7 +690,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\b(function(?:\s*\*|(?=\s|[(])))(?:\s*([a-zA-Z_$][_$\w]*))?\s*</string>
+					<string>(?x)
+  \b(function(?:\s*\*|(?=\s|[(])))
+  \s*([_$a-zA-Z][_$\w]*)?\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -718,7 +720,12 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\.([_$a-zA-Z][_$\w]*)\s*=\s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
+					<string>(?x)
+  (\b[_$a-zA-Z][_$\w]*)?
+  \.(prototype)
+  \.([_$a-zA-Z][_$\w]*)
+  \s*=
+  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -756,7 +763,11 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>([A-Z][_$\w]*)?\.([_$a-zA-Z][_$\w]*)\s*=\s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
+					<string>(?x)
+  (\b[_$a-zA-Z][_$\w]*)?
+  \.([_$a-zA-Z][_$\w]*)
+  \s*=
+  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -789,7 +800,10 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>\b([_$a-zA-Z][_$\w]*)\s*(:)\s*\b(function(?:\s*\*|(?=\s|[(])))\s*</string>
+					<string>(?x)
+  \b([_$a-zA-Z][_$\w]*)
+  \s*(:)
+  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
