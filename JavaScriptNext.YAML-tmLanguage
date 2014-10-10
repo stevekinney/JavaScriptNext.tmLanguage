@@ -352,7 +352,7 @@ repository:
         - include: '#function-declaration-parameters'
 
     # e.g. Sound.play = (args) => { }
-    - name: meta.function.static.js
+    - name: meta.function.static.arrow.js
       begin: >-
         (?x)
           (\b[_$a-zA-Z][_$\w]*)?
@@ -369,7 +369,7 @@ repository:
         - include: '#function-declaration-parameters'
 
     # e.g. play: (args) => { }
-    - name: meta.function.json.js
+    - name: meta.function.json.arrow.js
       begin: >-
         (?x)
           \b([_$a-zA-Z][_$\w]*)
@@ -385,7 +385,7 @@ repository:
         - include: '#function-declaration-parameters'
 
     # e.g. "play": (args) => { }
-    - name: meta.function.json.js
+    - name: meta.function.json.arrow.js
       begin: >-
         (?x)
           (?:

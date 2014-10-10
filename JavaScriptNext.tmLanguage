@@ -595,7 +595,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.function.static.js</string>
+					<string>meta.function.static.arrow.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -634,7 +634,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.function.json.js</string>
+					<string>meta.function.json.arrow.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -711,7 +711,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.function.json.js</string>
+					<string>meta.function.json.arrow.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
