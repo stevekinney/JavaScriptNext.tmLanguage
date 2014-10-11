@@ -1933,6 +1933,18 @@
 					<key>patterns</key>
 					<array>
 						<dict>
+							<key>captures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.js</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>/\*</string>
+						</dict>
+						<dict>
 							<key>include</key>
 							<string>source.js</string>
 						</dict>
@@ -1948,23 +1960,9 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(@)(if|elif|else|end)</string>
+					<string>(@)(if|elif|else|end|ifdef|endif|cc_on|set)\b</string>
 					<key>name</key>
 					<string>keyword.control.conditional.js</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.keyword.js</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(@)(cc_on|set)</string>
-					<key>name</key>
-					<string>keyword.operator.conditional.js</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -1976,7 +1974,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(@)(_win32|_win16|_mac|_alpha|_x86|_mc680x0|_PowerPC|_jscript_build|_jscript_version|_jscript|_debug|_fast|[a-zA-Z]\w+)</string>
+					<string>(@)(_win32|_win16|_mac|_alpha|_x86|_mc680x0|_PowerPC|_jscript|_jscript_build|_jscript_version|_debug|_fast|[a-zA-Z]\w+)</string>
 					<key>name</key>
 					<string>variable.other.conditional.js</string>
 				</dict>

@@ -123,20 +123,18 @@ repository:
       captures:
         '0': {name: punctuation.definition.comment.js}
       patterns:
+      - match: /\*
+        captures:
+          '0': {name: punctuation.definition.comment.js}
       - include: source.js
 
     - name: keyword.control.conditional.js
-      match: (@)(if|elif|else|end)
-      captures:
-        '1': {name: punctuation.definition.keyword.js}
-
-    - name: keyword.operator.conditional.js
-      match: (@)(cc_on|set)
+      match: (@)(if|elif|else|end|ifdef|endif|cc_on|set)\b
       captures:
         '1': {name: punctuation.definition.keyword.js}
 
     - name: variable.other.conditional.js
-      match: (@)(_win32|_win16|_mac|_alpha|_x86|_mc680x0|_PowerPC|_jscript_build|_jscript_version|_jscript|_debug|_fast|[a-zA-Z]\w+)
+      match: (@)(_win32|_win16|_mac|_alpha|_x86|_mc680x0|_PowerPC|_jscript|_jscript_build|_jscript_version|_debug|_fast|[a-zA-Z]\w+)
       captures:
         '1': {name: punctuation.definition.variable.js}
 
