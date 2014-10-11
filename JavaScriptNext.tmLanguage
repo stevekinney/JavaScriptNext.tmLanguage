@@ -1933,16 +1933,10 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>captures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.comment.js</string>
-								</dict>
-							</dict>
 							<key>match</key>
 							<string>/\*</string>
+							<key>name</key>
+							<string>punctuation.definition.comment.js</string>
 						</dict>
 						<dict>
 							<key>include</key>

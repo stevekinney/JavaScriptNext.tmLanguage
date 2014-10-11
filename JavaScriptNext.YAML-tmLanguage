@@ -123,9 +123,8 @@ repository:
       captures:
         '0': {name: punctuation.definition.comment.js}
       patterns:
-      - match: /\*
-        captures:
-          '0': {name: punctuation.definition.comment.js}
+      - name: punctuation.definition.comment.js
+        match: /\*
       - include: source.js
 
     - name: keyword.control.conditional.js
