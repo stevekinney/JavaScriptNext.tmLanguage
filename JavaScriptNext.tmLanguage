@@ -178,11 +178,6 @@
 							<key>name</key>
 							<string>punctuation.definition.comment.js</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.js</string>
-						</dict>
 					</dict>
 					<key>match</key>
 					<string>(&lt;!--|--&gt;)</string>
