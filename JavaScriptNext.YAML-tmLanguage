@@ -547,9 +547,6 @@ repository:
     - name: keyword.operator.js
       match: (?<!\.)\b(delete|in|instanceof|of|new|typeof|void|with)\b
 
-    - name: keyword.operator.js
-      match: '!|%|&|\*|--|-|\+\+|\+|~|===|==|=|!=|!==|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\|\||\?\:|\*=|/=|%=|\+=|-=|&=|\^='
-
     - name: punctuation.separator.key-value
       match: ':'
 
@@ -558,22 +555,27 @@ repository:
         (?x)
           !(?!=)| # logical-not     right-to-left   right
           &&    | # logical-and     left-to-right   both
-          \|\|   # logical-or      left-to-right   both
+          \|\|  | # logical-or      left-to-right   both
+
+    - name: keyword.operator.assignment.js
+      match: >-
+        (?x)
+          =      # assignment      right-to-left   both
 
     - name: keyword.operator.assignment.augmented.js
       match: >-
         (?x)
-            %= | # assignment      right-to-left   both
-            &= | # assignment      right-to-left   both
-           \*= | # assignment      right-to-left   both
-           \+= | # assignment      right-to-left   both
-            -= | # assignment      right-to-left   both
-            /= | # assignment      right-to-left   both
-           \^= | # assignment      right-to-left   both
-           \|= | # assignment      right-to-left   both
-           <<= | # assignment      right-to-left   both
-           >>= | # assignment      right-to-left   both
-          >>>=   # assignment      right-to-left   both
+          %=   | # assignment      right-to-left   both
+          &=   | # assignment      right-to-left   both
+          \*=  | # assignment      right-to-left   both
+          \+=  | # assignment      right-to-left   both
+          -=   | # assignment      right-to-left   both
+          /=   | # assignment      right-to-left   both
+          \^=  | # assignment      right-to-left   both
+          \|=  | # assignment      right-to-left   both
+          <<=  | # assignment      right-to-left   both
+          >>=  | # assignment      right-to-left   both
+          >>>= | # assignment      right-to-left   both
 
     - name: keyword.operator.bitwise.js
       match: >-
@@ -599,7 +601,7 @@ repository:
         (?x)
           ===  | # equality        left-to-right   both
           !==  | # equality        left-to-right   both
-           ==  | # equality        left-to-right   both
+          ==   | # equality        left-to-right   both
           !=     # equality        left-to-right   both
 
     - name: keyword.operator.assignment.js
