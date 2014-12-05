@@ -544,6 +544,9 @@ repository:
     - name: keyword.control.switch.js
       match: (?<!\.)\b(case|default|switch)\b
 
+    - name: keyword.control.async.js
+      match: (?<!\.)\b(async|await)\b
+
     - name: keyword.operator.js
       match: (?<!\.)\b(delete|in|instanceof|of|new|typeof|void|with)\b
 

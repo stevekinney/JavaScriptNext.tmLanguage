@@ -1184,6 +1184,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>(?&lt;!\.)\b(async|await)\b</string>
+					<key>name</key>
+					<string>keyword.control.async.js</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(?&lt;!\.)\b(delete|in|instanceof|of|new|typeof|void|with)\b</string>
 					<key>name</key>
 					<string>keyword.operator.js</string>
