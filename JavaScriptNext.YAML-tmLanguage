@@ -536,7 +536,7 @@ repository:
       match: \b(else|if)\b
 
     - name: keyword.control.trycatch.js
-      match: \b(catch|finally|throw|try)\b
+      match: (?<!\.)\b(catch|finally|throw|try)\b
 
     - name: keyword.control.loop.js
       match: \b(break|continue|do|for|goto|while)\b
@@ -809,7 +809,7 @@ repository:
     patterns:
     # built-ins
     - name: support.class.builtin.js
-      match: \b(Array|Boolean|Date|Function|Map|Math|Number|Object|Proxy|RegExp|Set|String|WeakMap)\b
+      match: \b(Array|Boolean|Date|Function|Map|Math|Number|Object|Promise|Proxy|RegExp|Set|String|WeakMap)\b
 
     - name: support.function.js
       match: \b(decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape)\b(?=\()

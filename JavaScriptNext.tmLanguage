@@ -1166,7 +1166,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(catch|finally|throw|try)\b</string>
+					<string>(?&lt;!\.)\b(catch|finally|throw|try)\b</string>
 					<key>name</key>
 					<string>keyword.control.trycatch.js</string>
 				</dict>
@@ -1994,7 +1994,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(Array|Boolean|Date|Function|Map|Math|Number|Object|Proxy|RegExp|Set|String|WeakMap)\b</string>
+					<string>\b(Array|Boolean|Date|Function|Map|Math|Number|Object|Promise|Proxy|RegExp|Set|String|WeakMap)\b</string>
 					<key>name</key>
 					<string>support.class.builtin.js</string>
 				</dict>
