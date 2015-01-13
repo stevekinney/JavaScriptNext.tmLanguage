@@ -555,9 +555,6 @@ repository:
     - name: keyword.operator.js
       match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
 
-    - name: punctuation.separator.key-value
-      match: ':'
-
     - name: keyword.operator.logical.js
       match: >-
         (?x)
@@ -611,9 +608,6 @@ repository:
           !==  | # equality        left-to-right   both
           ==   | # equality        left-to-right   both
           !=     # equality        left-to-right   both
-
-    - name: keyword.operator.assignment.js
-      match: (?x)=
 
     - name: keyword.operator.arithmetic.js
       match: >-

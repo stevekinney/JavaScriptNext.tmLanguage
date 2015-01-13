@@ -1277,12 +1277,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?x)=</string>
-					<key>name</key>
-					<string>keyword.operator.assignment.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>(?x)
   --   | # decrement       n/a             right-or-left
   \+\+ | # increment       n/a             right-or-left
