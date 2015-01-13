@@ -124,7 +124,6 @@ repository:
       patterns:
       - name: punctuation.definition.comment.js
         match: /\*
-
       - include: $self
 
     - name: keyword.control.conditional.js
@@ -147,13 +146,9 @@ repository:
         '1': {name: punctuation.definition.parameters.end.js}
       patterns:
       - name: variable.parameter.function.js
-        match: >-
-          (?x)
-            [_$a-zA-Z][_$\w]*
-
+        match: '[_$a-zA-Z][_$\w]*'
       - name: punctuation.separator.parameter.function.js
         match: ','
-
       - include: '#comments'
 
   literal-module:
