@@ -2130,6 +2130,12 @@
 					<key>name</key>
 					<string>support.class.node.js</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>\$[_$a-zA-Z][_$\w]*</string>
+					<key>name</key>
+					<string>variable.other.dollar.js</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>
