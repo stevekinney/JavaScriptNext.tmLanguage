@@ -873,4 +873,4 @@ repository:
 
     # dollar variables
     - name: variable.other.dollar.js
-      match: '\$[_$a-zA-Z][_$\w]*'
+      match: '\$[_$\w]+'

@@ -2132,7 +2132,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\$[_$a-zA-Z][_$\w]*</string>
+					<string>\$[_$\w]+</string>
 					<key>name</key>
 					<string>variable.other.dollar.js</string>
 				</dict>
