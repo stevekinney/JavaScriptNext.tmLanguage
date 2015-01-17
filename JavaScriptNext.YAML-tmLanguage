@@ -223,14 +223,14 @@ repository:
       match: ([_$a-zA-Z][_$\w]*)\.(prototype)\s*=\s*
       captures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
 
     # e.g. Sound.prototype
     - name: meta.prototype.js
       match: ([_$a-zA-Z][_$\w]*)\.(prototype)
       captures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
 
   literal-function-storage:
     patterns:
@@ -258,7 +258,7 @@ repository:
           \s*(function(?:\s*\*|(?=\s|[(])))\s*
       beginCaptures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
         '3': {name: entity.name.function.js}
         '4': {name: storage.type.function.js}
       end: (?<=\))
@@ -345,7 +345,7 @@ repository:
           \s*(?=\([^()]*\)\s*(=>))
       beginCaptures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
         '3': {name: entity.name.function.js}
       end: (?<=\))\s*(=>)
       endCaptures:
