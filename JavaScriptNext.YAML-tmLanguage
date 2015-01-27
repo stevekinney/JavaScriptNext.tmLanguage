@@ -31,8 +31,9 @@ repository:
     - include: '#literal-function-storage'
     - include: '#literal-arrow-function-storage'
     - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
+    - include: '#literal-labels'
 
-    # after literal-function-storage which requires the below in some cases
+    # after literal-function-storage & literal-labels which requires the below in some cases
     - include: '#literal-string'
     - include: '#literal-language-variable'
 
@@ -41,7 +42,6 @@ repository:
     - include: '#literal-function-call'
 
     # punctuation
-    - include: '#literal-labels'
     - include: '#literal-variable'
     - include: '#literal-punctuation'
 
@@ -555,15 +555,6 @@ repository:
     - name: keyword.operator.js
       match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
 
-    - begin: \?
-      beginCaptures:
-        '0': {name: keyword.operator.ternary.js}
-      end: ':'
-      endCaptures:
-        '0': {name: keyword.operator.ternary.js}
-      patterns:
-      - include: $self
-
     - name: keyword.operator.logical.js
       match: >-
         (?x)
@@ -629,14 +620,25 @@ repository:
           \+   | # addition        left-to-right   both
           -      # subtraction     left-to-right   both
 
+    - name: keyword.operator.ternary.js
+      match: '\?|:'
+
   literal-labels:
     patterns:
-    - match: (?<=['"])\s*(:)
-      captures:
-        '1': {name: punctuation.separator.key-value.js}
+    - begin: >-
+        (?x)
+          (?<!\?|\?\s)(?=(
+            ((')(.*?)(?<!\\)('))|
+            ((")(.*?)(?<!\\)("))
+          )\s*:)
+      end: ':'
+      endCaptures:
+        '0': {name: punctuation.separator.key-value.js}
+      patterns:
+      - include: '#literal-string'
 
     - name: constant.other.object.key.js
-      match: (?<!\.|\?|\? )([_$a-zA-Z][_$\w]*)\s*(:)
+      match: (?<!\.|\?|\?\s)([_$a-zA-Z][_$\w]*)\s*(:)
       captures:
         '1': {name: string.unquoted.label.js}
         '2': {name: punctuation.separator.key-value.js}

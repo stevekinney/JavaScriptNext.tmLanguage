@@ -264,6 +264,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#literal-labels</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#literal-string</string>
 				</dict>
 				<dict>
@@ -277,10 +281,6 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-function-call</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-labels</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1232,35 +1232,6 @@
 					<string>keyword.operator.js</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>\?</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.ternary.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>:</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.ternary.js</string>
-						</dict>
-					</dict>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>$self</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
 					<key>match</key>
 					<string>(?x)
   !(?!=)| # logical-not     right-to-left   right
@@ -1339,6 +1310,12 @@
 					<key>name</key>
 					<string>keyword.operator.arithmetic.js</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>\?|:</string>
+					<key>name</key>
+					<string>keyword.operator.ternary.js</string>
+				</dict>
 			</array>
 		</dict>
 		<key>literal-labels</key>
@@ -1346,16 +1323,29 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>(?x)
+  (?&lt;!\?|\?\s)(?=(
+    ((')(.*?)(?&lt;!\\)('))|
+    ((")(.*?)(?&lt;!\\)("))
+  )\s*:)</string>
+					<key>end</key>
+					<string>:</string>
+					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.separator.key-value.js</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>(?&lt;=['"])\s*(:)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#literal-string</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -1372,7 +1362,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?&lt;!\.|\?|\? )([_$a-zA-Z][_$\w]*)\s*(:)</string>
+					<string>(?&lt;!\.|\?|\?\s)([_$a-zA-Z][_$\w]*)\s*(:)</string>
 					<key>name</key>
 					<string>constant.other.object.key.js</string>
 				</dict>
