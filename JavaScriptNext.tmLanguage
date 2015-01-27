@@ -1893,6 +1893,12 @@
 					<string>variable.other.constant.js</string>
 				</dict>
 				<dict>
+					<key>match</key>
+					<string>\$[_$\w]+</string>
+					<key>name</key>
+					<string>variable.other.dollar.js</string>
+				</dict>
+				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -2131,12 +2137,6 @@
 					<string>}}</string>
 					<key>name</key>
 					<string>meta.tag.mustache.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\$[_$\w]+</string>
-					<key>name</key>
-					<string>variable.other.dollar.js</string>
 				</dict>
 			</array>
 		</dict>

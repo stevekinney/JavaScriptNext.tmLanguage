@@ -759,6 +759,10 @@ repository:
     - name: variable.other.constant.js
       match: \.?[A-Z][_$\dA-Z]*\b
 
+    # dollar variables
+    - name: variable.other.dollar.js
+      match: '\$[_$\w]+'
+
     # e.g. Class.property
     - name: meta.property.class.js
       match: >-
@@ -871,7 +875,3 @@ repository:
     - name: meta.tag.mustache.js
       begin: '{{'
       end: '}}'
-
-    # dollar variables
-    - name: variable.other.dollar.js
-      match: '\$[_$\w]+'
