@@ -2131,6 +2131,14 @@
 					<string>support.class.node.js</string>
 				</dict>
 				<dict>
+					<key>begin</key>
+					<string>{{</string>
+					<key>end</key>
+					<string>}}</string>
+					<key>name</key>
+					<string>meta.tag.mustache.js</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>\$[_$\w]+</string>
 					<key>name</key>

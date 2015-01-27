@@ -871,6 +871,11 @@ repository:
     - name: support.class.node.js
       match: \b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b
 
+    # mustache
+    - name: meta.tag.mustache.js
+      begin: '{{'
+      end: '}}'
+
     # dollar variables
     - name: variable.other.dollar.js
       match: '\$[_$\w]+'
