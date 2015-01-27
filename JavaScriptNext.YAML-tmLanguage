@@ -574,7 +574,7 @@ repository:
     - name: keyword.operator.assignment.js
       match: >-
         (?x)
-          =      # assignment      right-to-left   both
+          =(?!=)| # assignment      right-to-left   both
 
     - name: keyword.operator.assignment.augmented.js
       match: >-
