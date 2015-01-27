@@ -530,7 +530,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>support.constant.js</string>
+							<string>variable.language.prototype.js</string>
 						</dict>
 						<key>3</key>
 						<dict>
@@ -947,7 +947,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>support.constant.js</string>
+							<string>variable.language.prototype.js</string>
 						</dict>
 						<key>3</key>
 						<dict>
@@ -1564,12 +1564,6 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.)\b(module)\b</string>
-					<key>name</key>
-					<string>storage.type.module.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>(?&lt;!\.)\b(import|export|from|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.module.js</string>
@@ -1629,7 +1623,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>support.constant.js</string>
+							<string>variable.language.prototype.js</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -1648,7 +1642,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>support.constant.js</string>
+							<string>variable.language.prototype.js</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -2120,7 +2114,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.)\b(process|process\.(env|stdout|stdin|stderr)|global|GLOBAL|root|exports|__dirname|__filename|console)\b</string>
+					<string>(?&lt;!\.)\b(process|process\.(env|stdout|stdin|stderr)|global|GLOBAL|root|module|exports|__dirname|__filename|console)\b</string>
 					<key>name</key>
 					<string>support.type.object.node.js</string>
 				</dict>

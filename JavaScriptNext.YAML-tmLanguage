@@ -153,10 +153,6 @@ repository:
 
   literal-module:
     patterns:
-    # module names are defined using strings
-    - name: storage.type.module.js
-      match: (?<!\.)\b(module)\b
-
     - name: keyword.operator.module.js
       match: (?<!\.)\b(import|export|from|as)\b
 
@@ -223,14 +219,14 @@ repository:
       match: ([_$a-zA-Z][_$\w]*)\.(prototype)\s*=\s*
       captures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
 
     # e.g. Sound.prototype
     - name: meta.prototype.js
       match: ([_$a-zA-Z][_$\w]*)\.(prototype)
       captures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
 
   literal-function-storage:
     patterns:
@@ -258,7 +254,7 @@ repository:
           \s*(function(?:\s*\*|(?=\s|[(])))\s*
       beginCaptures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
         '3': {name: entity.name.function.js}
         '4': {name: storage.type.function.js}
       end: (?<=\))
@@ -345,7 +341,7 @@ repository:
           \s*(?=\([^()]*\)\s*(=>))
       beginCaptures:
         '1': {name: entity.name.class.js}
-        '2': {name: support.constant.js}
+        '2': {name: variable.language.prototype.js}
         '3': {name: entity.name.function.js}
       end: (?<=\))\s*(=>)
       endCaptures:
@@ -866,7 +862,7 @@ repository:
       match: (?<!\.)\b(natives|buffer|child_process|cluster|crypto|dgram|dns|fs|http|https|net|os|path|punycode|string|string_decoder|readline|repl|tls|tty|util|vm|zlib)\b
 
     - name: support.type.object.node.js
-      match: (?<!\.)\b(process|process\.(env|stdout|stdin|stderr)|global|GLOBAL|root|exports|__dirname|__filename|console)\b
+      match: (?<!\.)\b(process|process\.(env|stdout|stdin|stderr)|global|GLOBAL|root|module|exports|__dirname|__filename|console)\b
 
     - name: support.class.node.js
       match: \b(Buffer|EventEmitter|Server|Pipe|Socket|REPLServer|ReadStream|WriteStream|Stream|Inflate|Deflate|InflateRaw|DeflateRaw|GZip|GUnzip|Unzip|Zip)\b
