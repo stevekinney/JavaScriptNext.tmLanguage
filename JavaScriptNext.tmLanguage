@@ -1666,7 +1666,7 @@
 					<key>match</key>
 					<string>([_$a-zA-Z][_$\w]*)\.(prototype)</string>
 					<key>name</key>
-					<string>meta.prototype.js</string>
+					<string>meta.prototype.access.js</string>
 				</dict>
 			</array>
 		</dict>
