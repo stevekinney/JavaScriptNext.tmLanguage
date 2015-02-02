@@ -234,7 +234,7 @@ repository:
 
     # e.g. Sound.prototype
     - name: meta.prototype.access.js
-      match: ([_$a-zA-Z][_$\w]*)\.(prototype)
+      match: ([_$a-zA-Z][_$\w]*)\.(prototype)\b
       captures:
         '1': {name: entity.name.class.js}
         '2': {name: variable.language.prototype.js}

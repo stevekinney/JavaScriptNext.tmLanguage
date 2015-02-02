@@ -1678,7 +1678,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([_$a-zA-Z][_$\w]*)\.(prototype)</string>
+					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\b</string>
 					<key>name</key>
 					<string>meta.prototype.access.js</string>
 				</dict>
