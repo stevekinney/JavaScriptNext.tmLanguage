@@ -1427,9 +1427,9 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b(static\s)?
-  \s*([_$a-zA-Z][_$\w]*)
-  \s*(?=\([^())]*\)\s*\{)</string>
+  \b(?:(static)\s+)?
+  ([_$a-zA-Z][_$\w]*)\s*
+  (?=\([^())]*\)\s*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1458,10 +1458,10 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b(static\s)?
-  \s*(get|set)\s
-  \s*([_$a-zA-Z][_$\w]*)
-  \s*(?=\([^())]*\)\s*\{)</string>
+  \b(?:(static)\s+)?
+  (get|set)\s+
+  ([_$a-zA-Z][_$\w]*)\s*
+  (?=\([^())]*\)\s*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
