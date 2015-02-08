@@ -150,6 +150,13 @@ repository:
         match: '[_$a-zA-Z][_$\w]*'
       - name: punctuation.separator.parameter.function.js
         match: ','
+      - name: meta.parameter.optional.js
+        begin: '='
+        beginCaptures:
+          '0': {name: keyword.operator.assignment.js}
+        end: '(?=[,)])'
+        patterns:
+        - include: $self
       - include: '#comments'
 
   literal-module:
