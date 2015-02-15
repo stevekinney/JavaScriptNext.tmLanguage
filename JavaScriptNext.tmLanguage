@@ -329,7 +329,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>[_$a-zA-Z][_$\w]*</string>
+							<string>[_$a-zA-Z][$\w]*</string>
 							<key>name</key>
 							<string>variable.parameter.function.js</string>
 						</dict>
@@ -542,9 +542,9 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (\b_?[A-Z][_$\w]*)?
+  (\b_?[A-Z][$\w]*)?
   \.(prototype)
-  \.([_$a-zA-Z][_$\w]*)
+  \.([_$a-zA-Z][$\w]*)
   \s*=
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
@@ -588,8 +588,8 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (\b_?[A-Z][_$\w]*)?
-  \.([_$a-zA-Z][_$\w]*)
+  (\b_?[A-Z][$\w]*)?
+  \.([_$a-zA-Z][$\w]*)
   \s*=
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
@@ -628,7 +628,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b([_$a-zA-Z][_$\w]*)
+  \b([_$a-zA-Z][$\w]*)
   \s*(:)
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
@@ -751,7 +751,7 @@
 					<key>begin</key>
 					<string>(?x)
   (?&lt;!\.)\b(class)
-  \s+([_$a-zA-Z][_$\w]*)</string>
+  \s+([_$a-zA-Z][$\w]*)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -863,7 +863,7 @@
 					</dict>
 					<key>match</key>
 					<string>(?x)
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([_$a-zA-Z][$\w]*)\s*
   (\(\s*\))</string>
 					<key>name</key>
 					<string>meta.function-call.without-arguments.js</string>
@@ -879,7 +879,7 @@
 					</dict>
 					<key>match</key>
 					<string>(?x)
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([_$a-zA-Z][$\w]*)\s*
   (?=\()</string>
 					<key>name</key>
 					<string>meta.function-call.with-arguments.js</string>
@@ -894,7 +894,7 @@
 					<key>begin</key>
 					<string>(?x)
   \b(function(?:\s*\*|(?=\s|[(])))
-  \s*([_$a-zA-Z][_$\w]*)?\s*</string>
+  \s*([_$a-zA-Z][$\w]*)?\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -923,9 +923,9 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (\b_?[A-Z][_$\w]*)?
+  (\b_?[A-Z][$\w]*)?
   \.(prototype)
-  \.([_$a-zA-Z][_$\w]*)
+  \.([_$a-zA-Z][$\w]*)
   \s*=
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
@@ -966,8 +966,8 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (\b_?[A-Z][_$\w]*)?
-  \.([_$a-zA-Z][_$\w]*)
+  (\b_?[A-Z][$\w]*)?
+  \.([_$a-zA-Z][$\w]*)
   \s*=
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
@@ -1003,7 +1003,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b([_$a-zA-Z][_$\w]*)
+  \b([_$a-zA-Z][$\w]*)
   \s*(:)
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
@@ -1118,7 +1118,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(new)\s+(?=[_$a-zA-Z][_$\w.]*)</string>
+					<string>(new)\s+(?=[_$a-zA-Z][$\w.]*)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1128,7 +1128,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?![_$a-zA-Z][_$\w.]*)</string>
+					<string>(?![_$a-zA-Z][$\w.]*)</string>
 					<key>name</key>
 					<string>meta.instance.constructor</string>
 					<key>patterns</key>
@@ -1147,7 +1147,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>([_$a-zA-Z][_$\w.]*\.)?([_$a-zA-Z][_$\w]*)</string>
+							<string>([_$a-zA-Z][$\w.]*\.)?([_$a-zA-Z][$\w]*)</string>
 						</dict>
 					</array>
 				</dict>
@@ -1353,7 +1353,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?&lt;!\.|\?|\?\s)([_$a-zA-Z][_$\w]*)\s*(:)</string>
+					<string>(?&lt;!\.|\?|\?\s)([_$a-zA-Z][$\w]*)\s*(:)</string>
 					<key>name</key>
 					<string>constant.other.object.key.js</string>
 				</dict>
@@ -1451,7 +1451,7 @@
 					<key>begin</key>
 					<string>(?x)
   \b(?:(static)\s+)?
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([_$a-zA-Z][$\w]*)\s*
   (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1483,7 +1483,7 @@
 					<string>(?x)
   \b(?:(static)\s+)?
   (get|set)\s+
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([_$a-zA-Z][$\w]*)\s*
   (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1543,8 +1543,8 @@
 					<key>match</key>
 					<string>(?x)
   (?:(?&lt;=\.)|\b)
-  ([A-Z][_$\w]*)\s*\.
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([A-Z][$\w]*)\s*\.
+  ([_$a-zA-Z][$\w]*)\s*
   (\(\s*\))</string>
 					<key>name</key>
 					<string>meta.function-call.static.without-arguments.js</string>
@@ -1566,8 +1566,8 @@
 					<key>match</key>
 					<string>(?x)
   (?:(?&lt;=\.)|\b)
-  ([A-Z][_$\w]*)\s*\.
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([A-Z][$\w]*)\s*\.
+  ([_$a-zA-Z][$\w]*)\s*
   (?=\()</string>
 					<key>name</key>
 					<string>meta.function-call.static.with-arguments.js</string>
@@ -1589,7 +1589,7 @@
 					<key>match</key>
 					<string>(?x)
   (?&lt;=\.)
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([_$a-zA-Z][$\w]*)\s*
   (\(\s*\))</string>
 					<key>name</key>
 					<string>meta.function-call.method.without-arguments.js</string>
@@ -1606,7 +1606,7 @@
 					<key>match</key>
 					<string>(?x)
   (?&lt;=\.)
-  ([_$a-zA-Z][_$\w]*)\s*
+  ([_$a-zA-Z][$\w]*)\s*
   (?=\()</string>
 					<key>name</key>
 					<string>meta.function-call.method.with-arguments.js</string>
@@ -1682,7 +1682,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\s*=\s*</string>
+					<string>([_$a-zA-Z][$\w]*)\.(prototype)\s*=\s*</string>
 					<key>name</key>
 					<string>meta.prototype.declaration.js</string>
 				</dict>
@@ -1701,7 +1701,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([_$a-zA-Z][_$\w]*)\.(prototype)\b</string>
+					<string>([_$a-zA-Z][$\w]*)\.(prototype)\b</string>
 					<key>name</key>
 					<string>meta.prototype.access.js</string>
 				</dict>
@@ -1949,7 +1949,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\$[_$\w]+</string>
+					<string>\$[$\w]+</string>
 					<key>name</key>
 					<string>variable.other.dollar.js</string>
 				</dict>
@@ -1969,8 +1969,8 @@
 					</dict>
 					<key>match</key>
 					<string>(?x)
-  \b([A-Z][_$\w]*)\s*\.
-  ([_$a-zA-Z][_$\w]*)</string>
+  \b([A-Z][$\w]*)\s*\.
+  ([_$a-zA-Z][$\w]*)</string>
 					<key>name</key>
 					<string>meta.property.class.js</string>
 				</dict>
@@ -1984,7 +1984,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?&lt;!\.)[_$a-zA-Z][_$\w]*\s*(?=[\[\.])</string>
+					<string>(?&lt;!\.)[_$a-zA-Z][$\w]*\s*(?=[\[\.])</string>
 					<key>name</key>
 					<string>variable.other.object.js</string>
 				</dict>
@@ -1998,13 +1998,13 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?&lt;=\.)\s*[_$a-zA-Z][_$\w]*</string>
+					<string>(?&lt;=\.)\s*[_$a-zA-Z][$\w]*</string>
 					<key>name</key>
 					<string>meta.property.object.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>[_$a-zA-Z][_$\w]*</string>
+					<string>[_$a-zA-Z][$\w]*</string>
 					<key>name</key>
 					<string>variable.other.readwrite.js</string>
 				</dict>
