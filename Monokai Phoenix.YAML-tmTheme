@@ -131,21 +131,16 @@ settings:
 - name: entity.name.accessor.js
   scope: entity.name.accessor.js
   settings:
-    background: '#001122'
-    fontStyle: ''
     foreground: '#A6E22E'
 
 - name: entity.name.method.js
   scope: entity.name.method.js
   settings:
-    background: '#110022'
-    fontStyle: ''
     foreground: '#A6E22E'
 
 - name: meta.method.js
   scope: meta.method.js
   settings:
-    fontStyle: ''
     foreground: '#FFF'
 
 - name: support.function
@@ -156,7 +151,6 @@ settings:
 - name: Function name
   scope: entity.name.function
   settings:
-    fontStyle: ''
     foreground: '#A6E22E'
 
 - name: entity.name.class.js

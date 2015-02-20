@@ -285,10 +285,6 @@
 			<string>entity.name.accessor.js</string>
 			<key>settings</key>
 			<dict>
-				<key>background</key>
-				<string>#001122</string>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
 				<string>#A6E22E</string>
 			</dict>
@@ -300,10 +296,6 @@
 			<string>entity.name.method.js</string>
 			<key>settings</key>
 			<dict>
-				<key>background</key>
-				<string>#110022</string>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
 				<string>#A6E22E</string>
 			</dict>
@@ -315,8 +307,6 @@
 			<string>meta.method.js</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
 				<string>#FFF</string>
 			</dict>
@@ -339,8 +329,6 @@
 			<string>entity.name.function</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
 				<string>#A6E22E</string>
 			</dict>
