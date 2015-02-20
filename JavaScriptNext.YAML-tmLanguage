@@ -146,6 +146,8 @@ repository:
       endCaptures:
         '1': {name: punctuation.definition.parameters.end.js}
       patterns:
+      - name: keyword.operator.spread.js
+        match: (?<!\.)\.\.\.
       - name: variable.parameter.function.js
         match: '[_$a-zA-Z][$\w]*'
       - name: punctuation.separator.parameter.function.js
@@ -492,16 +494,16 @@ repository:
   literal-language-variable:
     patterns:
     - name: variable.language.arguments.js
-      match: (?<!\.)\b(arguments)\b
+      match: (?<!(?<!\.\.)\.)\b(arguments)\b
 
     - name: variable.language.super.js
-      match: (?<!\.)\b(super)\b
+      match: (?<!(?<!\.\.)\.)\b(super)\b
 
     - name: variable.language.this.js
-      match: (?<!\.)\b(this)\b
+      match: (?<!(?<!\.\.)\.)\b(this)\b
 
     - name: variable.language.self.js
-      match: (?<!\.)\b(self)\b
+      match: (?<!(?<!\.\.)\.)\b(self)\b
 
     - name: variable.language.proto.js
       match: (?<=\.)\b(__proto__)\b
@@ -640,6 +642,9 @@ repository:
 
     - name: keyword.operator.ternary.js
       match: '\?|:'
+
+    - name: keyword.operator.spread.js
+      match: (?<!\.)\.\.\.
 
   literal-labels:
     patterns:
