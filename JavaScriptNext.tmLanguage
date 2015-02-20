@@ -236,27 +236,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-language-constant</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-keywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-module</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-class</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-function-storage</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-method</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -276,7 +256,27 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#literal-keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-language-constant</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#literal-language-variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-module</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-method</string>
 				</dict>
 				<dict>
 					<key>include</key>

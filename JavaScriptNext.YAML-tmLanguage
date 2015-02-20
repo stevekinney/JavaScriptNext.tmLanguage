@@ -20,23 +20,23 @@ repository:
     - include: '#literal-regex'               # before operators to avoid ambiguities
     - include: '#literal-number'
     - include: '#literal-quasi'
-    - include: '#literal-language-constant'
 
-    # keywords/operators
-    - include: '#literal-keywords'
-
-    # modules/classes/functions
-    - include: '#literal-module'
-    - include: '#literal-class'
+    # object literals
     - include: '#literal-function-storage'
-    - include: '#literal-method'
     - include: '#literal-arrow-function-storage'
     - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
     - include: '#literal-labels'
 
-    # after literal-function-storage & literal-labels which requires the below in some cases
+    # after object literals which requires the below in some cases
     - include: '#literal-string'
+    - include: '#literal-keywords'
+    - include: '#literal-language-constant'
     - include: '#literal-language-variable'
+
+    # modules/classes/methods
+    - include: '#literal-module'
+    - include: '#literal-class'
+    - include: '#literal-method'
 
     # function calls
     - include: '#literal-method-call'
