@@ -757,7 +757,7 @@
 					<key>begin</key>
 					<string>(?x)
   (?&lt;!\.)\b(class)
-  \s+([_$a-zA-Z][$\w]*)</string>
+  \s+((?!\b(extends)\b)[_$a-zA-Z][$\w]*)?</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -787,10 +787,10 @@
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>extends</string>
+							<string>\b(extends)\b</string>
 							<key>beginCaptures</key>
 							<dict>
-								<key>0</key>
+								<key>1</key>
 								<dict>
 									<key>name</key>
 									<string>storage.type.extends.js</string>

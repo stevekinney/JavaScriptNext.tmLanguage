@@ -173,7 +173,7 @@ repository:
       begin: >-
         (?x)
           (?<!\.)\b(class)
-          \s+([_$a-zA-Z][$\w]*)
+          \s+((?!\b(extends)\b)[_$a-zA-Z][$\w]*)?
       beginCaptures:
         '1': {name: storage.type.class.js}
         '2': {name: entity.name.class.js}
@@ -182,9 +182,9 @@ repository:
         '0': {name: meta.brace.curly.js}
       patterns:
       - name: meta.class.extends.js
-        begin: extends
+        begin: \b(extends)\b
         beginCaptures:
-          '0': {name: storage.type.extends.js}
+          '1': {name: storage.type.extends.js}
         end: '(?={)'
         endCaptures:
           '0': {name: meta.brace.curly.js}
