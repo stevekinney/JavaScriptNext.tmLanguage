@@ -1804,13 +1804,13 @@
 					<key>match</key>
 					<string>,</string>
 					<key>name</key>
-					<string>meta.delimiter.object.comma.js</string>
+					<string>meta.delimiter.comma.js</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\.</string>
 					<key>name</key>
-					<string>meta.delimiter.method.period.js</string>
+					<string>meta.delimiter.period.js</string>
 				</dict>
 			</array>
 		</dict>

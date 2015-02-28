@@ -718,10 +718,10 @@ repository:
     - name: punctuation.terminator.statement.js
       match: \;
 
-    - name: meta.delimiter.object.comma.js
+    - name: meta.delimiter.comma.js
       match: ','
 
-    - name: meta.delimiter.method.period.js
+    - name: meta.delimiter.period.js
       match: \.
 
   literal-quasi:
