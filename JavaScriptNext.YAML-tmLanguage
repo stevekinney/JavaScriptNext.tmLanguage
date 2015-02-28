@@ -804,13 +804,15 @@ repository:
 
   literal-variable:
     patterns:
-    # e.g. .CONSTANT
+    # e.g. CONSTANT
     - name: variable.other.constant.js
-      match: \.?[A-Z][_$\dA-Z]*\b
+      match: '[A-Z][_$\dA-Z]*'
 
     # dollar variables
     - name: variable.other.dollar.js
-      match: '\$[$\w]+'
+      match: '(\$)[$\w]+'
+      captures:
+        '1': {name: punctuation.dollar.js}
 
     # e.g. Class.property
     - name: meta.property.class.js
