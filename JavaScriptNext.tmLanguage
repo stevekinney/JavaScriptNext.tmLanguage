@@ -528,8 +528,16 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  (?:\b(async)\s+)?
+  (\basync)?\s*
   (?=\([^()]*\)\s*(=&gt;))</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))\s*(=&gt;)</string>
 					<key>endCaptures</key>
@@ -557,7 +565,7 @@
   \.(prototype)
   \.([_$a-zA-Z][$\w]*)
   \s*=
-  \s*(?:(async)\s+)?
+  \s*(async)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -608,7 +616,7 @@
   (\b_?[A-Z][$\w]*)?
   \.([_$a-zA-Z][$\w]*)
   \s*=
-  \s*(?:(async)\s+)?
+  \s*(async)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -653,7 +661,7 @@
 					<string>(?x)
   \b([_$a-zA-Z][$\w]*)
   \s*(:)
-  \s*(?:(async)\s+)?
+  \s*(async)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -701,7 +709,7 @@
     ((")((?:[^"]|\\")*)("))
   )
   \s*(:)
-  \s*(?:(async)\s+)?
+  \s*(async)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
