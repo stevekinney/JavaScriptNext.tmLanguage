@@ -30,13 +30,14 @@ repository:
     # after object literals which requires the below in some cases
     - include: '#literal-string'
     - include: '#literal-keywords'
+    - include: '#literal-method'
+    - include: '#literal-operators'
     - include: '#literal-language-constant'
     - include: '#literal-language-variable'
 
-    # modules/classes/methods
+    # modules/classes
     - include: '#literal-module'
     - include: '#literal-class'
-    - include: '#literal-method'
 
     # function calls
     - include: '#literal-method-call'
@@ -593,6 +594,8 @@ repository:
       patterns:
       - include: $self
 
+  literal-operators:
+    patterns:
     - name: keyword.operator.js
       match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
 
