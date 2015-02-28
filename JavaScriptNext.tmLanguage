@@ -1518,7 +1518,7 @@
 					<string>(?x)
   (?:\b(static)\s+)?
   (?:\b(async)\s+)?
-  (\*?\s*[_$a-zA-Z][$\w]*)\s*
+  (?:\*?\s*([_$a-zA-Z][$\w]*))\s*
   (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -2233,12 +2233,12 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.type.object.firebug.js</string>
+							<string>support.type.object.console.js</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>support.function.firebug.js</string>
+							<string>support.function.console.js</string>
 						</dict>
 					</dict>
 					<key>match</key>

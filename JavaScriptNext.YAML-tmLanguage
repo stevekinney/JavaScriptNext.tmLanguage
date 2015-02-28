@@ -208,7 +208,7 @@ repository:
         (?x)
           (?:\b(static)\s+)?
           (?:\b(async)\s+)?
-          (\*?\s*[_$a-zA-Z][$\w]*)\s*
+          (?:\*?\s*([_$a-zA-Z][$\w]*))\s*
           (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)
       beginCaptures:
         '1': {name: storage.type.js}
