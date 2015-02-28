@@ -937,7 +937,7 @@
 					<key>begin</key>
 					<string>(?x)
   (?:\b(async)\s+)?
-  \s*(function(?:\s*\*|(?=\s|[(])))
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))
   \s*([_$a-zA-Z][$\w]*)?\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -952,6 +952,11 @@
 							<string>storage.type.function.js</string>
 						</dict>
 						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.function.js</string>
@@ -977,7 +982,7 @@
   \.([_$a-zA-Z][$\w]*)
   \s*=
   \s*(?:(async)\s+)?
-  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1005,6 +1010,11 @@
 							<key>name</key>
 							<string>storage.type.function.js</string>
 						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))</string>
@@ -1025,7 +1035,7 @@
   \.([_$a-zA-Z][$\w]*)
   \s*=
   \s*(?:(async)\s+)?
-  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1048,6 +1058,11 @@
 							<key>name</key>
 							<string>storage.type.function.js</string>
 						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))</string>
@@ -1067,7 +1082,7 @@
   \b([_$a-zA-Z][$\w]*)
   \s*(:)
   \s*(?:(async)\s+)?
-  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1089,6 +1104,11 @@
 						<dict>
 							<key>name</key>
 							<string>storage.type.function.js</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1112,7 +1132,7 @@
   )
   \s*(:)
   \s*(?:(async)\s+)?
-  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1129,6 +1149,11 @@
 						<dict>
 							<key>name</key>
 							<string>storage.type.function.js</string>
+						</dict>
+						<key>12</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -1434,7 +1459,7 @@
 					<string>(?x)
   (?:\b(static)\s+)?
   (?:\b(async)\s+)?
-  (?:\*?\s*([_$a-zA-Z][$\w]*))\s*
+  (\*)?\s*([_$a-zA-Z][$\w]*)\s*
   (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1449,6 +1474,11 @@
 							<string>storage.type.js</string>
 						</dict>
 						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.method.js</string>
