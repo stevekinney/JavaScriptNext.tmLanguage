@@ -209,7 +209,7 @@ repository:
         (?x)
           (?:\b(static)\s+)?
           (?:\b(async)\s+)?
-          (\*)?\s*([_$a-zA-Z][$\w]*)\s*
+          (?:(\*)\s*)?([_$a-zA-Z][$\w]*)\s*
           (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)
       beginCaptures:
         '1': {name: storage.type.js}
@@ -570,7 +570,6 @@ repository:
       end: (?![_$a-zA-Z][$\w.]*)
       patterns:
       - include: '#support'
-
       - match: ([_$a-zA-Z][$\w.]*\.)?([_$a-zA-Z][$\w]*)
         captures:
           '2': {name: entity.name.type.new.js}
@@ -582,7 +581,7 @@ repository:
       match: (?<!\.)\b(return|yield)\b
 
     - name: keyword.control.conditional.js
-      match: (?<!\.)\b(else|if)\b
+      match: (?<!\.)\b(if|else)\b
 
     - name: keyword.control.trycatch.js
       match: (?<!\.)\b(catch|finally|throw|try)\b

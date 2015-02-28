@@ -1263,7 +1263,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.)\b(else|if)\b</string>
+					<string>(?&lt;!\.)\b(if|else)\b</string>
 					<key>name</key>
 					<string>keyword.control.conditional.js</string>
 				</dict>
@@ -1459,7 +1459,7 @@
 					<string>(?x)
   (?:\b(static)\s+)?
   (?:\b(async)\s+)?
-  (\*)?\s*([_$a-zA-Z][$\w]*)\s*
+  (?:(\*)\s*)?([_$a-zA-Z][$\w]*)\s*
   (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
