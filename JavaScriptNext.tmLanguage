@@ -552,6 +552,7 @@
   \.(prototype)
   \.([_$a-zA-Z][$\w]*)
   \s*=
+  \s*(async)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -569,6 +570,11 @@
 						<dict>
 							<key>name</key>
 							<string>entity.name.function.js</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -597,6 +603,7 @@
   (\b_?[A-Z][$\w]*)?
   \.([_$a-zA-Z][$\w]*)
   \s*=
+  \s*(async)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -609,6 +616,11 @@
 						<dict>
 							<key>name</key>
 							<string>entity.name.function.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -636,6 +648,7 @@
 					<string>(?x)
   \b([_$a-zA-Z][$\w]*)
   \s*(:)
+  \s*(async)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -648,6 +661,11 @@
 						<dict>
 							<key>name</key>
 							<string>punctuation.separator.key-value.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -678,6 +696,7 @@
     ((")((?:[^"]|\\")*)("))
   )\s*
   (:)\s*
+  (async)?\s*
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -685,6 +704,11 @@
 						<dict>
 							<key>name</key>
 							<string>string.quoted.single.js</string>
+						</dict>
+						<key>10</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -899,16 +923,22 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b(function(?:\s*\*|(?=\s|[(])))
+  \b(async)?
+  \s*(function(?:\s*\*|(?=\s|[(])))
   \s*([_$a-zA-Z][$\w]*)?\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.function.js</string>
+							<string>storage.type.js</string>
 						</dict>
 						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.js</string>
+						</dict>
+						<key>3</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.function.js</string>
@@ -933,6 +963,7 @@
   \.(prototype)
   \.([_$a-zA-Z][$\w]*)
   \s*=
+  \s*(async)?
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -952,6 +983,11 @@
 							<string>entity.name.function.js</string>
 						</dict>
 						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>5</key>
 						<dict>
 							<key>name</key>
 							<string>storage.type.function.js</string>
@@ -975,6 +1011,7 @@
   (\b_?[A-Z][$\w]*)?
   \.([_$a-zA-Z][$\w]*)
   \s*=
+  \s*(async)?
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -989,6 +1026,11 @@
 							<string>entity.name.function.js</string>
 						</dict>
 						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>storage.type.function.js</string>
@@ -1011,6 +1053,7 @@
 					<string>(?x)
   \b([_$a-zA-Z][$\w]*)
   \s*(:)
+  \s*(async)?
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1025,6 +1068,11 @@
 							<string>punctuation.separator.key-value.js</string>
 						</dict>
 						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>storage.type.function.js</string>
@@ -1050,6 +1098,7 @@
     ((")((?:[^"]|\\")*)("))
   )\s*
   (:)\s*
+  (async)?\s*
   \b(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1059,6 +1108,11 @@
 							<string>string.quoted.single.js</string>
 						</dict>
 						<key>10</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>11</key>
 						<dict>
 							<key>name</key>
 							<string>storage.type.function.js</string>
@@ -1462,8 +1516,9 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b(?:(static)\s+)?
-  ([_$a-zA-Z][$\w]*)\s*
+  (?:\b(static)\s+)?
+  (?:\b(async)\s+)?
+  (\*?\s*[_$a-zA-Z][$\w]*)\s*
   (?=\([^())]*\)(?:\s|/\*.*\*/)*\{)</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1473,6 +1528,11 @@
 							<string>storage.type.js</string>
 						</dict>
 						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>3</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.method.js</string>
