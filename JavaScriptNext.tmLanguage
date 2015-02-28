@@ -524,6 +524,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
+  (?:\b(async)\s+)?
   (?=\([^()]*\)\s*(=&gt;))</string>
 					<key>end</key>
 					<string>(?&lt;=\))\s*(=&gt;)</string>
@@ -552,7 +553,7 @@
   \.(prototype)
   \.([_$a-zA-Z][$\w]*)
   \s*=
-  \s*(async)?
+  \s*(?:(async)\s+)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -603,7 +604,7 @@
   (\b_?[A-Z][$\w]*)?
   \.([_$a-zA-Z][$\w]*)
   \s*=
-  \s*(async)?
+  \s*(?:(async)\s+)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -648,7 +649,7 @@
 					<string>(?x)
   \b([_$a-zA-Z][$\w]*)
   \s*(:)
-  \s*(async)?
+  \s*(?:(async)\s+)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -694,9 +695,9 @@
   (?:
     ((')((?:[^']|\\')*)('))|
     ((")((?:[^"]|\\")*)("))
-  )\s*
-  (:)\s*
-  (async)?\s*
+  )
+  \s*(:)
+  \s*(?:(async)\s+)?
   \s*(?=\([^()]*\)\s*(=&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -923,7 +924,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b(async)?
+  (?:\b(async)\s+)?
   \s*(function(?:\s*\*|(?=\s|[(])))
   \s*([_$a-zA-Z][$\w]*)?\s*</string>
 					<key>beginCaptures</key>
@@ -963,7 +964,7 @@
   \.(prototype)
   \.([_$a-zA-Z][$\w]*)
   \s*=
-  \s*(async)?
+  \s*(?:(async)\s+)?
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1011,7 +1012,7 @@
   (\b_?[A-Z][$\w]*)?
   \.([_$a-zA-Z][$\w]*)
   \s*=
-  \s*(async)?
+  \s*(?:(async)\s+)?
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1053,7 +1054,7 @@
 					<string>(?x)
   \b([_$a-zA-Z][$\w]*)
   \s*(:)
-  \s*(async)?
+  \s*(?:(async)\s+)?
   \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1096,10 +1097,10 @@
   (?:
     ((')((?:[^']|\\')*)('))|
     ((")((?:[^"]|\\")*)("))
-  )\s*
-  (:)\s*
-  (async)?\s*
-  \b(function(?:\s*\*|(?=\s|[(])))\s*</string>
+  )
+  \s*(:)
+  \s*(?:(async)\s+)?
+  \s*(function(?:\s*\*|(?=\s|[(])))\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1213,7 +1214,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.)\b(async|const|let|var)\b</string>
+					<string>(?&lt;!\.)\b(const|let|var)\b</string>
 					<key>name</key>
 					<string>storage.type.js</string>
 				</dict>
