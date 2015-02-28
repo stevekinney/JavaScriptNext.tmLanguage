@@ -2034,7 +2034,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>[A-Z][_$\dA-Z]*</string>
+					<string>[A-Z][_$\dA-Z]*\b</string>
 					<key>name</key>
 					<string>variable.other.constant.js</string>
 				</dict>
