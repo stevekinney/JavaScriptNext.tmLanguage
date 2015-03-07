@@ -20,6 +20,7 @@ repository:
 
     - include: '#support'
     - include: '#literal-keywords'
+    - include: '#literal-switch'
 
     - include: '#expression'                  # after storage which requires this in some cases
 
@@ -53,32 +54,32 @@ repository:
   brackets:
     patterns:
     - name: meta.group.braces.round
-      begin: (\()
+      begin: \(
       beginCaptures:
-        '1': {name: meta.brace.round.js}
-      end: (\))
+        '0': {name: meta.brace.round.js}
+      end: \)
       endCaptures:
-        '1': {name: meta.brace.round.js}
+        '0': {name: meta.brace.round.js}
       patterns:
       - include: $self
 
     - name: meta.group.braces.square
-      begin: (\[)
+      begin: \[
       beginCaptures:
-        '1': {name: meta.brace.square.js}
-      end: (\])
+        '0': {name: meta.brace.square.js}
+      end: \]
       endCaptures:
-        '1': {name: meta.brace.square.js}
+        '0': {name: meta.brace.square.js}
       patterns:
       - include: '#expression'
 
     - name: meta.group.braces.curly
-      begin: ({)
+      begin: \{
       beginCaptures:
-        '1': {name: meta.brace.curly.js}
-      end: (})
+        '0': {name: meta.brace.curly.js}
+      end: \}
       endCaptures:
-        '1': {name: meta.brace.curly.js}
+        '0': {name: meta.brace.curly.js}
       patterns:
       - include: $self
 
@@ -165,7 +166,7 @@ repository:
   literal-module:
     patterns:
     - name: keyword.operator.module.js
-      match: (?<!\.)\b(import|export|from|as)\b
+      match: (?<!\.)\b(import|export|default|from|as)\b
 
   literal-class:
     patterns:
@@ -187,8 +188,6 @@ repository:
         beginCaptures:
           '1': {name: storage.type.extends.js}
         end: '(?={)'
-        endCaptures:
-          '0': {name: meta.brace.curly.js}
         patterns:
         - include: '#expression'
 
@@ -605,20 +604,31 @@ repository:
     - name: keyword.control.loop.js
       match: (?<!\.)\b(break|continue|do|for|goto|while)\b
 
-    - name: keyword.control.switch.js
-      match: (?<!\.)\b(switch)\b
-
-    - begin: (?<!\.)\b(case|default)\b
-      beginCaptures:
-        '1': {name: keyword.control.switch.js}
-      end: ':'
-      endCaptures:
-        '0': {name: punctuation.separator.switch.js}
-      patterns:
-      - include: '#expression'
-
     - name: keyword.operator.js
       match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
+
+  literal-switch:
+    patterns:
+    - name: meta.switch.js
+      begin: (?<!\.)\b(switch)\b
+      beginCaptures:
+        '1': {name: keyword.control.switch.js}
+      end: \}
+      endCaptures:
+        '0': {name: meta.brace.curly.js}
+      patterns:
+      - begin: \{
+        beginCaptures:
+          '0': {name: meta.brace.curly.js}
+        end: (?=})
+        patterns:
+        - begin: (?<!\.)\b(case|default)\b
+          beginCaptures:
+            '1': {name: keyword.control.switch.js}
+          end: (?=:)
+          patterns:
+          - include: '#expression'
+        - include: $self
 
   literal-operators:
     patterns:

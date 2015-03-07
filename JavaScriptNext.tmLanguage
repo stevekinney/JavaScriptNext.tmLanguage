@@ -33,20 +33,20 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(\()</string>
+					<string>\(</string>
 					<key>beginCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>meta.brace.round.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(\))</string>
+					<string>\)</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>meta.brace.round.js</string>
@@ -64,20 +64,20 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(\[)</string>
+					<string>\[</string>
 					<key>beginCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>meta.brace.square.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(\])</string>
+					<string>\]</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>meta.brace.square.js</string>
@@ -95,20 +95,20 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>({)</string>
+					<string>\{</string>
 					<key>beginCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>meta.brace.curly.js</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(})</string>
+					<string>\}</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>meta.brace.curly.js</string>
@@ -237,6 +237,10 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-switch</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -722,14 +726,6 @@
 							</dict>
 							<key>end</key>
 							<string>(?={)</string>
-							<key>endCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>meta.brace.curly.js</string>
-								</dict>
-							</dict>
 							<key>name</key>
 							<string>meta.class.extends.js</string>
 							<key>patterns</key>
@@ -1204,41 +1200,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.)\b(switch)\b</string>
-					<key>name</key>
-					<string>keyword.control.switch.js</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(?&lt;!\.)\b(case|default)\b</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.switch.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>:</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.separator.switch.js</string>
-						</dict>
-					</dict>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#expression</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>(?&lt;!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b</string>
 					<key>name</key>
 					<string>keyword.operator.js</string>
@@ -1566,7 +1527,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.)\b(import|export|from|as)\b</string>
+					<string>(?&lt;!\.)\b(import|export|default|from|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.module.js</string>
 				</dict>
@@ -1982,6 +1943,81 @@
 						<dict>
 							<key>include</key>
 							<string>#string-content</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-switch</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?&lt;!\.)\b(switch)\b</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.switch.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.curly.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.switch.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>\{</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>meta.brace.curly.js</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(?=})</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>begin</key>
+									<string>(?&lt;!\.)\b(case|default)\b</string>
+									<key>beginCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>keyword.control.switch.js</string>
+										</dict>
+									</dict>
+									<key>end</key>
+									<string>(?=:)</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#expression</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>$self</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
