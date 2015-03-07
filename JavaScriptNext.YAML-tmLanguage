@@ -20,7 +20,6 @@ repository:
 
     - include: '#support'
     - include: '#literal-keywords'
-    - include: '#literal-method'
 
     - include: '#expression'                  # after storage which requires this in some cases
 
@@ -35,6 +34,11 @@ repository:
     - include: '#literal-string'
     - include: '#literal-language-constant'
     - include: '#literal-language-variable'
+
+    - include: '#literal-function'
+    - include: '#literal-method'
+    - include: '#literal-arrow-function'
+    - include: '#literal-prototype'
 
     - include: '#literal-module'
     - include: '#literal-class'
@@ -231,6 +235,15 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
+  literal-prototype:
+    patterns:
+    # e.g. Sound.prototype
+    - name: meta.prototype.access.js
+      match: ([_$a-zA-Z][$\w]*)\.(prototype)\b
+      captures:
+        '1': {name: entity.name.class.js}
+        '2': {name: variable.language.prototype.js}
+
   literal-prototype-storage:
     patterns:
     # e.g. Sound.prototype = {  } when extending an object
@@ -240,14 +253,7 @@ repository:
         '1': {name: entity.name.class.js}
         '2': {name: variable.language.prototype.js}
 
-    # e.g. Sound.prototype
-    - name: meta.prototype.access.js
-      match: ([_$a-zA-Z][$\w]*)\.(prototype)\b
-      captures:
-        '1': {name: entity.name.class.js}
-        '2': {name: variable.language.prototype.js}
-
-  literal-function-storage:
+  literal-function:
     patterns:
     # e.g. function play(arg1, arg2) {  }
     - name: meta.function.js
@@ -265,6 +271,8 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
+  literal-function-storage:
+    patterns:
     # e.g. Sound.prototype.play = function(arg1, arg2) {  }
     - name: meta.prototype.function.js
       begin: >-
@@ -359,7 +367,7 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
-  literal-arrow-function-storage:
+  literal-arrow-function:
     patterns:
     # e.g. (args) => { }
     - name: meta.function.arrow.js
@@ -375,6 +383,8 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
+  literal-arrow-function-storage:
+    patterns:
     # e.g. Sound.prototype.play = (args) => { }
     - name: meta.prototype.function.arrow.js
       begin: >-

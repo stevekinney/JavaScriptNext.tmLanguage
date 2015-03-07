@@ -240,10 +240,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-method</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#expression</string>
 				</dict>
 				<dict>
@@ -283,6 +279,22 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-language-variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-method</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-arrow-function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-prototype</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -386,7 +398,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-arrow-function-storage</key>
+		<key>literal-arrow-function</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -423,6 +435,12 @@
 						</dict>
 					</array>
 				</dict>
+			</array>
+		</dict>
+		<key>literal-arrow-function-storage</key>
+		<dict>
+			<key>patterns</key>
+			<array>
 				<dict>
 					<key>begin</key>
 					<string>(?x)
@@ -751,6 +769,53 @@
 				</dict>
 			</array>
 		</dict>
+		<key>literal-function</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (?:\b(async)\s+)?
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))
+  \s*([_$a-zA-Z][$\w]*)?\s*</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\))</string>
+					<key>name</key>
+					<string>meta.function.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-declaration-parameters</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>literal-function-call</key>
 		<dict>
 			<key>patterns</key>
@@ -798,47 +863,6 @@
 		<dict>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>begin</key>
-					<string>(?x)
-  (?:\b(async)\s+)?
-  \s*(function)(?:\s*(\*)|(?=\s|[(]))
-  \s*([_$a-zA-Z][$\w]*)?\s*</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.function.js</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.generator.asterisk.js</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?&lt;=\))</string>
-					<key>name</key>
-					<string>meta.function.js</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#function-declaration-parameters</string>
-						</dict>
-					</array>
-				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(?x)
@@ -1673,6 +1697,31 @@
 				</dict>
 			</array>
 		</dict>
+		<key>literal-prototype</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.language.prototype.js</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>([_$a-zA-Z][$\w]*)\.(prototype)\b</string>
+					<key>name</key>
+					<string>meta.prototype.access.js</string>
+				</dict>
+			</array>
+		</dict>
 		<key>literal-prototype-storage</key>
 		<dict>
 			<key>patterns</key>
@@ -1695,25 +1744,6 @@
 					<string>([_$a-zA-Z][$\w]*)\.(prototype)\s*=\s*</string>
 					<key>name</key>
 					<string>meta.prototype.declaration.js</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.class.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.language.prototype.js</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>([_$a-zA-Z][$\w]*)\.(prototype)\b</string>
-					<key>name</key>
-					<string>meta.prototype.access.js</string>
 				</dict>
 			</array>
 		</dict>
