@@ -306,6 +306,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#literal-constructor</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#literal-method-call</string>
 				</dict>
 				<dict>
@@ -769,6 +773,47 @@
 				</dict>
 			</array>
 		</dict>
+		<key>literal-constructor</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(new)\s+(?=[_$a-zA-Z][$\w.]*)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.new.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?![_$a-zA-Z][$\w.]*)</string>
+					<key>name</key>
+					<string>meta.instance.constructor</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#support</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.type.new.js</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>([_$a-zA-Z][$\w.]*\.)?([_$a-zA-Z][$\w]*)</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>literal-function</key>
 		<dict>
 			<key>patterns</key>
@@ -1127,41 +1172,6 @@
 		<dict>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>begin</key>
-					<string>(new)\s+(?=[_$a-zA-Z][$\w.]*)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.new.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?![_$a-zA-Z][$\w.]*)</string>
-					<key>name</key>
-					<string>meta.instance.constructor</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#support</string>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>entity.name.type.new.js</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>([_$a-zA-Z][$\w.]*\.)?([_$a-zA-Z][$\w]*)</string>
-						</dict>
-					</array>
-				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?&lt;!\.)\b(const|let|var)\b</string>

@@ -43,6 +43,7 @@ repository:
     - include: '#literal-module'
     - include: '#literal-class'
 
+    - include: '#literal-constructor'
     - include: '#literal-method-call'
     - include: '#literal-function-call'
 
@@ -574,7 +575,7 @@ repository:
     - name: constant.language.nan.js
       match: (?<!\.)\bNaN\b
 
-  literal-keywords:
+  literal-constructor:
     patterns:
     - name: meta.instance.constructor
       begin: (new)\s+(?=[_$a-zA-Z][$\w.]*)
@@ -587,6 +588,8 @@ repository:
         captures:
           '2': {name: entity.name.type.new.js}
 
+  literal-keywords:
+    patterns:
     - name: storage.type.js
       match: (?<!\.)\b(const|let|var)\b
 
