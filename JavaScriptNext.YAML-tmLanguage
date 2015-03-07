@@ -23,7 +23,6 @@ repository:
 
     - include: '#expression'                  # after storage which requires this in some cases
 
-    - include: '#literal-operators'
     - include: '#literal-punctuation'
 
   expression:
@@ -48,6 +47,8 @@ repository:
     - include: '#literal-function-call'
 
     - include: '#literal-variable'
+    - include: '#literal-operators'
+
     - include: '#brackets'
     - include: '#comments'
 
@@ -703,6 +704,9 @@ repository:
     - name: keyword.operator.spread.js
       match: (?<!\.)\.\.\.
 
+    - name: keyword.operator.accessor.js
+      match: \.
+
   literal-labels:
     patterns:
     - begin: >-
@@ -753,9 +757,6 @@ repository:
 
     - name: meta.delimiter.comma.js
       match: ','
-
-    - name: meta.delimiter.period.js
-      match: \.
 
   literal-quasi:
     patterns:

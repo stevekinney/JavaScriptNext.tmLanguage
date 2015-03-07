@@ -244,10 +244,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-operators</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-punctuation</string>
 				</dict>
 			</array>
@@ -319,6 +315,10 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-operators</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1666,6 +1666,12 @@
 					<key>name</key>
 					<string>keyword.operator.spread.js</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>\.</string>
+					<key>name</key>
+					<string>keyword.operator.accessor.js</string>
+				</dict>
 			</array>
 		</dict>
 		<key>literal-prototype</key>
@@ -1733,12 +1739,6 @@
 					<string>,</string>
 					<key>name</key>
 					<string>meta.delimiter.comma.js</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\.</string>
-					<key>name</key>
-					<string>meta.delimiter.period.js</string>
 				</dict>
 			</array>
 		</dict>
