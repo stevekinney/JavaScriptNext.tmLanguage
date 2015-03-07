@@ -141,12 +141,12 @@ repository:
 
   function-declaration-parameters:
     patterns:
-    - begin: (\()
+    - begin: \(
       beginCaptures:
-        '1': {name: punctuation.definition.parameters.begin.js}
-      end: (\))
+        '0': {name: punctuation.definition.parameters.begin.js}
+      end: \)
       endCaptures:
-        '1': {name: punctuation.definition.parameters.end.js}
+        '0': {name: punctuation.definition.parameters.end.js}
       patterns:
       - name: keyword.operator.spread.js
         match: (?<!\.)\.\.\.
