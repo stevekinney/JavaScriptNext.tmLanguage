@@ -7,7 +7,6 @@ firstLineMatch: ^#!/.*\b(node|js)$\n?
 keyEquivalent: ^~J
 
 patterns:
-- include: '#comments'
 - include: '#core'
 
 repository:
@@ -50,6 +49,7 @@ repository:
 
     - include: '#literal-variable'
     - include: '#brackets'
+    - include: '#comments'
 
   brackets:
     patterns:

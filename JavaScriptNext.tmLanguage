@@ -18,10 +18,6 @@
 	<array>
 		<dict>
 			<key>include</key>
-			<string>#comments</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#core</string>
 		</dict>
 	</array>
@@ -327,6 +323,10 @@
 				<dict>
 					<key>include</key>
 					<string>#brackets</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
 				</dict>
 			</array>
 		</dict>
