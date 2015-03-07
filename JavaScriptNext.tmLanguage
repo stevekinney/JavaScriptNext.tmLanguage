@@ -22,10 +22,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#support</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#core</string>
 		</dict>
 	</array>
@@ -233,6 +229,10 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-labels</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#support</string>
 				</dict>
 				<dict>
 					<key>include</key>

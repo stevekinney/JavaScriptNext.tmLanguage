@@ -8,7 +8,6 @@ keyEquivalent: ^~J
 
 patterns:
 - include: '#comments'
-- include: '#support'
 - include: '#core'
 
 repository:
@@ -19,6 +18,7 @@ repository:
     - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
     - include: '#literal-labels'
 
+    - include: '#support'
     - include: '#literal-keywords'
     - include: '#literal-method'
 
