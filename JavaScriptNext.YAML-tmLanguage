@@ -14,38 +14,35 @@ patterns:
 repository:
   core:
     patterns:
-    # literals
-    - include: '#literal-regexp'              # before operators to avoid ambiguities
-    - include: '#literal-number'
-    - include: '#literal-quasi'
-
-    # object literals
     - include: '#literal-function-storage'
     - include: '#literal-arrow-function-storage'
     - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
     - include: '#literal-labels'
 
-    # after object literals which requires the below in some cases
-    - include: '#literal-string'
     - include: '#literal-keywords'
     - include: '#literal-method'
+
+    - include: '#expression'                  # after storage which requires this in some cases
+
     - include: '#literal-operators'
+    - include: '#literal-punctuation'
+
+  expression:
+    patterns:
+    - include: '#literal-regexp'              # before operators to avoid ambiguities
+    - include: '#literal-number'
+    - include: '#literal-quasi'
+    - include: '#literal-string'
     - include: '#literal-language-constant'
     - include: '#literal-language-variable'
 
-    # modules/classes
     - include: '#literal-module'
     - include: '#literal-class'
 
-    # function calls
     - include: '#literal-method-call'
     - include: '#literal-function-call'
 
-    # punctuation
     - include: '#literal-variable'
-    - include: '#literal-punctuation'
-
-    # brackets
     - include: '#brackets'
 
   brackets:
@@ -68,7 +65,7 @@ repository:
       endCaptures:
         '1': {name: meta.brace.square.js}
       patterns:
-      - include: $self
+      - include: '#expression'
 
     - name: meta.group.braces.curly
       begin: ({)
@@ -157,7 +154,7 @@ repository:
           '0': {name: keyword.operator.assignment.js}
         end: '(?=[,)])'
         patterns:
-        - include: $self
+        - include: '#expression'
       - include: '#comments'
 
   literal-module:
@@ -188,7 +185,7 @@ repository:
         endCaptures:
           '0': {name: meta.brace.curly.js}
         patterns:
-        - include: $self
+        - include: '#expression'
 
       - begin: '{'
         beginCaptures:
@@ -605,13 +602,13 @@ repository:
       endCaptures:
         '0': {name: punctuation.separator.switch.js}
       patterns:
-      - include: $self
+      - include: '#expression'
 
-  literal-operators:
-    patterns:
     - name: keyword.operator.js
       match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
 
+  literal-operators:
+    patterns:
     - name: keyword.operator.logical.js
       match: >-
         (?x)
@@ -687,7 +684,7 @@ repository:
     patterns:
     - begin: >-
         (?x)
-          (?<!\?|\?\s)(?=(
+          (?<!\?)(?<!\?\s)(?=(
             ((')((?:[^']|\\')*)('))|
             ((")((?:[^"]|\\")*)("))
           )\s*:)
@@ -756,7 +753,7 @@ repository:
         endCaptures:
           '0': {name: punctuation.quasi.element.end.js}
         patterns:
-        - include: $self
+        - include: '#expression'
 
   literal-regexp:
     patterns:
