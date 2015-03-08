@@ -19,10 +19,10 @@ repository:
 
     - include: '#support'
     - include: '#literal-keywords'
+    - include: '#literal-for'
     - include: '#literal-switch'
 
     - include: '#expression'                  # after storage which requires this in some cases
-
     - include: '#literal-punctuation'
 
   expression:
@@ -47,12 +47,11 @@ repository:
     - include: '#literal-function-call'
 
     - include: '#literal-variable'
-    - include: '#literal-operators'
-
     - include: '#brackets'
     - include: '#comments'
+    - include: '#literal-operators'
 
-  brackets:
+  round-brackets:
     patterns:
     - name: meta.group.braces.round
       begin: \(
@@ -62,8 +61,10 @@ repository:
       endCaptures:
         '0': {name: meta.brace.round.js}
       patterns:
-      - include: $self
+      - include: '#expression'
 
+  square-brackets:
+    patterns:
     - name: meta.group.braces.square
       begin: \[
       beginCaptures:
@@ -74,6 +75,8 @@ repository:
       patterns:
       - include: '#expression'
 
+  curly-brackets:
+    patterns:
     - name: meta.group.braces.curly
       begin: \{
       beginCaptures:
@@ -83,6 +86,12 @@ repository:
         '0': {name: meta.brace.curly.js}
       patterns:
       - include: $self
+
+  brackets:
+    patterns:
+    - include: '#round-brackets'
+    - include: '#square-brackets'
+    - include: '#curly-brackets'
 
   comments:
     patterns:
@@ -588,10 +597,14 @@ repository:
         captures:
           '2': {name: entity.name.type.new.js}
 
-  literal-keywords:
+  literal-keyword-storage:
     patterns:
     - name: storage.type.js
       match: (?<!\.)\b(const|let|var)\b
+
+  literal-keywords:
+    patterns:
+    - include: '#literal-keyword-storage'
 
     - name: keyword.control.flow.js
       match: (?<!\.)\b(return|yield)\b
@@ -603,10 +616,29 @@ repository:
       match: (?<!\.)\b(catch|finally|throw|try)\b
 
     - name: keyword.control.loop.js
-      match: (?<!\.)\b(break|continue|do|for|goto|while)\b
+      match: (?<!\.)\b(break|continue|do|goto|while)\b
 
     - name: keyword.operator.js
       match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
+
+  literal-for:
+    patterns:
+    - name: meta.for.js
+      begin: (?<!\.)\b(for)\b
+      beginCaptures:
+        '1': {name: keyword.control.loop.js}
+      end: \)
+      endCaptures:
+        '0': {name: meta.brace.round.js}
+      patterns:
+      - begin: \(
+        beginCaptures:
+          '0': {name: meta.brace.round.js}
+        end: (?=\))
+        patterns:
+        - include: '#literal-keyword-storage'
+        - include: '#expression'
+        - include: '#literal-punctuation'
 
   literal-switch:
     patterns:
@@ -618,6 +650,7 @@ repository:
       endCaptures:
         '0': {name: meta.brace.curly.js}
       patterns:
+      - include: '#round-brackets'
       - begin: \{
         beginCaptures:
           '0': {name: meta.brace.curly.js}

@@ -28,97 +28,16 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>\(</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.round.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.round.js</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.group.braces.round</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>$self</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#round-brackets</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>\[</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.square.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\]</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.square.js</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.group.braces.square</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#expression</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#square-brackets</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>\{</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.curly.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\}</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.brace.curly.js</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.group.braces.curly</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>$self</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#curly-brackets</string>
 				</dict>
 			</array>
 		</dict>
@@ -236,6 +155,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#literal-for</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#literal-switch</string>
 				</dict>
 				<dict>
@@ -245,6 +168,43 @@
 				<dict>
 					<key>include</key>
 					<string>#literal-punctuation</string>
+				</dict>
+			</array>
+		</dict>
+		<key>curly-brackets</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.curly.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.curly.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.group.braces.curly</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -318,15 +278,15 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-operators</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#brackets</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-operators</string>
 				</dict>
 			</array>
 		</dict>
@@ -810,6 +770,68 @@
 				</dict>
 			</array>
 		</dict>
+		<key>literal-for</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?&lt;!\.)\b(for)\b</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.loop.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.round.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.for.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>\(</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>meta.brace.round.js</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(?=\))</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#literal-keyword-storage</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#expression</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#literal-punctuation</string>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>literal-function</key>
 		<dict>
 			<key>patterns</key>
@@ -1164,7 +1186,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-keywords</key>
+		<key>literal-keyword-storage</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -1173,6 +1195,16 @@
 					<string>(?&lt;!\.)\b(const|let|var)\b</string>
 					<key>name</key>
 					<string>storage.type.js</string>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-keywords</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#literal-keyword-storage</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -1194,7 +1226,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.)\b(break|continue|do|for|goto|while)\b</string>
+					<string>(?&lt;!\.)\b(break|continue|do|goto|while)\b</string>
 					<key>name</key>
 					<string>keyword.control.loop.js</string>
 				</dict>
@@ -1978,6 +2010,10 @@
 					<key>patterns</key>
 					<array>
 						<dict>
+							<key>include</key>
+							<string>#round-brackets</string>
+						</dict>
+						<dict>
 							<key>begin</key>
 							<string>\{</string>
 							<key>beginCaptures</key>
@@ -2104,6 +2140,43 @@
 				</dict>
 			</array>
 		</dict>
+		<key>round-brackets</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\(</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.round.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.round.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.group.braces.round</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expression</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>special-comments-conditional-compilation</key>
 		<dict>
 			<key>patterns</key>
@@ -2177,6 +2250,43 @@
 					<string>(@)(_win32|_win16|_mac|_alpha|_x86|_mc680x0|_PowerPC|_jscript|_jscript_build|_jscript_version|_debug|_fast|[a-zA-Z]\w+)</string>
 					<key>name</key>
 					<string>variable.other.conditional.js</string>
+				</dict>
+			</array>
+		</dict>
+		<key>square-brackets</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\[</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.square.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\]</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.square.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.group.braces.square</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expression</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
