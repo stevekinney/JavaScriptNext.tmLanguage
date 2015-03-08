@@ -12,9 +12,8 @@ patterns:
 repository:
   core:
     patterns:
-    - include: '#literal-function-storage'
-    - include: '#literal-arrow-function-storage'
-    - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
+    - include: '#literal-function-labels'
+    - include: '#literal-arrow-function-labels'
     - include: '#literal-labels'
 
     - include: '#support'
@@ -22,11 +21,15 @@ repository:
     - include: '#literal-for'
     - include: '#literal-switch'
 
-    - include: '#expression'                  # after storage which requires this in some cases
+    - include: '#expression'
     - include: '#literal-punctuation'
 
   expression:
     patterns:
+    - include: '#literal-function-storage'
+    - include: '#literal-arrow-function-storage'
+    - include: '#literal-prototype-storage'   # after literal-function-storage, which includes some prototype strings
+
     - include: '#literal-regexp'              # before operators to avoid ambiguities
     - include: '#literal-number'
     - include: '#literal-quasi'
@@ -246,7 +249,7 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
-  literal-prototype:
+  literal-prototype-storage:
     patterns:
     # e.g. Sound.prototype
     - name: meta.prototype.access.js
@@ -255,8 +258,6 @@ repository:
         '1': {name: entity.name.class.js}
         '2': {name: variable.language.prototype.js}
 
-  literal-prototype-storage:
-    patterns:
     # e.g. Sound.prototype = {  } when extending an object
     - name: meta.prototype.declaration.js
       match: ([_$a-zA-Z][$\w]*)\.(prototype)\s*=\s*
@@ -264,7 +265,7 @@ repository:
         '1': {name: entity.name.class.js}
         '2': {name: variable.language.prototype.js}
 
-  literal-function:
+  literal-function-storage:
     patterns:
     # e.g. function play(arg1, arg2) {  }
     - name: meta.function.js
@@ -282,8 +283,6 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
-  literal-function-storage:
-    patterns:
     # e.g. Sound.prototype.play = function(arg1, arg2) {  }
     - name: meta.prototype.function.js
       begin: >-
@@ -328,6 +327,8 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
+  literal-function-labels:
+    patterns:
     # e.g. play: function(arg1, arg2) {  }
     - name: meta.function.json.js
       begin: >-
@@ -378,7 +379,7 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
-  literal-arrow-function:
+  literal-arrow-function-storage:
     patterns:
     # e.g. (args) => { }
     - name: meta.function.arrow.js
@@ -394,8 +395,6 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
-  literal-arrow-function-storage:
-    patterns:
     # e.g. Sound.prototype.play = (args) => { }
     - name: meta.prototype.function.arrow.js
       begin: >-
@@ -436,6 +435,8 @@ repository:
       patterns:
       - include: '#function-declaration-parameters'
 
+  literal-arrow-function-labels:
+    patterns:
     # e.g. play: (args) => { }
     - name: meta.function.json.arrow.js
       begin: >-

@@ -131,15 +131,11 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#literal-function-storage</string>
+					<string>#literal-function-labels</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-arrow-function-storage</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literal-prototype-storage</string>
+					<string>#literal-arrow-function-labels</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -212,6 +208,18 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#literal-function-storage</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-arrow-function-storage</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#literal-prototype-storage</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#literal-regexp</string>
@@ -366,147 +374,10 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-arrow-function</key>
+		<key>literal-arrow-function-labels</key>
 		<dict>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>begin</key>
-					<string>(?x)
-  (\basync)?\s*
-  (?=\([^()]*\)\s*(=&gt;))</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?&lt;=\))\s*(=&gt;)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.function.arrow.js</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.function.arrow.js</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#function-declaration-parameters</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>literal-arrow-function-storage</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>(?x)
-  (\b_?[A-Z][$\w]*)?
-  \.(prototype)
-  \.([_$a-zA-Z][$\w]*)
-  \s*=
-  \s*(async)?
-  \s*(?=\([^()]*\)\s*(=&gt;))</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.class.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.language.prototype.js</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?&lt;=\))\s*(=&gt;)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.function.arrow.js</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.prototype.function.arrow.js</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#function-declaration-parameters</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(?x)
-  (\b_?[A-Z][$\w]*)?
-  \.([_$a-zA-Z][$\w]*)
-  \s*=
-  \s*(async)?
-  \s*(?=\([^()]*\)\s*(=&gt;))</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.class.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?&lt;=\))\s*(=&gt;)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.function.arrow.js</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.function.static.arrow.js</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#function-declaration-parameters</string>
-						</dict>
-					</array>
-				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(?x)
@@ -627,6 +498,143 @@
 					</dict>
 					<key>name</key>
 					<string>meta.function.json.arrow.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-declaration-parameters</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-arrow-function-storage</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (\basync)?\s*
+  (?=\([^()]*\)\s*(=&gt;))</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\))\s*(=&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.arrow.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.function.arrow.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-declaration-parameters</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (\b_?[A-Z][$\w]*)?
+  \.(prototype)
+  \.([_$a-zA-Z][$\w]*)
+  \s*=
+  \s*(async)?
+  \s*(?=\([^()]*\)\s*(=&gt;))</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.language.prototype.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\))\s*(=&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.arrow.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.prototype.function.arrow.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-declaration-parameters</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (\b_?[A-Z][$\w]*)?
+  \.([_$a-zA-Z][$\w]*)
+  \s*=
+  \s*(async)?
+  \s*(?=\([^()]*\)\s*(=&gt;))</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\))\s*(=&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.arrow.js</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.function.static.arrow.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -832,53 +840,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-function</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>(?x)
-  (?:\b(async)\s+)?
-  \s*(function)(?:\s*(\*)|(?=\s|[(]))
-  \s*([_$a-zA-Z][$\w]*)?\s*</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.function.js</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.generator.asterisk.js</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?&lt;=\))</string>
-					<key>name</key>
-					<string>meta.function.js</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#function-declaration-parameters</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
 		<key>literal-function-call</key>
 		<dict>
 			<key>patterns</key>
@@ -922,124 +883,10 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-function-storage</key>
+		<key>literal-function-labels</key>
 		<dict>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>begin</key>
-					<string>(?x)
-  (\b_?[A-Z][$\w]*)?
-  \.(prototype)
-  \.([_$a-zA-Z][$\w]*)
-  \s*=
-  \s*(?:(async)\s+)?
-  \s*(function)(?:\s*(\*)|(?=\s|[(]))
-  \s*([_$a-zA-Z][$\w]*)?\s*</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.class.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.language.prototype.js</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.js</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.function.js</string>
-						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.generator.asterisk.js</string>
-						</dict>
-						<key>7</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?&lt;=\))</string>
-					<key>name</key>
-					<string>meta.prototype.function.js</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#function-declaration-parameters</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(?x)
-  (\b_?[A-Z][$\w]*)?
-  \.([_$a-zA-Z][$\w]*)
-  \s*=
-  \s*(?:(async)\s+)?
-  \s*(function)(?:\s*(\*)|(?=\s|[(]))
-  \s*([_$a-zA-Z][$\w]*)?\s*</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.class.js</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.js</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.function.js</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.generator.asterisk.js</string>
-						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.js</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?&lt;=\))</string>
-					<key>name</key>
-					<string>meta.function.static.js</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#function-declaration-parameters</string>
-						</dict>
-					</array>
-				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(?x)
@@ -1176,6 +1023,167 @@
 					<string>(?&lt;=\))</string>
 					<key>name</key>
 					<string>meta.function.json.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-declaration-parameters</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-function-storage</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (?:\b(async)\s+)?
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))
+  \s*([_$a-zA-Z][$\w]*)?\s*</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\))</string>
+					<key>name</key>
+					<string>meta.function.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-declaration-parameters</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (\b_?[A-Z][$\w]*)?
+  \.(prototype)
+  \.([_$a-zA-Z][$\w]*)
+  \s*=
+  \s*(?:(async)\s+)?
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))
+  \s*([_$a-zA-Z][$\w]*)?\s*</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.language.prototype.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.js</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\))</string>
+					<key>name</key>
+					<string>meta.prototype.function.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-declaration-parameters</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+  (\b_?[A-Z][$\w]*)?
+  \.([_$a-zA-Z][$\w]*)
+  \s*=
+  \s*(?:(async)\s+)?
+  \s*(function)(?:\s*(\*)|(?=\s|[(]))
+  \s*([_$a-zA-Z][$\w]*)?\s*</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.js</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.js</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.js</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.generator.asterisk.js</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.js</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\))</string>
+					<key>name</key>
+					<string>meta.function.static.js</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1706,7 +1714,7 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-prototype</key>
+		<key>literal-prototype-storage</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -1729,12 +1737,6 @@
 					<key>name</key>
 					<string>meta.prototype.access.js</string>
 				</dict>
-			</array>
-		</dict>
-		<key>literal-prototype-storage</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
 					<key>captures</key>
 					<dict>
