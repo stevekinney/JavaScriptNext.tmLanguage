@@ -274,7 +274,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-variable</string>
+					<string>#comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -282,11 +282,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comments</string>
+					<string>#literal-operators</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-operators</string>
+					<string>#literal-variable</string>
 				</dict>
 			</array>
 		</dict>
@@ -1230,12 +1230,6 @@
 					<key>name</key>
 					<string>keyword.control.loop.js</string>
 				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b</string>
-					<key>name</key>
-					<string>keyword.operator.js</string>
-				</dict>
 			</array>
 		</dict>
 		<key>literal-labels</key>
@@ -1607,6 +1601,12 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b</string>
+					<key>name</key>
+					<string>keyword.operator.js</string>
+				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?x)

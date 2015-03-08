@@ -46,10 +46,11 @@ repository:
     - include: '#literal-method-call'
     - include: '#literal-function-call'
 
-    - include: '#literal-variable'
-    - include: '#brackets'
     - include: '#comments'
+    - include: '#brackets'
+
     - include: '#literal-operators'
+    - include: '#literal-variable'
 
   round-brackets:
     patterns:
@@ -618,9 +619,6 @@ repository:
     - name: keyword.control.loop.js
       match: (?<!\.)\b(break|continue|do|goto|while)\b
 
-    - name: keyword.operator.js
-      match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
-
   literal-for:
     patterns:
     - name: meta.for.js
@@ -666,6 +664,9 @@ repository:
 
   literal-operators:
     patterns:
+    - name: keyword.operator.js
+      match: (?<!\.)\b(await|delete|in|instanceof|new|of|typeof|void|with)\b
+
     - name: keyword.operator.logical.js
       match: >-
         (?x)
